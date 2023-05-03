@@ -58,11 +58,11 @@ try {
                                 </li>
                                 <li>Torah Resources</li>
                                 <ul>
-                                    <li>Haftorah </li>
-                                    <ul>
+                                    <li>
+                                        Haftorah:{" "}
                                         {reading.torah_resource.haftorah.map(
                                             (haftorah, index) => (
-                                                <li>
+                                                <span>
                                                     {(index > 0 ? ", " : "") +
                                                         haftorah.book +
                                                         " " +
@@ -70,10 +70,10 @@ try {
                                                         (index === 0
                                                             ? "(E)"
                                                             : "(H)")}
-                                                </li>
+                                                </span>
                                             )
-                                        )}
-                                    </ul>
+                                        )}{" "}
+                                    </li>
 
                                     <li>
                                         Brit Chadasha:{" "}
