@@ -6,7 +6,7 @@ const props = {
     description: "",
     image: "home",
 };
-import torahReadingsJson from "../torah_readings.json";
+import torahReadingsJson from "../../public/torah_readings.json";
 import { TorahReadings, TorahReadingType } from "./data";
 
 let parsedTorahReadings: TorahReadingType[] = [];
@@ -21,43 +21,65 @@ try {
 ---
 
 <Layout {...props}>
+    <nav>
+        <ul>
+            {
+                parsedTorahReadings.map((reading) => (
+                    <li>
+                        <Link href={`#week-${reading.week}`}>
+                            Week {reading.week}
+                        </Link>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+
     <main>
-        <h1>Yearly Torah Readings</h1>
         {
             error ? (
                 <p>
                     Sorry, there was an error loading the Torah readings data.
                 </p>
             ) : (
-                <ul>
+                <>
                     {parsedTorahReadings.map((reading) => (
-                        <li>
-                            Week {reading.week}: <i>{reading.portion}</i>
+                        <article>
+                            <span id={`week-${reading.week}`}>
+                                {" "}
+                                Week {reading.week}
+                            </span>
+                            <h3>
+                                <i>{reading.portion}</i>
+                            </h3>
                             <ul>
                                 <li>
                                     Torah: {reading.book} {reading.verses}
                                 </li>
                                 <li>Torah Resources</li>
                                 <ul>
-                                    <li>Haftorah</li>
+                                    <li>Haftorah </li>
                                     <ul>
                                         {reading.torah_resource.haftorah.map(
                                             (haftorah, index) => (
-                                                <li key={index}>
-                                                    {haftorah.book}{" "}
-                                                    {haftorah.verses}
+                                                <li>
+                                                    {(index > 0 ? ", " : "") +
+                                                        haftorah.book +
+                                                        " " +
+                                                        haftorah.verses +
+                                                        (index === 0
+                                                            ? "(E)"
+                                                            : "(H)")}
                                                 </li>
                                             )
                                         )}
                                     </ul>
+
                                     <li>
                                         Brit Chadasha:{" "}
+                                        {reading.torah_resource.apostolic.book}{" "}
                                         {
-                                            reading.torah_resource.britChadasha
-                                                .book
-                                        }{" "}
-                                        {
-                                            reading.torah_resource.britChadasha
+                                            reading.torah_resource.apostolic
                                                 .verses
                                         }
                                     </li>
@@ -74,11 +96,13 @@ try {
                                     </li>
                                 </ul>
                             </ul>
-                        </li>
+                        </article>
                     ))}
-                </ul>
+                </>
             )
         }
+
+        <Link href="../../public/torah_readings.json">Full json</Link>
 
         <details>
             <summary

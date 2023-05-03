@@ -136,6 +136,7 @@ main {
     display: grid;
     grid-template-columns: [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end];
     scroll-margin-top: var(--space-2xl);
+    row-gap: var(--size-10);
 }
 
 main>* {
@@ -149,4 +150,27 @@ svg {
 
 svg g {
     fill: var(--text-1);
+}
+
+article span {
+    scroll-margin: var(--size-5);
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--surface-2);
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--size-5);
+    padding-inline: 0;
+    overflow-x: auto;
+    padding-block: var(--size-4);
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
 }

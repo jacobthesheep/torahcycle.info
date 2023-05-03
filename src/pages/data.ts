@@ -12,7 +12,7 @@ export const TorahReading = z.object({
 				verses: z.string(),
 			}),
 		),
-		britChadasha: z.object({
+		apostolic: z.object({
 			book: z.string(),
 			verses: z.string(),
 		}),
