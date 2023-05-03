@@ -1,0 +1,1570 @@
+[
+	{
+		"week": 1,
+		"portion": "Bereshit – In the beginning",
+		"book": "Genesis",
+		"verses": "1:1-6:8",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "42:5-43:11"
+				},
+				{
+					"book": "Isaiah",
+					"verses": "42:5-42:21"
+				}
+			],
+			"britChadasha": {
+				"book": "Revelation",
+				"verses": "22:6-21"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 2,
+		"portion": "Noach – Noah",
+		"book": "Genesis",
+		"verses": "6:9-11:32",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "54:1-55:5"
+				},
+				{
+					"book": "Isaiah",
+					"verses": "54:1-10"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "24:36-46"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 3,
+		"portion": "Lech L’cha – Go forth, yourself",
+		"book": "Genesis",
+		"verses": "12:1-17:27",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "40:27-41:16"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "24:36-46"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 4,
+		"portion": "Vayera – and He appeared",
+		"book": "Genesis",
+		"verses": "18:1-22:24",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "2 Kings",
+					"verses": "4:1-4:37"
+				},
+				{
+					"book": "2 Kings",
+					"verses": "4:1-4:23"
+				}
+			],
+			"britChadasha": {
+				"book": "Luke",
+				"verses": "1:26-38; 24:36-53"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 5,
+		"portion": "Chayei Sarah – life of Sarah",
+		"book": "Genesis",
+		"verses": "23:1-25:18",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "1:1-1:31"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "1:1-17"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 6,
+		"portion": "Tol’dot – generations",
+		"book": "Genesis",
+		"verses": "25:19-28:9",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Malachi",
+					"verses": "1:1-2:7"
+				}
+			],
+			"britChadasha": {
+				"book": "Romans",
+				"verses": "9:1-13"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 7,
+		"portion": "Vayeitze – and he went out",
+		"book": "Genesis",
+		"verses": "28:10-32:2[3]",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Hosea",
+					"verses": "12:13-14:10"
+				},
+				{
+					"book": "Hosea",
+					"verses": "11:7-12:12"
+				}
+			],
+			"britChadasha": {
+				"book": "John",
+				"verses": "1:19-51"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 8,
+		"portion": "Vayishlach – and he sent",
+		"book": "Genesis",
+		"verses": "Gen 32:3[4]-36:43",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Obadiah",
+					"verses": "1:1-1:21"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "11:11-20"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 9,
+		"portion": "Vayeishev – and he settled",
+		"book": "Genesis",
+		"verses": "37:1-40:23",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Amos",
+					"verses": "2:6-3:8"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "1:1-6, 16-25"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 10,
+		"portion": "Mikeitz – at the end of",
+		"book": "Genesis",
+		"verses": "41:1-44:17",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "3:15-4:1"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "27:15-46"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 11,
+		"portion": "Vayigash – and he drew near",
+		"book": "Genesis",
+		"verses": "44:18-47:27",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Ezekiel",
+					"verses": "37:15-37:28"
+				}
+			],
+			"britChadasha": {
+				"book": "Luke",
+				"verses": "6:12-16"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 12,
+		"portion": "Vay’chi – and he lived",
+		"book": "Genesis",
+		"verses": "47:28-50:26",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "2:1-12"
+				}
+			],
+			"britChadasha": {
+				"book": "1 Peter",
+				"verses": "1:1-9"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 13,
+		"portion": "Sh’mot – names",
+		"book": "Exodus",
+		"verses": "1:1-6:1",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "27:6-28:13"
+				}
+			],
+			"britChadasha": {
+				"book": "1 Corinthians",
+				"verses": "14:13-25"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 14,
+		"portion": "Va’era – and I appeared",
+		"book": "Exodus",
+		"verses": "6:2-9:35",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Ezekiel",
+					"verses": "28:25-29:21"
+				}
+			],
+			"britChadasha": {
+				"book": "Revelation",
+				"verses": "16:1-21"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 15,
+		"portion": "Bo – enter",
+		"book": "Exodus",
+		"verses": "10:1-13:16",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jeremiah",
+					"verses": "46:13-46:28"
+				}
+			],
+			"britChadasha": {
+				"book": "Romans",
+				"verses": "9:14-29"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 16,
+		"portion": "B’shalach – when he let go",
+		"book": "Exodus",
+		"verses": "13:17-17:16",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jude",
+					"verses": "4:4-5:31"
+				},
+				{
+					"book": "Jude",
+					"verses": "5:1-5:31"
+				}
+			],
+			"britChadasha": {
+				"book": "Revelation",
+				"verses": "19:1-20:6"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 17,
+		"portion": "Yitro – Jethro",
+		"book": "Exodus",
+		"verses": "18:1-20:26[23]",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "6:1-7:6; 9:5-9:6"
+				},
+				{
+					"book": "Isaiah",
+					"verses": "6:1-6:13"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "5:8-20"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 18,
+		"portion": "Mishpatim – judgments",
+		"book": "Exodus",
+		"verses": "21:1-24:18",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jeremiah",
+					"verses": "34:8-34:22; 33:25-33:26"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "17:1-11"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 19,
+		"portion": "T’rumah – offering",
+		"book": "Exodus",
+		"verses": "25:1-27:19",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "5:26-6:13"
+				}
+			],
+			"britChadasha": {
+				"book": "2 Corinthians",
+				"verses": "9:1-15"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 20,
+		"portion": "T’tzaveh – you shall command",
+		"book": "Exodus",
+		"verses": "27:20-30:10",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Ezekiel",
+					"verses": "43:10-43:27"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "13:10-16"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 21,
+		"portion": "Ki Tisa – when you elevate",
+		"book": "Exodus",
+		"verses": "30:11-34:35",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "18:1-18:39"
+				},
+				{
+					"book": "1 Kings",
+					"verses": "18:20-18:39"
+				}
+			],
+			"britChadasha": {
+				"book": "2 Corinthians",
+				"verses": "3:1-18"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 22,
+		"portion": "Vayakel – and he assembled",
+		"book": "Exodus",
+		"verses": "35:1-38:20",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "7:40-7:50"
+				},
+				{
+					"book": "1 Kings",
+					"verses": "7:13-7:26"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "9:1-11"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 23,
+		"portion": "P’kudei – accountings of",
+		"book": "Exodus",
+		"verses": "38:21-40:38",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "7:51-8:21"
+				},
+				{
+					"book": "1 Kings",
+					"verses": "7:40-7:50"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "8:1-12"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 24,
+		"portion": "Vayikra – and He called",
+		"book": "Leviticus",
+		"verses": "Lev 1:1-6:7[5:26]",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "43:21-44:23"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "10:1-18"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 25,
+		"portion": "Tzav – command",
+		"book": "Leviticus",
+		"verses": "6:8[1]-8:36",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jeremiah",
+					"verses": "7:21-8:3; 9:22-9:23"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "9:11-28"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 26,
+		"portion": "Sh’mini – eighth",
+		"book": "Leviticus",
+		"verses": "9:1-11:47",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "2 Samuel",
+					"verses": "6:1-7:17"
+				},
+				{
+					"book": "2 Samuel",
+					"verses": "6:1-6:19"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "7:1-19"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 27,
+		"portion": "Tazria – she bears seed",
+		"book": "Leviticus",
+		"verses": "12:1-13:59",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "2 Kings",
+					"verses": "4:42-5:19"
+				}
+			],
+			"britChadasha": {
+				"book": "Luke",
+				"verses": "7:18-35"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 28,
+		"portion": "M’tzora – infected one",
+		"book": "Leviticus",
+		"verses": "14:1-15:33",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "2 Kings",
+					"verses": "7:3-7:20"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "23:16-24:2, 30-31"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 29,
+		"portion": "Acharei Mot – after the death",
+		"book": "Leviticus",
+		"verses": "16:1-18:30",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Ezekiel",
+					"verses": "22:1-22:19"
+				},
+				{
+					"book": "Ezekiel",
+					"verses": "22:1-22:16"
+				}
+			],
+			"britChadasha": {
+				"book": "1 Corinthians",
+				"verses": "6:9-20"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 30,
+		"portion": "K’doshim – holy ones",
+		"book": "Leviticus",
+		"verses": "19:1-20:27",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Amos",
+					"verses": "9:7-9:15"
+				},
+				{
+					"book": "Ezekiel",
+					"verses": "20:2-20:20"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "5:43-48"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 31,
+		"portion": "Emor – say",
+		"book": "Leviticus",
+		"verses": "21:1-24:23",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Ezekiel",
+					"verses": "44:15-44:31"
+				}
+			],
+			"britChadasha": {
+				"book": "Luke",
+				"verses": "14:12-24"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 32,
+		"portion": "B’har – on the Mount",
+		"book": "Leviticus",
+		"verses": "25:1-26:2",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jeremiah",
+					"verses": "32:6-32:27"
+				}
+			],
+			"britChadasha": {
+				"book": "Luke",
+				"verses": "4:16-21"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 33,
+		"portion": "B’chukotai – in My status",
+		"book": "Leviticus",
+		"verses": "26:3-27:34",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jeremiah",
+					"verses": "16:19-17:14"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "22:1-14"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 34,
+		"portion": "B’midbar – in the Wilderness",
+		"book": "Numbers",
+		"verses": "1:1-4:20",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Hosea",
+					"verses": "2:1-2:22"
+				}
+			],
+			"britChadasha": {
+				"book": "Romans",
+				"verses": "9:22-33"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 35,
+		"portion": "Naso – elevate",
+		"book": "Numbers",
+		"verses": "4:21-7:89",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Judges",
+					"verses": "13:2-13:25"
+				}
+			],
+			"britChadasha": {
+				"book": "John",
+				"verses": "12:20-36"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 36,
+		"portion": "B’ha’alot’cha – in your making go up",
+		"book": "Numbers",
+		"verses": "8:1-12:16",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Zechariah",
+					"verses": "2:14-4:7"
+				}
+			],
+			"britChadasha": {
+				"book": "Revelation",
+				"verses": "11:1-19"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 37,
+		"portion": "Sh’lach l’cha – send for yourself",
+		"book": "Numbers",
+		"verses": "13:1-15:41",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Joshua",
+					"verses": "2:1-2:24"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "3:7-4:1"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 38,
+		"portion": "Korach – Korah",
+		"book": "Numbers",
+		"verses": "16:1-18:32",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Samuel",
+					"verses": "11:14-12:22"
+				}
+			],
+			"britChadasha": {
+				"book": "Acts",
+				"verses": "5:1-11"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 39,
+		"portion": "Chukat – ordinance of",
+		"book": "Numbers",
+		"verses": "19:1-22:1",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Judges",
+					"verses": "11:1-11:33"
+				}
+			],
+			"britChadasha": {
+				"book": "John",
+				"verses": "3:10-21"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 40,
+		"portion": "Balak – Balak",
+		"book": "Numbers",
+		"verses": "22:2-25:9",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Micah",
+					"verses": "5:6-6:8"
+				}
+			],
+			"britChadasha": {
+				"book": "Romans",
+				"verses": "11:25-32"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 41,
+		"portion": "Pinchas – Phinehas",
+		"book": "Numbers",
+		"verses": "25:10-29:40[30:1]",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "1 Kings",
+					"verses": "18:46-19:21"
+				}
+			],
+			"britChadasha": {
+				"book": "John",
+				"verses": "2:13-25"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 42,
+		"portion": "Matot – tribes",
+		"book": "Numbers",
+		"verses": "30:1[2]-32:42",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jeremiah",
+					"verses": "1:1-2:3"
+				}
+			],
+			"britChadasha": {
+				"book": "Acts",
+				"verses": "9:1-22"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 43,
+		"portion": "Mas’ei – journeys of",
+		"book": "Numbers",
+		"verses": "33:1-36:13",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Jeremiah",
+					"verses": "2:4-28; 3:4"
+				},
+				{
+					"book": "Jeremiah",
+					"verses": "2:4-28; 4:1-4:2"
+				}
+			],
+			"britChadasha": {
+				"book": "James",
+				"verses": "4:1-12"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 44,
+		"portion": "D’varim – words",
+		"book": "Deuteronomy",
+		"verses": "1:1-3:22",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "1:1-1:27"
+				}
+			],
+			"britChadasha": {
+				"book": "Acts",
+				"verses": "7:51-8:4"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 45,
+		"portion": "Va-etchanan – and I pleaded",
+		"book": "Deuteronomy",
+		"verses": "3:23-7:11",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "40:1-40:26"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "23:31-39"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 46,
+		"portion": "Ekev – as a result",
+		"book": "Deuteronomy",
+		"verses": "7:12-11:25",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "49:14-51:3"
+				}
+			],
+			"britChadasha": {
+				"book": "Hebrews",
+				"verses": "11:8-13"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 47,
+		"portion": "R’eih – see",
+		"book": "Deuteronomy",
+		"verses": "11:26-16:17",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "54:11-55:5"
+				}
+			],
+			"britChadasha": {
+				"book": "John",
+				"verses": "7:37-52"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 48,
+		"portion": "Shof’tim – judges",
+		"book": "Deuteronomy",
+		"verses": "16:18-21:9",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "51:12-52:12"
+				}
+			],
+			"britChadasha": {
+				"book": "Matthew",
+				"verses": "3:1-17"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 49,
+		"portion": "Ki Teitzei – when you go out",
+		"book": "Deuteronomy",
+		"verses": "21:10-25:19",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "54:1-54:10"
+				}
+			],
+			"britChadasha": {
+				"book": "1 Corinthians",
+				"verses": "5:1-5"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 50,
+		"portion": "Ki Tavo – when you enter in",
+		"book": "Deuteronomy",
+		"verses": "26:1-29:9[8]",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "60:1-60:22"
+				}
+			],
+			"britChadasha": {
+				"book": "Luke",
+				"verses": "24:44-53"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 51,
+		"portion": "Nitzavim – you are standing",
+		"book": "Deuteronomy",
+		"verses": "29:10[9]-30:20",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "61:10-63:9"
+				}
+			],
+			"britChadasha": {
+				"book": "John",
+				"verses": "15:1-11"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 52,
+		"portion": "Vayelech – and he went",
+		"book": "Deuteronomy",
+		"verses": "31:1-30",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Isaiah",
+					"verses": "55:6-56:8"
+				}
+			],
+			"britChadasha": {
+				"book": "Romans",
+				"verses": "10:1-17"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 53,
+		"portion": "Ha-azinu – give ear",
+		"book": "Deuteronomy",
+		"verses": "32:1-52",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "2 Samuel",
+					"verses": "22:1-22:51"
+				}
+			],
+			"britChadasha": {
+				"book": "Romans",
+				"verses": "10:17-11:12; 12:19; 15:9-10"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	},
+	{
+		"week": 54,
+		"portion": "V’zot – and this the blessing",
+		"book": "Deuteronomy",
+		"verses": "33:1-34:12",
+		"torah_resource": {
+			"haftorah": [
+				{
+					"book": "Joshua",
+					"verses": "1:1-1:18"
+				},
+				{
+					"book": "Joshua",
+					"verses": "1:1-1:9"
+				}
+			],
+			"britChadasha": {
+				"book": "Revelation",
+				"verses": "21:9-22:5"
+			}
+		},
+		"ffoz": {
+			"prophets": {
+				"book": "Isaiah",
+				"verses": "42:5-43:10"
+			},
+			"gospel": {
+				"book": "John",
+				"verses": "1:1-17"
+			}
+		}
+	}
+]

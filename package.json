@@ -1,15 +1,27 @@
 {
-  "name": "torahcycle.info",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^2.3.2"
-  }
+	"name": "torahcycle.info",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"browserslist": [
+		"defaults"
+	],
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@fontsource/comfortaa": "^4.5.11",
+		"@fontsource/rubik": "^4.5.14",
+		"astro": "^2.3.2",
+		"hebrew-date": "^1.0.6",
+		"open-props": "^1.5.8",
+		"zod": "^3.21.4"
+	},
+	"devDependencies": {
+		"rome": "12.0.0"
+	}
 }

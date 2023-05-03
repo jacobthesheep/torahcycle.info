@@ -1,15 +1,94 @@
 ---
+import Layout from "../layouts/BaseLayout.astro";
+import Link from "../components/Link.astro";
+const props = {
+    title: "",
+    description: "",
+    image: "home",
+};
+import torahReadingsJson from "../torah_readings.json";
+import { TorahReadings, TorahReadingType } from "./data";
+
+let parsedTorahReadings: TorahReadingType[] = [];
+let error;
+
+try {
+    parsedTorahReadings = TorahReadings.parse(torahReadingsJson);
+} catch (err) {
+    error = err;
+    console.error("Error validating Torah readings data:", err);
+}
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout {...props}>
+    <main>
+        <h1>Yearly Torah Readings</h1>
+        {
+            error ? (
+                <p>
+                    Sorry, there was an error loading the Torah readings data.
+                </p>
+            ) : (
+                <ul>
+                    {parsedTorahReadings.map((reading) => (
+                        <li>
+                            Week {reading.week}: <i>{reading.portion}</i>
+                            <ul>
+                                <li>
+                                    Torah: {reading.book} {reading.verses}
+                                </li>
+                                <li>Torah Resources</li>
+                                <ul>
+                                    <li>Haftorah</li>
+                                    <ul>
+                                        {reading.torah_resource.haftorah.map(
+                                            (haftorah, index) => (
+                                                <li key={index}>
+                                                    {haftorah.book}{" "}
+                                                    {haftorah.verses}
+                                                </li>
+                                            )
+                                        )}
+                                    </ul>
+                                    <li>
+                                        Brit Chadasha:{" "}
+                                        {
+                                            reading.torah_resource.britChadasha
+                                                .book
+                                        }{" "}
+                                        {
+                                            reading.torah_resource.britChadasha
+                                                .verses
+                                        }
+                                    </li>
+                                </ul>
+                                <li>FFOZ</li>
+                                <ul>
+                                    <li>
+                                        Prophets: {reading.ffoz.prophets.book}{" "}
+                                        {reading.ffoz.prophets.verses}
+                                    </li>
+                                    <li>
+                                        Gospel: {reading.ffoz.gospel.book}{" "}
+                                        {reading.ffoz.gospel.verses}
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
+
+        <details>
+            <summary
+                >What is the difference between Etz Hayim and Hertz?</summary
+            >
+            <p>
+                These two versions represent different selections of Haftarah
+                readings that are associated with the weekly Torah portion in
+                Jewish liturgical practice.
+            </p>
+        </details>
+    </main>
+</Layout>
