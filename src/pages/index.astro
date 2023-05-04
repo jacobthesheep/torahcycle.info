@@ -56,64 +56,32 @@ try {
                                 <li>
                                     Torah: {reading.book} {reading.verses}
                                 </li>
-                                <li>Torah Resources</li>
-                                <ul>
-                                    <li>
-                                        Haftarah:{" "}
-                                        {reading.torah_resource.haftarah.map(
-                                            (haftarah, index) => (
-                                                <span>
-                                                    {(index > 0 ? ", " : "") +
-                                                        haftarah.book +
-                                                        " " +
-                                                        haftarah.verses +
-                                                        (index === 0
-                                                            ? "(E)"
-                                                            : "(H)")}
-                                                </span>
-                                            )
-                                        )}{" "}
-                                    </li>
 
-                                    <li>
-                                        Apostolic:{" "}
-                                        {reading.torah_resource.apostolic.book}{" "}
-                                        {
-                                            reading.torah_resource.apostolic
-                                                .verses
-                                        }
-                                    </li>
-                                </ul>
-                                <li>FFOZ</li>
-                                <ul>
-                                    <li>
-                                        Prophets:{" "}
-                                        {reading.ffoz.prophets.map(
-                                            (prophet, index) => (
-                                                <span>
-                                                    {(index > 0 ? ", " : "") +
-                                                        prophet.book +
-                                                        " " +
-                                                        prophet.verses}
-                                                </span>
-                                            )
-                                        )}
-                                    </li>
+                                <li>
+                                    Haftarah:{" "}
+                                    {reading.haftorah.map(
+                                        (haftorahItem, index) => (
+                                            <span>
+                                                {(index > 0 ? ", " : "") +
+                                                    haftorahItem.book +
+                                                    " " + haftorahItem.verses}
+                                            </span>
+                                        )
+                                    )}{" "}
+                                </li>
 
-                                    <li>
-                                        Gospel:{" "}
-                                        {reading.ffoz.gospel.map(
-                                            (gospelItem, index) => (
-                                                <span>
-                                                    {(index > 0 ? ", " : "") +
-                                                        gospelItem.book +
-                                                        " " +
-                                                        gospelItem.verses}
-                                                </span>
-                                            )
-                                        )}
-                                    </li>
-                                </ul>
+                                <li>
+                                    Apostolic:{" "}
+                                    {reading.apostolic.map(
+                                        (apolisticItem, index) => (
+                                            <span>
+                                                {(index > 0 ? ", " : "") +
+                                                    apolisticItem.book +
+                                                    " " + apolisticItem.verses}
+                                            </span>
+                                        )
+                                    )}{" "}
+                                </li>
                             </ul>
                         </article>
                     ))}
