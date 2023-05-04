@@ -18,14 +18,18 @@ export const TorahReading = z.object({
 		}),
 	}),
 	ffoz: z.object({
-		prophets: z.object({
-			book: z.string(),
-			verses: z.string(),
-		}),
-		gospel: z.object({
-			book: z.string(),
-			verses: z.string(),
-		}),
+		prophets: z.array(
+			z.object({
+				book: z.string(),
+				verses: z.string(),
+			}),
+		),
+		gospel: z.array(
+			z.object({
+				book: z.string(),
+				verses: z.string(),
+			}),
+		),
 	}),
 });
 

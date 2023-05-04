@@ -76,7 +76,7 @@ try {
                                     </li>
 
                                     <li>
-                                        Brit Chadasha:{" "}
+                                        Apostolic:{" "}
                                         {reading.torah_resource.apostolic.book}{" "}
                                         {
                                             reading.torah_resource.apostolic
@@ -87,12 +87,31 @@ try {
                                 <li>FFOZ</li>
                                 <ul>
                                     <li>
-                                        Prophets: {reading.ffoz.prophets.book}{" "}
-                                        {reading.ffoz.prophets.verses}
+                                        Prophets:{" "}
+                                        {reading.ffoz.prophets.map(
+                                            (prophet, index) => (
+                                                <span>
+                                                    {(index > 0 ? ", " : "") +
+                                                        prophet.book +
+                                                        " " +
+                                                        prophet.verses}
+                                                </span>
+                                            )
+                                        )}
                                     </li>
+
                                     <li>
-                                        Gospel: {reading.ffoz.gospel.book}{" "}
-                                        {reading.ffoz.gospel.verses}
+                                        Gospel:{" "}
+                                        {reading.ffoz.gospel.map(
+                                            (gospelItem, index) => (
+                                                <span>
+                                                    {(index > 0 ? ", " : "") +
+                                                        gospelItem.book +
+                                                        " " +
+                                                        gospelItem.verses}
+                                                </span>
+                                            )
+                                        )}
                                     </li>
                                 </ul>
                             </ul>

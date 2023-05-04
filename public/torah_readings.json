@@ -12,7 +12,7 @@
 				},
 				{
 					"book": "Isaiah",
-					"verses": "42:5-42:21"
+					"verses": "42:5-21"
 				}
 			],
 			"apostolic": {
@@ -21,14 +21,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "42:5-43:10"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "1:1-17"
+				}
+			]
 		}
 	},
 	{
@@ -53,14 +57,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "54:1-55:5"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "17:20-27"
+				}
+			]
 		}
 	},
 	{
@@ -81,14 +89,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "40:27-41:16"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "8:51-58"
+				}
+			]
 		}
 	},
 	{
@@ -100,11 +112,11 @@
 			"haftorah": [
 				{
 					"book": "2 Kings",
-					"verses": "4:1-4:37"
+					"verses": "4:1-37"
 				},
 				{
 					"book": "2 Kings",
-					"verses": "4:1-4:23"
+					"verses": "4:1-23"
 				}
 			],
 			"apostolic": {
@@ -113,14 +125,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "2 Kings",
+					"verses": "4:1-37"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "17:28-37"
+				}
+			]
 		}
 	},
 	{
@@ -132,7 +148,7 @@
 			"haftorah": [
 				{
 					"book": "1 Kings",
-					"verses": "1:1-1:31"
+					"verses": "1:1-31"
 				}
 			],
 			"apostolic": {
@@ -141,14 +157,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "1 Kings",
+					"verses": "1:1-31"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "4:3-14"
+				}
+			]
 		}
 	},
 	{
@@ -169,14 +189,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Malachi",
+					"verses": "1:1-2:7"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "10:21-38"
+				}
+			]
 		}
 	},
 	{
@@ -201,14 +225,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Hosea",
+					"verses": "12:12-14:10"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "1:41-51"
+				}
+			]
 		}
 	},
 	{
@@ -220,7 +248,7 @@
 			"haftorah": [
 				{
 					"book": "Obadiah",
-					"verses": "1:1-1:21"
+					"verses": "1:1-21"
 				}
 			],
 			"apostolic": {
@@ -229,14 +257,22 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Hosea",
+					"verses": "11:7-12:12"
+				},
+				{
+					"book": "Obadiah",
+					"verses": "1:1-21"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "2:13-23"
+				}
+			]
 		}
 	},
 	{
@@ -257,14 +293,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Amos",
+					"verses": "2:6-3:8"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "1:18-25"
+				}
+			]
 		}
 	},
 	{
@@ -285,14 +325,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Zechariah",
+					"verses": "2:14-4:7"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "24:13-29"
+				}
+			]
 		}
 	},
 	{
@@ -304,7 +348,7 @@
 			"haftorah": [
 				{
 					"book": "Ezekiel",
-					"verses": "37:15-37:28"
+					"verses": "37:15-28"
 				}
 			],
 			"apostolic": {
@@ -313,14 +357,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "37:15-28"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "24:30-48"
+				}
+			]
 		}
 	},
 	{
@@ -341,14 +389,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "1 Kings",
+					"verses": "2:1-12"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "13:1-19"
+				}
+			]
 		}
 	},
 	{
@@ -369,14 +421,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "27:6-28:13, 29:22-23"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "2:1-12"
+				}
+			]
 		}
 	},
 	{
@@ -397,14 +453,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "2:1-12"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "11:14-22"
+				}
+			]
 		}
 	},
 	{
@@ -416,7 +476,7 @@
 			"haftorah": [
 				{
 					"book": "Jeremiah",
-					"verses": "46:13-46:28"
+					"verses": "46:13-28"
 				}
 			],
 			"apostolic": {
@@ -425,14 +485,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Jeremiah",
+					"verses": "46:13-28"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "19:31-37"
+				}
+			]
 		}
 	},
 	{
@@ -448,7 +512,7 @@
 				},
 				{
 					"book": "Jude",
-					"verses": "5:1-5:31"
+					"verses": "5:1-31"
 				}
 			],
 			"apostolic": {
@@ -457,14 +521,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Judges",
+					"verses": "4:4-5:31"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "14:22-33"
+				}
+			]
 		}
 	},
 	{
@@ -476,7 +544,7 @@
 			"haftorah": [
 				{
 					"book": "Isaiah",
-					"verses": "6:1-7:6; 9:5-9:6"
+					"verses": "6:1-7:6; 9:5-6"
 				},
 				{
 					"book": "Isaiah",
@@ -489,14 +557,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "6:1-7:6, 9:5-6"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "19:16-26"
+				}
+			]
 		}
 	},
 	{
@@ -508,7 +580,7 @@
 			"haftorah": [
 				{
 					"book": "Jeremiah",
-					"verses": "34:8-34:22; 33:25-33:26"
+					"verses": "34:8-22; 33:25-26"
 				}
 			],
 			"apostolic": {
@@ -517,14 +589,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "66:1-24"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "26:20-30"
+				}
+			]
 		}
 	},
 	{
@@ -545,14 +621,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "1 Kings",
+					"verses": "5:26-6:13"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Mark",
+					"verses": "12:35-44"
+				}
+			]
 		}
 	},
 	{
@@ -564,7 +644,7 @@
 			"haftorah": [
 				{
 					"book": "Ezekiel",
-					"verses": "43:10-43:27"
+					"verses": "43:10-27"
 				}
 			],
 			"apostolic": {
@@ -573,14 +653,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "43:10-27"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "5:13-20"
+				}
+			]
 		}
 	},
 	{
@@ -592,11 +676,11 @@
 			"haftorah": [
 				{
 					"book": "1 Kings",
-					"verses": "18:1-18:39"
+					"verses": "18:1-39"
 				},
 				{
 					"book": "1 Kings",
-					"verses": "18:20-18:39"
+					"verses": "18:20-39"
 				}
 			],
 			"apostolic": {
@@ -605,14 +689,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "1 Kings",
+					"verses": "18:1-39"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Mark",
+					"verses": "9:1-10"
+				}
+			]
 		}
 	},
 	{
@@ -624,11 +712,11 @@
 			"haftorah": [
 				{
 					"book": "1 Kings",
-					"verses": "7:40-7:50"
+					"verses": "7:40-50"
 				},
 				{
 					"book": "1 Kings",
-					"verses": "7:13-7:26"
+					"verses": "7:13-26"
 				}
 			],
 			"apostolic": {
@@ -637,14 +725,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "2 Kings",
+					"verses": "11:17-12:17"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "12:1-13"
+				}
+			]
 		}
 	},
 	{
@@ -660,7 +752,7 @@
 				},
 				{
 					"book": "1 Kings",
-					"verses": "7:40-7:50"
+					"verses": "7:40-50"
 				}
 			],
 			"apostolic": {
@@ -669,14 +761,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "1 Kings",
+					"verses": "7:51-8:21"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "16:1-13"
+				}
+			]
 		}
 	},
 	{
@@ -697,14 +793,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "36:16-38"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "9:13-25"
+				}
+			]
 		}
 	},
 	{
@@ -716,7 +816,7 @@
 			"haftorah": [
 				{
 					"book": "Jeremiah",
-					"verses": "7:21-8:3; 9:22-9:23"
+					"verses": "7:21-8:3; 9:22-23"
 				}
 			],
 			"apostolic": {
@@ -725,14 +825,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "45:16-46:18"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "3:11-17"
+				}
+			]
 		}
 	},
 	{
@@ -748,7 +852,7 @@
 				},
 				{
 					"book": "2 Samuel",
-					"verses": "6:1-6:19"
+					"verses": "6:1-19"
 				}
 			],
 			"apostolic": {
@@ -757,14 +861,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "45:16-46:18"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "3:11-17"
+				}
+			]
 		}
 	},
 	{
@@ -785,14 +893,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "2 Kings",
+					"verses": "4:42-5:19"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "2:22-33"
+				}
+			]
 		}
 	},
 	{
@@ -813,14 +925,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Malachi",
+					"verses": "3:4-24"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Mark",
+					"verses": "1:35-45"
+				}
+			]
 		}
 	},
 	{
@@ -832,11 +948,11 @@
 			"haftorah": [
 				{
 					"book": "Ezekiel",
-					"verses": "22:1-22:19"
+					"verses": "22:1-19"
 				},
 				{
 					"book": "Ezekiel",
-					"verses": "22:1-22:16"
+					"verses": "22:1-16"
 				}
 			],
 			"apostolic": {
@@ -845,14 +961,22 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "22:1-19"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "15:10-20"
+				},
+				{
+					"book": "Mark",
+					"verses": "12:28-34"
+				}
+			]
 		}
 	},
 	{
@@ -864,11 +988,11 @@
 			"haftorah": [
 				{
 					"book": "Amos",
-					"verses": "9:7-9:15"
+					"verses": "9:7-15"
 				},
 				{
 					"book": "Ezekiel",
-					"verses": "20:2-20:20"
+					"verses": "20:2-20"
 				}
 			],
 			"apostolic": {
@@ -877,14 +1001,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Amos",
+					"verses": "9:7-15"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Mark",
+					"verses": "12:28-34"
+				}
+			]
 		}
 	},
 	{
@@ -896,7 +1024,7 @@
 			"haftorah": [
 				{
 					"book": "Ezekiel",
-					"verses": "44:15-44:31"
+					"verses": "44:15-31"
 				}
 			],
 			"apostolic": {
@@ -905,14 +1033,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Ezekiel",
+					"verses": "44:15-31"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "26:59-66"
+				}
+			]
 		}
 	},
 	{
@@ -924,7 +1056,7 @@
 			"haftorah": [
 				{
 					"book": "Jeremiah",
-					"verses": "32:6-32:27"
+					"verses": "32:6-27"
 				}
 			],
 			"apostolic": {
@@ -933,14 +1065,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Jeremiah",
+					"verses": "32:6-27"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "4:14-22"
+				}
+			]
 		}
 	},
 	{
@@ -961,14 +1097,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Jeremiah",
+					"verses": "16:19-17:14"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "16:20-28"
+				}
+			]
 		}
 	},
 	{
@@ -980,7 +1120,7 @@
 			"haftorah": [
 				{
 					"book": "Hosea",
-					"verses": "2:1-2:22"
+					"verses": "2:1-22"
 				}
 			],
 			"apostolic": {
@@ -989,14 +1129,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Hosea",
+					"verses": "2:1-22"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "4:1-17"
+				}
+			]
 		}
 	},
 	{
@@ -1008,7 +1152,7 @@
 			"haftorah": [
 				{
 					"book": "Judges",
-					"verses": "13:2-13:25"
+					"verses": "13:2-25"
 				}
 			],
 			"apostolic": {
@@ -1017,14 +1161,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Judges",
+					"verses": "13:2-25"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "1:11-20"
+				}
+			]
 		}
 	},
 	{
@@ -1045,14 +1193,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Zechariah",
+					"verses": "2:14-4:7"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "14:14-21"
+				}
+			]
 		}
 	},
 	{
@@ -1064,7 +1216,7 @@
 			"haftorah": [
 				{
 					"book": "Joshua",
-					"verses": "2:1-2:24"
+					"verses": "2:1-24"
 				}
 			],
 			"apostolic": {
@@ -1073,14 +1225,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Joshua",
+					"verses": "2:1-24"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "10:1-14"
+				}
+			]
 		}
 	},
 	{
@@ -1101,14 +1257,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "1 Samuel",
+					"verses": "11:14-12:22"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "26:13-24"
+				}
+			]
 		}
 	},
 	{
@@ -1120,7 +1280,7 @@
 			"haftorah": [
 				{
 					"book": "Judges",
-					"verses": "11:1-11:33"
+					"verses": "11:1-33"
 				}
 			],
 			"apostolic": {
@@ -1129,14 +1289,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Judges",
+					"verses": "11:1-33"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "19:38-42"
+				}
+			]
 		}
 	},
 	{
@@ -1157,14 +1321,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Micah",
+					"verses": "5:6-6:8"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "21:1-11"
+				}
+			]
 		}
 	},
 	{
@@ -1185,14 +1353,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Jeremiah",
+					"verses": "1:1-2:3"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "2:13-22"
+				}
+			]
 		}
 	},
 	{
@@ -1213,14 +1385,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Jeremiah",
+					"verses": "1:1-2:3"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "13:1-9"
+				}
+			]
 		}
 	},
 	{
@@ -1236,7 +1412,7 @@
 				},
 				{
 					"book": "Jeremiah",
-					"verses": "2:4-28; 4:1-4:2"
+					"verses": "2:4-28; 4:1-2"
 				}
 			],
 			"apostolic": {
@@ -1245,14 +1421,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Jeremiah",
+					"verses": "2:4-28, 3:4, 4:1-2"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Mark",
+					"verses": "11:12-23"
+				}
+			]
 		}
 	},
 	{
@@ -1264,7 +1444,7 @@
 			"haftorah": [
 				{
 					"book": "Isaiah",
-					"verses": "1:1-1:27"
+					"verses": "1:1-27"
 				}
 			],
 			"apostolic": {
@@ -1273,14 +1453,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "1:1-27"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "24:1-22"
+				}
+			]
 		}
 	},
 	{
@@ -1292,7 +1476,7 @@
 			"haftorah": [
 				{
 					"book": "Isaiah",
-					"verses": "40:1-40:26"
+					"verses": "40:1-26"
 				}
 			],
 			"apostolic": {
@@ -1301,14 +1485,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "40:1-26"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Luke",
+					"verses": "3:2-15"
+				}
+			]
 		}
 	},
 	{
@@ -1329,14 +1517,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "49:14-51:3"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "16:13-20"
+				}
+			]
 		}
 	},
 	{
@@ -1357,14 +1549,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "54:11-55:5"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "6:35-51"
+				}
+			]
 		}
 	},
 	{
@@ -1385,14 +1581,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "51:12-52:12"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "14:9-20"
+				}
+			]
 		}
 	},
 	{
@@ -1404,7 +1604,7 @@
 			"haftorah": [
 				{
 					"book": "Isaiah",
-					"verses": "54:1-54:10"
+					"verses": "54:1-10"
 				}
 			],
 			"apostolic": {
@@ -1413,14 +1613,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "54:1-10"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "24:29-42"
+				}
+			]
 		}
 	},
 	{
@@ -1432,7 +1636,7 @@
 			"haftorah": [
 				{
 					"book": "Isaiah",
-					"verses": "60:1-60:22"
+					"verses": "60:1-22"
 				}
 			],
 			"apostolic": {
@@ -1441,14 +1645,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "60:1-22"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "4:13-24"
+				}
+			]
 		}
 	},
 	{
@@ -1469,14 +1677,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "61:10-63:9"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "12:41-50"
+				}
+			]
 		}
 	},
 	{
@@ -1497,14 +1709,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Isaiah",
+					"verses": "55:6-56:8"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Matthew",
+					"verses": "21:9-17"
+				}
+			]
 		}
 	},
 	{
@@ -1516,7 +1732,7 @@
 			"haftorah": [
 				{
 					"book": "2 Samuel",
-					"verses": "22:1-22:51"
+					"verses": "22:1-51"
 				}
 			],
 			"apostolic": {
@@ -1525,14 +1741,26 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Hosea",
+					"verses": "14:2-10"
+				},
+				{
+					"book": "Micah",
+					"verses": "7:18-20"
+				},
+				{
+					"book": "Joel",
+					"verses": "2:15-27"
+				}
+			],
+			"gospel": [
+				{
+					"book": "John",
+					"verses": "6:26-35"
+				}
+			]
 		}
 	},
 	{
@@ -1544,11 +1772,11 @@
 			"haftorah": [
 				{
 					"book": "Joshua",
-					"verses": "1:1-1:18"
+					"verses": "1:1-18"
 				},
 				{
 					"book": "Joshua",
-					"verses": "1:1-1:9"
+					"verses": "1:1-9"
 				}
 			],
 			"apostolic": {
@@ -1557,14 +1785,18 @@
 			}
 		},
 		"ffoz": {
-			"prophets": {
-				"book": "Isaiah",
-				"verses": "42:5-43:10"
-			},
-			"gospel": {
-				"book": "John",
-				"verses": "1:1-17"
-			}
+			"prophets": [
+				{
+					"book": "Joshua",
+					"verses": "1:1-18"
+				}
+			],
+			"gospel": [
+				{
+					"book": "Acts",
+					"verses": "1:1-14"
+				}
+			]
 		}
 	}
 ]
