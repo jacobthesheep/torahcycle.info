@@ -4,6 +4,7 @@ import "@fontsource/rubik/variable.css";
 import "@fontsource/comfortaa/variable.css";
 const { title, description, image } = Astro.props as PageMeta;
 const author = "Jacob Lamb";
+const authorURL = "https://jtlamb.dev/";
 const completeTitle = `${title}${title ? " - " : ""}Torah Reading Cycle`;
 import Link from "../components/Link.astro";
 const socialImageURL = new URL(`/assets/og_${image}.png`, Astro.url);
@@ -24,7 +25,7 @@ let thisYear = `${new Date().getFullYear()}`;
         <meta name="generator" content={Astro.generator} />
         <title>{completeTitle}</title>
         <meta name="author" content={author} />
-        <link rel="author" href="https://jtlamb.dev/" />
+        <link rel="author" href={authorURL} />
         <meta name="description" content={description} />
         <meta name="color-scheme" content="dark light" />
         <meta property="og:title" content={completeTitle} />
@@ -48,9 +49,35 @@ let thisYear = `${new Date().getFullYear()}`;
         <header>
             <div>
                 <!--?xml version="1.0" standalone="no"?-->
-                <span><Link href="/">Torah Reading Cycle</Link> - site wip</span>
+                <span><Link href="/">Torah Reading Cycle</Link> - site wip</span
+                >
             </div>
         </header>
+        <section>
+            <p>
+                This list of weekly scripture readings is collected from <Link
+                    href="https://torahportions.ffoz.org/"
+                    isExternal={true}
+                >
+                    FFOZ
+                </Link>, <Link
+                    href="https://torahresource.com/resources/weekly-parashah/"
+                    isExternal={true}
+                >
+                    Torah Resource
+                </Link>, and the <Link
+                    href="https://tlvbiblesociety.org/"
+                    isExternal={true}
+                >
+                    Tree of Life Bible
+                </Link>.
+            </p>
+            <p>
+                Development by <Link href={authorURL} isExternal={true}>
+                    {author}
+                </Link>
+            </p>
+        </section>
         <slot />
         <footer>
             <p>
