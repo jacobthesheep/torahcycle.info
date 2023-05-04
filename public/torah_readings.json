@@ -1,11 +1,14 @@
 [
 	{
 		"week": 1,
-		"portion": "Bereshit – In the beginning",
+		"portion": {
+			"hebrew": "Bereshit",
+			"english": "In the beginning"
+		},
 		"book": "Genesis",
 		"verses": "1:1-6:8",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "42:5-43:11"
@@ -37,11 +40,14 @@
 	},
 	{
 		"week": 2,
-		"portion": "Noach – Noah",
+		"portion": {
+			"hebrew": "Noach",
+			"english": "Noah"
+		},
 		"book": "Genesis",
 		"verses": "6:9-11:32",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "54:1-55:5"
@@ -73,11 +79,14 @@
 	},
 	{
 		"week": 3,
-		"portion": "Lech L’cha – Go forth, yourself",
+		"portion": {
+			"hebrew": "Lech L’cha",
+			"english": "Go forth, yourself"
+		},
 		"book": "Genesis",
 		"verses": "12:1-17:27",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "40:27-41:16"
@@ -105,11 +114,14 @@
 	},
 	{
 		"week": 4,
-		"portion": "Vayera – and He appeared",
+		"portion": {
+			"hebrew": "Vayera",
+			"english": "and He appeared"
+		},
 		"book": "Genesis",
 		"verses": "18:1-22:24",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "2 Kings",
 					"verses": "4:1-37"
@@ -141,11 +153,14 @@
 	},
 	{
 		"week": 5,
-		"portion": "Chayei Sarah – life of Sarah",
+		"portion": {
+			"hebrew": "Chayei Sarah",
+			"english": "life of Sarah"
+		},
 		"book": "Genesis",
 		"verses": "23:1-25:18",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "1:1-31"
@@ -173,11 +188,14 @@
 	},
 	{
 		"week": 6,
-		"portion": "Tol’dot – generations",
+		"portion": {
+			"hebrew": "Tol’dot",
+			"english": "generations"
+		},
 		"book": "Genesis",
 		"verses": "25:19-28:9",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Malachi",
 					"verses": "1:1-2:7"
@@ -205,11 +223,14 @@
 	},
 	{
 		"week": 7,
-		"portion": "Vayeitze – and he went out",
+		"portion": {
+			"hebrew": "Vayeitze",
+			"english": "and he went out"
+		},
 		"book": "Genesis",
 		"verses": "28:10-32:2[3]",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Hosea",
 					"verses": "12:13-14:10"
@@ -241,11 +262,14 @@
 	},
 	{
 		"week": 8,
-		"portion": "Vayishlach – and he sent",
+		"portion": {
+			"hebrew": "Vayishlach",
+			"english": "and he sent"
+		},
 		"book": "Genesis",
 		"verses": "Gen 32:3[4]-36:43",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Obadiah",
 					"verses": "1:1-21"
@@ -277,11 +301,14 @@
 	},
 	{
 		"week": 9,
-		"portion": "Vayeishev – and he settled",
+		"portion": {
+			"hebrew": "Vayeishev",
+			"english": "and he settled"
+		},
 		"book": "Genesis",
 		"verses": "37:1-40:23",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Amos",
 					"verses": "2:6-3:8"
@@ -309,11 +336,14 @@
 	},
 	{
 		"week": 10,
-		"portion": "Mikeitz – at the end of",
+		"portion": {
+			"hebrew": "Mikeitz",
+			"english": "at the end of"
+		},
 		"book": "Genesis",
 		"verses": "41:1-44:17",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "3:15-4:1"
@@ -341,11 +371,14 @@
 	},
 	{
 		"week": 11,
-		"portion": "Vayigash – and he drew near",
+		"portion": {
+			"hebrew": "Vayigash",
+			"english": "and he drew near"
+		},
 		"book": "Genesis",
 		"verses": "44:18-47:27",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Ezekiel",
 					"verses": "37:15-28"
@@ -373,11 +406,14 @@
 	},
 	{
 		"week": 12,
-		"portion": "Vay’chi – and he lived",
+		"portion": {
+			"hebrew": "Vay’chi",
+			"english": "and he lived"
+		},
 		"book": "Genesis",
 		"verses": "47:28-50:26",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "2:1-12"
@@ -405,11 +441,14 @@
 	},
 	{
 		"week": 13,
-		"portion": "Sh’mot – names",
+		"portion": {
+			"hebrew": "Sh’mot",
+			"english": "names"
+		},
 		"book": "Exodus",
 		"verses": "1:1-6:1",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "27:6-28:13"
@@ -437,11 +476,14 @@
 	},
 	{
 		"week": 14,
-		"portion": "Va’era – and I appeared",
+		"portion": {
+			"hebrew": "Va’era",
+			"english": "and I appeared"
+		},
 		"book": "Exodus",
 		"verses": "6:2-9:35",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Ezekiel",
 					"verses": "28:25-29:21"
@@ -469,11 +511,14 @@
 	},
 	{
 		"week": 15,
-		"portion": "Bo – enter",
+		"portion": {
+			"hebrew": "Bo",
+			"english": "enter"
+		},
 		"book": "Exodus",
 		"verses": "10:1-13:16",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jeremiah",
 					"verses": "46:13-28"
@@ -501,11 +546,14 @@
 	},
 	{
 		"week": 16,
-		"portion": "B’shalach – when he let go",
+		"portion": {
+			"hebrew": "B’shalach",
+			"english": "when he let go"
+		},
 		"book": "Exodus",
 		"verses": "13:17-17:16",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jude",
 					"verses": "4:4-5:31"
@@ -537,11 +585,14 @@
 	},
 	{
 		"week": 17,
-		"portion": "Yitro – Jethro",
+		"portion": {
+			"hebrew": "Yitro",
+			"english": "Jethro"
+		},
 		"book": "Exodus",
 		"verses": "18:1-20:26[23]",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "6:1-7:6; 9:5-6"
@@ -573,11 +624,14 @@
 	},
 	{
 		"week": 18,
-		"portion": "Mishpatim – judgments",
+		"portion": {
+			"hebrew": "Mishpatim",
+			"english": "judgments"
+		},
 		"book": "Exodus",
 		"verses": "21:1-24:18",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jeremiah",
 					"verses": "34:8-22; 33:25-26"
@@ -605,11 +659,14 @@
 	},
 	{
 		"week": 19,
-		"portion": "T’rumah – offering",
+		"portion": {
+			"hebrew": "T’rumah",
+			"english": "offering"
+		},
 		"book": "Exodus",
 		"verses": "25:1-27:19",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "5:26-6:13"
@@ -637,11 +694,14 @@
 	},
 	{
 		"week": 20,
-		"portion": "T’tzaveh – you shall command",
+		"portion": {
+			"hebrew": "T’tzaveh",
+			"english": "you shall command"
+		},
 		"book": "Exodus",
 		"verses": "27:20-30:10",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Ezekiel",
 					"verses": "43:10-27"
@@ -669,11 +729,14 @@
 	},
 	{
 		"week": 21,
-		"portion": "Ki Tisa – when you elevate",
+		"portion": {
+			"hebrew": "Ki Tisa",
+			"english": "when you elevate"
+		},
 		"book": "Exodus",
 		"verses": "30:11-34:35",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "18:1-39"
@@ -705,11 +768,14 @@
 	},
 	{
 		"week": 22,
-		"portion": "Vayakel – and he assembled",
+		"portion": {
+			"hebrew": "Vayakel",
+			"english": "and he assembled"
+		},
 		"book": "Exodus",
 		"verses": "35:1-38:20",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "7:40-50"
@@ -741,11 +807,14 @@
 	},
 	{
 		"week": 23,
-		"portion": "P’kudei – accountings of",
+		"portion": {
+			"hebrew": "P’kudei",
+			"english": "accountings of"
+		},
 		"book": "Exodus",
 		"verses": "38:21-40:38",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "7:51-8:21"
@@ -777,11 +846,14 @@
 	},
 	{
 		"week": 24,
-		"portion": "Vayikra – and He called",
+		"portion": {
+			"hebrew": "Vayikra",
+			"english": "and He called"
+		},
 		"book": "Leviticus",
 		"verses": "Lev 1:1-6:7[5:26]",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "43:21-44:23"
@@ -809,11 +881,14 @@
 	},
 	{
 		"week": 25,
-		"portion": "Tzav – command",
+		"portion": {
+			"hebrew": "Tzav",
+			"english": "command"
+		},
 		"book": "Leviticus",
 		"verses": "6:8[1]-8:36",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jeremiah",
 					"verses": "7:21-8:3; 9:22-23"
@@ -841,11 +916,14 @@
 	},
 	{
 		"week": 26,
-		"portion": "Sh’mini – eighth",
+		"portion": {
+			"hebrew": "Sh’mini",
+			"english": "eighth"
+		},
 		"book": "Leviticus",
 		"verses": "9:1-11:47",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "2 Samuel",
 					"verses": "6:1-7:17"
@@ -877,11 +955,14 @@
 	},
 	{
 		"week": 27,
-		"portion": "Tazria – she bears seed",
+		"portion": {
+			"hebrew": "Tazria",
+			"english": "she bears seed"
+		},
 		"book": "Leviticus",
 		"verses": "12:1-13:59",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "2 Kings",
 					"verses": "4:42-5:19"
@@ -909,11 +990,14 @@
 	},
 	{
 		"week": 28,
-		"portion": "M’tzora – infected one",
+		"portion": {
+			"hebrew": "M’tzora",
+			"english": "infected one"
+		},
 		"book": "Leviticus",
 		"verses": "14:1-15:33",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "2 Kings",
 					"verses": "7:3-7:20"
@@ -941,11 +1025,14 @@
 	},
 	{
 		"week": 29,
-		"portion": "Acharei Mot – after the death",
+		"portion": {
+			"hebrew": "Acharei Mot",
+			"english": "after the death"
+		},
 		"book": "Leviticus",
 		"verses": "16:1-18:30",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Ezekiel",
 					"verses": "22:1-19"
@@ -981,11 +1068,14 @@
 	},
 	{
 		"week": 30,
-		"portion": "K’doshim – holy ones",
+		"portion": {
+			"hebrew": "K’doshim",
+			"english": "holy ones"
+		},
 		"book": "Leviticus",
 		"verses": "19:1-20:27",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Amos",
 					"verses": "9:7-15"
@@ -1017,11 +1107,14 @@
 	},
 	{
 		"week": 31,
-		"portion": "Emor – say",
+		"portion": {
+			"hebrew": "Emor",
+			"english": "say"
+		},
 		"book": "Leviticus",
 		"verses": "21:1-24:23",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Ezekiel",
 					"verses": "44:15-31"
@@ -1049,11 +1142,14 @@
 	},
 	{
 		"week": 32,
-		"portion": "B’har – on the Mount",
+		"portion": {
+			"hebrew": "B’har",
+			"english": "on the Mount"
+		},
 		"book": "Leviticus",
 		"verses": "25:1-26:2",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jeremiah",
 					"verses": "32:6-27"
@@ -1081,11 +1177,14 @@
 	},
 	{
 		"week": 33,
-		"portion": "B’chukotai – in My status",
+		"portion": {
+			"hebrew": "B’chukotai",
+			"english": "in My status"
+		},
 		"book": "Leviticus",
 		"verses": "26:3-27:34",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jeremiah",
 					"verses": "16:19-17:14"
@@ -1113,11 +1212,14 @@
 	},
 	{
 		"week": 34,
-		"portion": "B’midbar – in the Wilderness",
+		"portion": {
+			"hebrew": "B’midbar",
+			"english": "in the Wilderness"
+		},
 		"book": "Numbers",
 		"verses": "1:1-4:20",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Hosea",
 					"verses": "2:1-22"
@@ -1145,11 +1247,14 @@
 	},
 	{
 		"week": 35,
-		"portion": "Naso – elevate",
+		"portion": {
+            "hebrew": "Naso",
+            "english": "elevate"
+        },
 		"book": "Numbers",
 		"verses": "4:21-7:89",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Judges",
 					"verses": "13:2-25"
@@ -1177,11 +1282,14 @@
 	},
 	{
 		"week": 36,
-		"portion": "B’ha’alot’cha – in your making go up",
+		"portion": {
+            "hebrew": "B’ha’alot’cha",
+            "english": "in your making go up"
+        },
 		"book": "Numbers",
 		"verses": "8:1-12:16",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Zechariah",
 					"verses": "2:14-4:7"
@@ -1209,11 +1317,14 @@
 	},
 	{
 		"week": 37,
-		"portion": "Sh’lach l’cha – send for yourself",
+		"portion": {
+            "hebrew": "Sh’lach l’cha",
+            "english": "send for yourself"
+        },
 		"book": "Numbers",
 		"verses": "13:1-15:41",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Joshua",
 					"verses": "2:1-24"
@@ -1241,11 +1352,14 @@
 	},
 	{
 		"week": 38,
-		"portion": "Korach – Korah",
+		"portion": {
+            "hebrew": "Korach",
+            "english": "Korah"
+        },
 		"book": "Numbers",
 		"verses": "16:1-18:32",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Samuel",
 					"verses": "11:14-12:22"
@@ -1273,11 +1387,14 @@
 	},
 	{
 		"week": 39,
-		"portion": "Chukat – ordinance of",
+		"portion": {
+            "hebrew": "Chukat",
+            "english": "ordinance of"
+        },
 		"book": "Numbers",
 		"verses": "19:1-22:1",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Judges",
 					"verses": "11:1-33"
@@ -1305,11 +1422,13 @@
 	},
 	{
 		"week": 40,
-		"portion": "Balak – Balak",
+		"portion": {
+            "hebrew": "Balak"
+        },
 		"book": "Numbers",
 		"verses": "22:2-25:9",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Micah",
 					"verses": "5:6-6:8"
@@ -1337,11 +1456,14 @@
 	},
 	{
 		"week": 41,
-		"portion": "Pinchas – Phinehas",
+		"portion": {
+            "hebrew": "Pinchas",
+            "english": "Phinehas"
+        },
 		"book": "Numbers",
 		"verses": "25:10-29:40[30:1]",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "1 Kings",
 					"verses": "18:46-19:21"
@@ -1369,11 +1491,14 @@
 	},
 	{
 		"week": 42,
-		"portion": "Matot – tribes",
+		"portion": {
+            "hebrew": "Matot",
+            "english": "tribes"
+        },
 		"book": "Numbers",
 		"verses": "30:1[2]-32:42",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jeremiah",
 					"verses": "1:1-2:3"
@@ -1401,11 +1526,14 @@
 	},
 	{
 		"week": 43,
-		"portion": "Mas’ei – journeys of",
+		"portion": {
+            "hebrew": "Mas’ei",
+            "english": "journeys of"
+        },
 		"book": "Numbers",
 		"verses": "33:1-36:13",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Jeremiah",
 					"verses": "2:4-28; 3:4"
@@ -1437,11 +1565,14 @@
 	},
 	{
 		"week": 44,
-		"portion": "D’varim – words",
+		"portion": {
+            "hebrew": "D’varim",
+            "english": "words"
+        },
 		"book": "Deuteronomy",
 		"verses": "1:1-3:22",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "1:1-27"
@@ -1469,11 +1600,14 @@
 	},
 	{
 		"week": 45,
-		"portion": "Va-etchanan – and I pleaded",
+		"portion": {
+            "hebrew": "Va-etchanan",
+            "english": "and I pleaded"
+        },
 		"book": "Deuteronomy",
 		"verses": "3:23-7:11",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "40:1-26"
@@ -1501,11 +1635,14 @@
 	},
 	{
 		"week": 46,
-		"portion": "Ekev – as a result",
+		"portion": {
+            "hebrew": "Ekev",
+            "english": "as a result"
+        },
 		"book": "Deuteronomy",
 		"verses": "7:12-11:25",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "49:14-51:3"
@@ -1533,11 +1670,14 @@
 	},
 	{
 		"week": 47,
-		"portion": "R’eih – see",
+		"portion": {
+            "hebrew": "R’eih",
+            "english": "see"
+        },
 		"book": "Deuteronomy",
 		"verses": "11:26-16:17",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "54:11-55:5"
@@ -1565,11 +1705,14 @@
 	},
 	{
 		"week": 48,
-		"portion": "Shof’tim – judges",
+		"portion": {
+            "hebrew": "Shof’tim",
+            "english": "judges"
+        },
 		"book": "Deuteronomy",
 		"verses": "16:18-21:9",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "51:12-52:12"
@@ -1597,11 +1740,14 @@
 	},
 	{
 		"week": 49,
-		"portion": "Ki Teitzei – when you go out",
+		"portion": {
+            "hebrew": "Ki Teitzei",
+            "english": "when you go out"
+        },
 		"book": "Deuteronomy",
 		"verses": "21:10-25:19",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "54:1-10"
@@ -1629,11 +1775,14 @@
 	},
 	{
 		"week": 50,
-		"portion": "Ki Tavo – when you enter in",
+		"portion": {
+            "hebrew": "Ki Tavo",
+            "english": "when you enter in"
+        },
 		"book": "Deuteronomy",
 		"verses": "26:1-29:9[8]",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "60:1-22"
@@ -1661,11 +1810,14 @@
 	},
 	{
 		"week": 51,
-		"portion": "Nitzavim – you are standing",
+		"portion": {
+            "hebrew": "Nitzavim",
+            "english": "you are standing"
+        },
 		"book": "Deuteronomy",
 		"verses": "29:10[9]-30:20",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "61:10-63:9"
@@ -1693,11 +1845,14 @@
 	},
 	{
 		"week": 52,
-		"portion": "Vayelech – and he went",
+		"portion": {
+            "hebrew": "Vayelech",
+            "english": "and he went"
+        },
 		"book": "Deuteronomy",
 		"verses": "31:1-30",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Isaiah",
 					"verses": "55:6-56:8"
@@ -1725,11 +1880,14 @@
 	},
 	{
 		"week": 53,
-		"portion": "Ha-azinu – give ear",
+		"portion": {
+            "hebrew": "Ha-azinu",
+            "english": "give ear"
+        },
 		"book": "Deuteronomy",
 		"verses": "32:1-52",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "2 Samuel",
 					"verses": "22:1-51"
@@ -1765,11 +1923,14 @@
 	},
 	{
 		"week": 54,
-		"portion": "V’zot – and this the blessing",
+		"portion": {
+            "hebrew": "V’zot",
+            "english": "and this the blessing"
+        },
 		"book": "Deuteronomy",
 		"verses": "33:1-34:12",
 		"torah_resource": {
-			"haftorah": [
+			"haftarah": [
 				{
 					"book": "Joshua",
 					"verses": "1:1-18"

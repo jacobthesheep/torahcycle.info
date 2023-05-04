@@ -49,8 +49,9 @@ try {
                                 Week {reading.week}
                             </span>
                             <h3>
-                                <i>{reading.portion}</i>
+                                <i>{reading.portion.hebrew}</i>
                             </h3>
+                            <p>{reading.portion.english}</p>
                             <ul>
                                 <li>
                                     Torah: {reading.book} {reading.verses}
@@ -58,14 +59,14 @@ try {
                                 <li>Torah Resources</li>
                                 <ul>
                                     <li>
-                                        Haftorah:{" "}
-                                        {reading.torah_resource.haftorah.map(
-                                            (haftorah, index) => (
+                                        Haftarah:{" "}
+                                        {reading.torah_resource.haftarah.map(
+                                            (haftarah, index) => (
                                                 <span>
                                                     {(index > 0 ? ", " : "") +
-                                                        haftorah.book +
+                                                        haftarah.book +
                                                         " " +
-                                                        haftorah.verses +
+                                                        haftarah.verses +
                                                         (index === 0
                                                             ? "(E)"
                                                             : "(H)")}

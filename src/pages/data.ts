@@ -2,11 +2,14 @@ import { z } from "zod";
 
 export const TorahReading = z.object({
 	week: z.number(),
-	portion: z.string(),
+	portion: z.object({
+		hebrew: z.string(),
+		english: z.string().optional(),
+	}),
 	book: z.string(),
 	verses: z.string(),
 	torah_resource: z.object({
-		haftorah: z.array(
+		haftarah: z.array(
 			z.object({
 				book: z.string(),
 				verses: z.string(),
