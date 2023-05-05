@@ -1,4 +1,4 @@
-const hebrewDate = require("hebrew-date");
+import hebrewDate from "hebrew-date";
 
 if (hebrewDate(new Date()).month === 8 && hebrewDate(new Date()).date === 14) {
 	console.log(
@@ -7,3 +7,5 @@ if (hebrewDate(new Date()).month === 8 && hebrewDate(new Date()).date === 14) {
 		}`,
 	);
 }
+
+console.log(hebrewDate(new Date()))
