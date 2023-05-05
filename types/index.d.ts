@@ -3,3 +3,5 @@ interface PageMeta {
 	description: string;
 	image?: string;
 }
+
+declare module "hebrew-date";

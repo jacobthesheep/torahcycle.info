@@ -4,8 +4,8 @@
 			"hebrew": "Pesach",
 			"english": "Passover"
 		},
-		"month": "8",
-		"date": "14",
+		"month": 8,
+		"date": 14,
 		"time": "1st day",
 		"torah": [
 			{ "book": "Exodus", "verses": "12:21-51" },
@@ -52,8 +52,8 @@
 			"hebrew": "Pesach",
 			"english": "Passover"
 		},
-		"month": "8",
-		"date": "20",
+		"month": 8,
+		"date": 20,
 		"time": "Last day",
 		"torah": [
 			{ "book": "Exodus", "verses": "13:17-15:26" },
@@ -77,8 +77,8 @@
 			"hebrew": "Shavuot",
 			"english": "Weeks"
 		},
-		"month": "10",
-		"date": "6",
+		"month": 10,
+		"date": 6,
 		"torah": [
 			{ "book": "Exodus", "verses": "19:1-20:22" },
 			{ "book": "Numbers", "verses": "28:26-31" }
@@ -101,8 +101,8 @@
 			"hebrew": "Yom Teruah",
 			"english": "Day of Blowing Trumpets"
 		},
-		"month": "1",
-		"date": "1",
+		"month": 1,
+		"date": 1,
 		"torah": [
 			{ "book": "Genesis", "verses": "21:1-34" },
 			{ "book": "Numbers", "verses": "29:1-6" }
@@ -125,8 +125,8 @@
 			"hebrew": "Yom Kippur",
 			"english": "Day of Atonement"
 		},
-		"month": "1",
-		"date": "10",
+		"month": 1,
+		"date": 10,
 		"torah": [
 			{ "book": "Leviticus", "verses": "16:1-34" },
 			{ "book": "Numbers", "verses": "29:7-10" }
@@ -149,8 +149,8 @@
 			"hebrew": "Sukkot",
 			"english": "Tabernacles"
 		},
-		"month": "1",
-		"date": "15",
+		"month": 1,
+		"date": 15,
 		"time": "1st Day",
 		"torah": [
 			{ "book": "Leviticus", "verses": "22:26-23:44" },
@@ -194,8 +194,8 @@
 			"hebrew": "Shemini Atzeret",
 			"english": "The Eighth Day"
 		},
-		"month": "1",
-		"date": "22",
+		"month": 1,
+		"date": 22,
 		"torah": [
 			{ "book": "Deuturomny", "verses": "14:2216:17" },
 			{ "book": "Numbers", "verses": "29:35-30:1" }

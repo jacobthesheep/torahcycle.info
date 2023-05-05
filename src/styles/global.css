@@ -2,7 +2,21 @@
 @import "open-props/normalize";
 @import "open-props/buttons";
 
+/* some CSS styling straight from https://github.com/hexagoncircle/ryan-mulligan-dev */
+
 @layer utils {
+
+    :root {
+        --space-3xs: clamp(0.25rem, calc(0.23rem + 0.12vw), 0.31rem);
+        --space-2xs: clamp(0.5rem, calc(0.48rem + 0.12vw), 0.56rem);
+        --space-xs: clamp(0.75rem, calc(0.7rem + 0.24vw), 0.88rem);
+        --space-sm: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
+        --space-md: clamp(1.5rem, calc(1.43rem + 0.37vw), 1.69rem);
+        --space-lg: clamp(2rem, calc(1.9rem + 0.49vw), 2.25rem);
+        --space-xl: clamp(3rem, calc(2.85rem + 0.73vw), 3.38rem);
+        --space-2xl: clamp(4rem, calc(3.8rem + 0.98vw), 4.5rem);
+        --space-3xl: clamp(6rem, calc(5.71rem + 1.46vw), 6.75rem);
+    }
 
     *,
     *::before,
@@ -20,21 +34,9 @@
     body {
         margin: 0;
         width: 100%;
-        --space-sm: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
-        --space-md: clamp(1.5rem, calc(1.43rem + 0.37vw), 1.69rem);
-        --page-max-width: 55ch;
-        --page-padding: clamp(var(--space-sm), 6vw, var(--space-md));
-        --full: minmax(var(--page-padding), 1fr);
-        --content: min(var(--page-max-width), 100% - var(--page-padding) * 2);
-        --popout: minmax(0, 2rem);
-        --feature: minmax(0, 5rem);
-        display: grid;
-        grid-template-columns: [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end];
-        row-gap: var(--size-10);
-    }
-
-    body>* {
-        grid-column: content;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
     }
 
     img,
@@ -121,8 +123,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--size-fluid-2) 0;
-    background-color: var(--bg);
+    padding: var(--size-6);
 }
 
 header span a {
@@ -144,10 +145,28 @@ svg g {
     fill: var(--text-1);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--size-10);
+main,
+footer {
+    --space-sm: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
+    --space-md: clamp(1.5rem, calc(1.43rem + 0.37vw), 1.69rem);
+    --page-max-width: 55ch;
+    --page-padding: clamp(var(--space-sm), 6vw, var(--space-md));
+    --full: minmax(var(--page-padding), 1fr);
+    --content: min(var(--page-max-width), 100% - var(--page-padding) * 2);
+    --popout: minmax(0, 2rem);
+    --feature: minmax(0, 5rem);
+    display: grid;
+    grid-template-columns: [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end];
+}
+
+main>*,
+article>*,
+footer>* {
+    grid-column: content;
+}
+
+main>*+* {
+    margin-block-start: var(--space, var(--space-md));
 }
 
 article span {
@@ -171,4 +190,77 @@ nav ul {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     white-space: nowrap;
+}
+
+article {
+    --outline-offset: 2px;
+    --space: var(--space-xl);
+    --scrollbar-offset: 4px;
+    display: grid;
+    grid-column: full;
+    grid-template-columns: inherit;
+    margin-block-end: calc(var(--space-xs)*-1 - 1ex);
+    overflow-y: hidden;
+    max-width: 100%;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+}
+
+article ul[role="list"] {
+    display: flex;
+    gap: clamp(var(--page-padding)/2, 4vw, var(--page-padding));
+    padding-block: var(--space-lg) calc(var(--space-lg) + 1ex);
+    position: relative;
+    width: 100%;
+}
+
+article ul[role="list"]>li {
+    --duration: 250ms;
+    flex: 1 0 auto;
+    position: relative;
+    scroll-snap-align: center;
+    min-inline-size: var(--size-content-2);
+    /* background-color: var(--surface-2); */
+    border: 2px solid var(--surface-3);
+    border-radius: var(--radius-3);
+    display: block;
+    overflow: hidden;
+    scroll-margin-top: var(--space-2xl);
+    transition: transform var(--duration);
+    padding: var(--size-5);
+}
+
+ul[role="list"] {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+footer {
+    border-top: 2px dashed var(--surface-2);
+    justify-items: center;
+    margin-top: auto;
+    padding-block: var(--size-5) calc(var(--size-5) + env(safe-area-inset-bottom));
+}
+
+article::-webkit-scrollbar {
+    background-color: transparent;
+    height: 12px;
+}
+
+article::-webkit-scrollbar-thumb {
+    background-color: transparent
+}
+
+article::-webkit-scrollbar:active,
+article:hover::-webkit-scrollbar {
+    background-color: var(--blue-5);
+    box-shadow: inset var(--surface-1) 0 0 0 4px
+}
+
+article::-webkit-scrollbar-thumb:active,
+article:hover::-webkit-scrollbar-thumb {
+    background-color: var(--blue-5);
+    border-left: 4px solid var(--surface-1);
+    border-right: 4px solid var(--surface-1);
 }

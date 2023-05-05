@@ -53,33 +53,16 @@ let thisYear = `${new Date().getFullYear()}`;
                 >
             </div>
         </header>
-        <section>
-            <p>
-                This list of weekly scripture readings is collected from <Link
-                    href="https://torahportions.ffoz.org/"
-                >
-                    FFOZ
-                </Link>, <Link
-                    href="https://torahresource.com/resources/weekly-parashah/"
-                >
-                    Torah Resource
-                </Link>, and the <Link href="https://tlvbiblesociety.org/">
-                    Tree of Life Bible
-                </Link>.
-            </p>
-            <p>
-                Developed by <Link href={authorURL}>
-                    {author}
-                </Link>.
-            </p>
-        </section>
         <slot />
         <footer>
             <p>
                 <small>
                     &copy;
                     <time datetime={thisYear}>{thisYear}</time>
-                    built by {author}
+                    built by <Link href={authorURL}>{author}</Link>, page design
+                    inspired by <Link href="https://ryanmulligan.dev/">
+                        Ryan Mulligan's website
+                    </Link>
                 </small>
             </p>
         </footer>

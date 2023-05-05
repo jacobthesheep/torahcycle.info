@@ -8,4 +8,3 @@ if (hebrewDate(new Date()).month === 8 && hebrewDate(new Date()).date === 14) {
 	);
 }
 
-console.log(hebrewDate(new Date()))
