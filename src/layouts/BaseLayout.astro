@@ -57,25 +57,20 @@ let thisYear = `${new Date().getFullYear()}`;
             <p>
                 This list of weekly scripture readings is collected from <Link
                     href="https://torahportions.ffoz.org/"
-                    isExternal={true}
                 >
                     FFOZ
                 </Link>, <Link
                     href="https://torahresource.com/resources/weekly-parashah/"
-                    isExternal={true}
                 >
                     Torah Resource
-                </Link>, and the <Link
-                    href="https://tlvbiblesociety.org/"
-                    isExternal={true}
-                >
+                </Link>, and the <Link href="https://tlvbiblesociety.org/">
                     Tree of Life Bible
                 </Link>.
             </p>
             <p>
-                Development by <Link href={authorURL} isExternal={true}>
+                Developed by <Link href={authorURL}>
                     {author}
-                </Link>
+                </Link>.
             </p>
         </section>
         <slot />

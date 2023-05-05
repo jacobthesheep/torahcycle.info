@@ -45,44 +45,49 @@ try {
                     {parsedTorahReadings.map((reading) => (
                         <article>
                             <span id={`week-${reading.week}`}>
-                                {" "}
                                 Week {reading.week}
                             </span>
                             <h3>
                                 <i>Parashat {reading.portion.hebrew}</i>
                             </h3>
                             <p>{reading.portion.english}</p>
-                            <ul>
+                            <ul class="fa-ul">
                                 <li>
+                                    <span class="fa-li">
+                                        <i class="fa-solid fa-scroll-torah" />
+                                    </span>
                                     Torah: {reading.book} {reading.verses}
                                 </li>
 
                                 <li>
-                                    Haftorah:{" "}
+                                    Haftorah:
                                     {reading.haftorah.map(
                                         (haftorahItem, index) => (
                                             <span>
+                                                <span class="fa-li">
+                                                    <i class="fa-solid fa-book-tanakh" />
+                                                </span>
                                                 {(index > 0 ? ", " : "") +
                                                     haftorahItem.book +
                                                     " " +
                                                     haftorahItem.verses}
                                             </span>
                                         )
-                                    )}{" "}
+                                    )}
                                 </li>
 
                                 <li>
-                                    Apostolic:{" "}
+                                    Apostolic:
                                     {reading.apostolic.map(
                                         (apolisticItem, index) => (
                                             <span>
-                                                {(index > 0 ? ", " : "") +
-                                                    apolisticItem.book +
-                                                    " " +
-                                                    apolisticItem.verses}
+                                                <span class="fa-li">
+                                                    <i class="fa-solid fa-book-bible" />
+                                                </span>
+                                                {(index > 0 ? ", " : "") + apolisticItem.book + " " + apolisticItem.verses}
                                             </span>
                                         )
-                                    )}{" "}
+                                    )}
                                 </li>
                             </ul>
                         </article>
