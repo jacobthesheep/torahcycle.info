@@ -10,8 +10,6 @@ View the torah reading cycle in a simple yet elegant way.
 - **Styling**: [Open Props](https://open-props.style/)
 - **Deployment**: [Vercel](https://vercel.com/)
 
-Side note: project is based off [Tailwind UI's Commit template](https://commit.tailwindui.com/).
-
 ## Installation
 
 Install my-project with pnpm
