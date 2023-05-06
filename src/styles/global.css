@@ -4,94 +4,82 @@
 
 /* some CSS styling straight from https://github.com/hexagoncircle/ryan-mulligan-dev */
 
-@layer utils {
 
-    :root {
-        --space-3xs: clamp(0.25rem, calc(0.23rem + 0.12vw), 0.31rem);
-        --space-2xs: clamp(0.5rem, calc(0.48rem + 0.12vw), 0.56rem);
-        --space-xs: clamp(0.75rem, calc(0.7rem + 0.24vw), 0.88rem);
-        --space-sm: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
-        --space-md: clamp(1.5rem, calc(1.43rem + 0.37vw), 1.69rem);
-        --space-lg: clamp(2rem, calc(1.9rem + 0.49vw), 2.25rem);
-        --space-xl: clamp(3rem, calc(2.85rem + 0.73vw), 3.38rem);
-        --space-2xl: clamp(4rem, calc(3.8rem + 0.98vw), 4.5rem);
-        --space-3xl: clamp(6rem, calc(5.71rem + 1.46vw), 6.75rem);
-    }
 
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
-
-    html {
-        block-size: 100%;
-        font-family: "RubikVariable", system-ui, sans-serif;
-        font-feature-settings: "tnum";
-        font-optical-sizing: auto;
-    }
-
-    body {
-        margin: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xl);
-    }
-
-    img,
-    picture,
-    video,
-    canvas,
-    svg {
-        display: block;
-        max-width: 100%;
-    }
-
-    p,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        overflow-wrap: break-word;
-        margin-block: 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    blockquote {
-        font-family: "Comfortaa", ui-rounded, sans-serif;
-        white-space: unset;
-        text-wrap: balance;
-    }
-
-    input,
-    button,
-    select {
-        font: inherit;
-    }
-
-    :is(input, button, a, select) {
-        border-radius: var(--radius-2);
-        width: fit-content;
-    }
-
-    :is(input, button, a[data-button], select) {
-        padding: var(--size-2) var(--size-3);
-    }
-
-    :is(input, button, a, select):is(:focus-visible) {
-        outline: 2px solid red;
-        outline-offset: 2px;
-    }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
+html {
+    block-size: 100%;
+    font-family: "RubikVariable", system-ui, sans-serif;
+    font-feature-settings: "tnum";
+    font-optical-sizing: auto;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-fluid-5);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    margin-block: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+    font-family: "ComfortaaVariable", ui-rounded, sans-serif;
+    white-space: unset;
+    text-wrap: balance;
+}
+
+input,
+button,
+select {
+    font: inherit;
+}
+
+:is(input, button, a, select) {
+    border-radius: var(--radius-2);
+    width: fit-content;
+}
+
+:is(input, button, a[data-button], select) {
+    padding: var(--size-2) var(--size-3);
+}
+
+:is(input, button, a, select):is(:focus-visible) {
+    outline: 2px solid red;
+    outline-offset: 2px;
+}
+
 
 @layer customComponents {
     a[data-button] {
@@ -147,10 +135,10 @@ svg g {
 
 main,
 footer {
-    --space-sm: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
-    --space-md: clamp(1.5rem, calc(1.43rem + 0.37vw), 1.69rem);
+    /* --size-fluid-2: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
+    --size-fluid-3: clamp(1.5rem, calc(1.43rem + 0.37vw), 1.69rem); */
     --page-max-width: 55ch;
-    --page-padding: clamp(var(--space-sm), 6vw, var(--space-md));
+    --page-padding: clamp(var(--size-fluid-2), 6vw, var(--size-fluid-3));
     --full: minmax(var(--page-padding), 1fr);
     --content: min(var(--page-max-width), 100% - var(--page-padding) * 2);
     --popout: minmax(0, 2rem);
@@ -166,7 +154,7 @@ footer>* {
 }
 
 main>*+* {
-    margin-block-start: var(--space, var(--space-md));
+    margin-block-start: var(--size-fluid-5);
 }
 
 article span {
@@ -194,12 +182,11 @@ nav ul {
 
 article {
     --outline-offset: 2px;
-    --space: var(--space-xl);
     --scrollbar-offset: 4px;
     display: grid;
     grid-column: full;
     grid-template-columns: inherit;
-    margin-block-end: calc(var(--space-xs)*-1 - 1ex);
+    margin-block-end: calc(var(--size-fluid-1)*-1 - 1ex);
     overflow-y: hidden;
     max-width: 100%;
     overflow-x: scroll;
@@ -210,7 +197,7 @@ article {
 article ul[role="list"] {
     display: flex;
     gap: clamp(var(--page-padding)/2, 4vw, var(--page-padding));
-    padding-block: var(--space-lg) calc(var(--space-lg) + 1ex);
+    padding-block: var(--size-fluid-4) calc(var(--size-fluid-4) + 1ex);
     position: relative;
     width: 100%;
 }
@@ -220,18 +207,19 @@ article ul[role="list"]>li {
     flex: 1 0 auto;
     position: relative;
     scroll-snap-align: center;
-    min-inline-size: var(--size-content-2);
-    /* background-color: var(--surface-2); */
+    inline-size: min(300px + 5vw, 100%);
     border: 2px solid var(--surface-3);
     border-radius: var(--radius-3);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
-    scroll-margin-top: var(--space-2xl);
+    scroll-margin-top: var(--size-fluid-6);
     transition: transform var(--duration);
     padding: var(--size-5);
 }
 
-ul[role="list"] {
+ul {
     list-style-type: none;
     padding-inline-start: 0;
 }

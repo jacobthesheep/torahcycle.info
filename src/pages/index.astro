@@ -77,10 +77,15 @@ parsedFestivalReadings.forEach((reading) => {
                                     <span id={`week-${reading.week}`}>
                                         Week {reading.week}
                                     </span>
-                                    <h3>
-                                        <i>Parashat {reading.portion.hebrew}</i>
-                                    </h3>
-                                    <p>{reading.portion.english}</p>
+                                    <div>
+                                        <h3>
+                                            <i>
+                                                Parashat{" "}
+                                                {reading.portion.hebrew}
+                                            </i>
+                                        </h3>
+                                        <p>{reading.portion.english}</p>
+                                    </div>
                                     <ul class="fa-ul">
                                         <li>
                                             <span class="fa-li">
