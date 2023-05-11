@@ -95,13 +95,13 @@ parsedFestivalReadings.forEach((reading) => {
                                             {reading.verses}
                                         </li>
                                         <li>
+                                            <span class="fa-li">
+                                                <i class="fa-solid fa-book-tanakh" />
+                                            </span>
                                             Haftorah:
                                             {reading.haftorah.map(
                                                 (haftorahItem, index) => (
                                                     <span>
-                                                        <span class="fa-li">
-                                                            <i class="fa-solid fa-book-tanakh" />
-                                                        </span>
                                                         {(index > 0
                                                             ? ", "
                                                             : "") +
@@ -113,13 +113,13 @@ parsedFestivalReadings.forEach((reading) => {
                                             )}
                                         </li>
                                         <li>
+                                            <span class="fa-li">
+                                                <i class="fa-solid fa-book-bible" />
+                                            </span>
                                             Apostolic:
                                             {reading.apostolic.map(
                                                 (apolisticItem, index) => (
                                                     <span>
-                                                        <span class="fa-li">
-                                                            <i class="fa-solid fa-book-bible" />
-                                                        </span>
                                                         {(index > 0
                                                             ? ", "
                                                             : "") +
