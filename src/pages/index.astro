@@ -1,57 +1,12 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
+import ParsedTorahReadings from "../components/TorahReading.svelte";
 const props = {
     title: "",
     description: "",
     image: "home",
 };
-
-import hebrewDate from "hebrew-date";
-
-import {
-    TorahReadings,
-    TorahReadingType,
-} from "./data";
-
-let parsedTorahReadings: TorahReadingType[] = [];
-let error;
-
-function isHebrewLeapYear(year: number): boolean {
-    const yearInCycle = year % 19;
-    return [0, 3, 6, 8, 11, 14, 17].includes(yearInCycle);
-}
-
-
-async function loadData() {
-    try {
-        const hebrewDateToday = hebrewDate(new Date());
-        const hebrewYear = hebrewDateToday.year;
-
-        if (isHebrewLeapYear(hebrewYear)) {
-            const torahLeapReadingsJson = await import(
-                "../../public/torah_readings_leap.json"
-            );
-            parsedTorahReadings = TorahReadings.parse(
-                torahLeapReadingsJson.default
-            );
-        } else {
-            const torahReadingsJson = await import(
-                "../../public/torah_readings.json"
-            );
-            parsedTorahReadings = TorahReadings.parse(
-                torahReadingsJson.default
-            );
-        }
-    } catch (err) {
-        error = err;
-        console.error("Error validating Torah readings data:", err);
-    }
-}
-
-loadData();
-
-
 ---
 
 <Layout {...props}>
@@ -72,80 +27,7 @@ loadData();
         <h1>Weekly Scripture Reading</h1>
         <!-- {holidayReading ? <p>{holidayReading}</p> : <p>No holiday reading</p>} -->
         <article>
-            {
-                error ? (
-                    <p>
-                        Sorry, there was an error loading the Torah readings
-                        data.
-                    </p>
-                ) : (
-                    <>
-                        <ul role="list">
-                            {parsedTorahReadings.map((reading) => (
-                                <li>
-                                    <span id={`week-${reading.week}`}>
-                                        Week {reading.week}
-                                    </span>
-                                    <div>
-                                        <h3>
-                                            <i>
-                                                Parashat{" "}
-                                                {reading.portion.hebrew}
-                                            </i>
-                                        </h3>
-                                        <p>{reading.portion.english}</p>
-                                    </div>
-                                    <ul class="fa-ul">
-                                        <li>
-                                            <span class="fa-li">
-                                                <i class="fa-solid fa-scroll-torah" />
-                                            </span>
-                                            Torah: {reading.book}{" "}
-                                            {reading.verses}
-                                        </li>
-                                        <li>
-                                            <span class="fa-li">
-                                                <i class="fa-solid fa-book-tanakh" />
-                                            </span>
-                                            Haftorah:
-                                            {reading.haftorah.map(
-                                                (haftorahItem, index) => (
-                                                    <span>
-                                                        {(index > 0
-                                                            ? ", "
-                                                            : "") +
-                                                            haftorahItem.book +
-                                                            " " +
-                                                            haftorahItem.verses}
-                                                    </span>
-                                                )
-                                            )}
-                                        </li>
-                                        <li>
-                                            <span class="fa-li">
-                                                <i class="fa-solid fa-book-bible" />
-                                            </span>
-                                            Apostolic:
-                                            {reading.apostolic.map(
-                                                (apolisticItem, index) => (
-                                                    <span>
-                                                        {(index > 0
-                                                            ? ", "
-                                                            : "") +
-                                                            apolisticItem.book +
-                                                            " " +
-                                                            apolisticItem.verses}
-                                                    </span>
-                                                )
-                                            )}
-                                        </li>
-                                    </ul>
-                                </li>
-                            ))}
-                        </ul>
-                    </>
-                )
-            }
+            <ParsedTorahReadings/>
         </article>
         <section>
             <p>
