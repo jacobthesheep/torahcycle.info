@@ -6,9 +6,11 @@ const props = {
     description: "",
     image: "home",
 };
+
 import hebrewDate from "hebrew-date";
 
 import torahReadingsJson from "../../public/torah_readings.json";
+import torahLeapReadingsJson from "../../public/torah_readings_leap.json";
 import festivalReadingsJson from "../../public/festival_readings.json";
 import {
     TorahReadings,
@@ -18,11 +20,13 @@ import {
 } from "./data";
 
 let parsedTorahReadings: TorahReadingType[] = [];
+let parsedLeapTorahReadings: TorahReadingType[] = [];
 let parsedFestivalReadings: FestivalReadingType[] = [];
 let error;
 
 try {
     parsedTorahReadings = TorahReadings.parse(torahReadingsJson);
+    parsedLeapTorahReadings = TorahReadings.parse(torahLeapReadingsJson);
     parsedFestivalReadings = FestivalReadings.parse(festivalReadingsJson);
 } catch (err) {
     error = err;
@@ -43,13 +47,29 @@ parsedFestivalReadings.forEach((reading) => {
         }
     }
 });
+
+function isHebrewLeapYear(year: number): boolean {
+    const yearInCycle = year % 19;
+    return [0, 3, 6, 8, 11, 14, 17].includes(yearInCycle);
+}
+
+const hebrewDateToday = hebrewDate(new Date());
+const hebrewYear = hebrewDateToday.year;
+
+let displayTorahReading;
+
+if (isHebrewLeapYear(hebrewYear)) {
+    displayTorahReading = parsedLeapTorahReadings;
+} else {
+    displayTorahReading = parsedTorahReadings;
+}
 ---
 
 <Layout {...props}>
     <!-- <nav>
         <ul>
             {
-                parsedTorahReadings.map((reading) => (
+                displayTorahReadings.map((reading) => (
                     <li>
                         <Link href={`#week-${reading.week}`}>
                             Week {reading.week}
@@ -72,7 +92,7 @@ parsedFestivalReadings.forEach((reading) => {
                 ) : (
                     <>
                         <ul role="list">
-                            {parsedTorahReadings.map((reading) => (
+                            {displayTorahReading.map((reading) => (
                                 <li>
                                     <span id={`week-${reading.week}`}>
                                         Week {reading.week}

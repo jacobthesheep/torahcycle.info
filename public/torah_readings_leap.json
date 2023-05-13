@@ -32,7 +32,7 @@
 		"week": 2,
 		"portion": {
 			"hebrew": "Noah",
-			"english": "Noah..."
+            "english": "Noah..."
 		},
 		"book": "Genesis",
 		"verses": "6:9-11:32",
@@ -563,15 +563,15 @@
 	{
 		"week": 22,
 		"portion": {
-			"hebrew": "Vayakhel-Pekudei",
-			"english": "And assembled.../Accounts"
+			"hebrew": "Vayakhel",
+			"english": "And assembled..."
 		},
 		"book": "Exodus",
-		"verses": "35:1-40:38",
+		"verses": "35:1-38:20",
 		"haftorah": [
 			{
 				"book": "1 Kings",
-				"verses": "7:13-26; 40-50; 51-8:21"
+				"verses": "7:13-26; 40-50"
 			},
 			{
 				"book": "2 Kings",
@@ -586,7 +586,24 @@
 			{
 				"book": "Matthew",
 				"verses": "12:1-13"
-			},
+			}
+		]
+	},
+	{
+		"week": 23,
+		"portion": {
+			"hebrew": "Pekudei",
+			"english": "Accounts"
+		},
+		"book": "Exodus",
+		"verses": "38:21-40:38",
+		"haftorah": [
+			{
+				"book": "1 Kings",
+				"verses": "7:40-50; 51-8:21"
+			}
+		],
+		"apostolic": [
 			{
 				"book": "Hebrews",
 				"verses": "8:1-12"
@@ -598,7 +615,7 @@
 		]
 	},
 	{
-		"week": 23,
+		"week": 24,
 		"portion": {
 			"hebrew": "Vayikra",
 			"english": "And He called..."
@@ -627,7 +644,7 @@
 		]
 	},
 	{
-		"week": 24,
+		"week": 25,
 		"portion": {
 			"hebrew": "Tzav",
 			"english": "Command"
@@ -656,7 +673,7 @@
 		]
 	},
 	{
-		"week": 25,
+		"week": 26,
 		"portion": {
 			"hebrew": "Shemini",
 			"english": "Eighth"
@@ -689,17 +706,38 @@
 		]
 	},
 	{
-		"week": 26,
+		"week": 27,
 		"portion": {
-			"hebrew": "Tazria-Metzora",
-			"english": "Conceived/Leper"
+			"hebrew": "Tazria",
+			"english": "Conceived"
 		},
 		"book": "Leviticus",
-		"verses": "12:1-15:33",
+		"verses": "12:1-13:59",
 		"haftorah": [
 			{
 				"book": "2 Kings",
-				"verses": "4:42-5:19, 7:3-20"
+				"verses": "4:42-5:19"
+			}
+		],
+		"apostolic": [
+			{
+				"book": "Luke",
+				"verses": "2:22-33; 7:18-35"
+			}
+		]
+	},
+	{
+		"week": 28,
+		"portion": {
+			"hebrew": "Metzora",
+			"english": "Leper"
+		},
+		"book": "Leviticus",
+		"verses": "14:1-15:33",
+		"haftorah": [
+			{
+				"book": "2 Kings",
+				"verses": "7:3-20"
 			},
 			{
 				"book": "Malachi",
@@ -707,10 +745,6 @@
 			}
 		],
 		"apostolic": [
-			{
-				"book": "Luke",
-				"verses": "2:22-33; 7:18-35"
-			},
 			{
 				"book": "Matthew",
 				"verses": "23:16-24:2, 30-31"
@@ -722,21 +756,17 @@
 		]
 	},
 	{
-		"week": 27,
+		"week": 29,
 		"portion": {
-			"hebrew": "Acharei Mot-Kedoshim",
-			"english": "After the death.../Holy"
+			"hebrew": "Acharei Mot",
+			"english": "After the death..."
 		},
 		"book": "Leviticus",
-		"verses": "16:1-20:27",
+		"verses": "16:1-18:30",
 		"haftorah": [
 			{
-				"book": "Amos",
-				"verses": "9:7-15"
-			},
-			{
 				"book": "Ezekiel",
-				"verses": "20:2-20, 22:1-19"
+				"verses": "22:1-19"
 			}
 		],
 		"apostolic": [
@@ -746,7 +776,7 @@
 			},
 			{
 				"book": "Matthew",
-				"verses": "5:43-48, 15:10-20"
+				"verses": "15:10-20"
 			},
 			{
 				"book": "Mark",
@@ -755,7 +785,36 @@
 		]
 	},
 	{
-		"week": 28,
+		"week": 30,
+		"portion": {
+			"hebrew": "Kedoshim",
+			"english": "Holy"
+		},
+		"book": "Leviticus",
+		"verses": "19:1-20:27",
+		"haftorah": [
+			{
+				"book": "Amos",
+				"verses": "9:7-15"
+			},
+			{
+				"book": "Ezekiel",
+				"verses": "20:2-20"
+			}
+		],
+		"apostolic": [
+			{
+				"book": "Matthew",
+				"verses": "5:43-48"
+			},
+			{
+				"book": "Mark",
+				"verses": "12:28-34"
+			}
+		]
+	},
+	{
+		"week": 31,
 		"portion": {
 			"hebrew": "Emor",
 			"english": "Say"
@@ -780,17 +839,17 @@
 		]
 	},
 	{
-		"week": 29,
+		"week": 32,
 		"portion": {
-			"hebrew": "Behar-Bechukotai",
-			"english": "On Mount Sinai.../In My status..."
+			"hebrew": "Behar",
+			"english": "On Mount Sinai..."
 		},
 		"book": "Leviticus",
-		"verses": "25:1-27:34",
+		"verses": "25:1-26:2",
 		"haftorah": [
 			{
 				"book": "Jeremiah",
-				"verses": "16:19-17:14, 32:6-27"
+				"verses": "32:6-27"
 			}
 		],
 		"apostolic": [
@@ -801,7 +860,24 @@
 			{
 				"book": "Luke",
 				"verses": "4:14-22"
-			},
+			}
+		]
+	},
+	{
+		"week": 33,
+		"portion": {
+			"hebrew": "Bechukotai",
+			"english": "In My status..."
+		},
+		"book": "Leviticus",
+		"verses": "26:3-27:34",
+		"haftorah": [
+			{
+				"book": "Jeremiah",
+				"verses": "16:19-17:14"
+			}
+		],
+		"apostolic": [
 			{
 				"book": "Matthew",
 				"verses": "16:20-28, 22:1-14"
@@ -809,7 +885,7 @@
 		]
 	},
 	{
-		"week": 30,
+		"week": 34,
 		"portion": {
 			"hebrew": "Bamidbar",
 			"english": "In the wilderness..."
@@ -834,7 +910,7 @@
 		]
 	},
 	{
-		"week": 31,
+		"week": 35,
 		"portion": {
 			"hebrew": "Naso",
 			"english": "Elevate"
@@ -859,7 +935,7 @@
 		]
 	},
 	{
-		"week": 32,
+		"week": 36,
 		"portion": {
 			"hebrew": "Beha’alotecha",
 			"english": "When you set up..."
@@ -884,7 +960,7 @@
 		]
 	},
 	{
-		"week": 33,
+		"week": 37,
 		"portion": {
 			"hebrew": "Shlach",
 			"english": "Send thou..."
@@ -909,7 +985,7 @@
 		]
 	},
 	{
-		"week": 34,
+		"week": 38,
 		"portion": {
 			"hebrew": "Korach",
 			"english": "Korah"
@@ -934,28 +1010,41 @@
 		]
 	},
 	{
-		"week": 35,
+		"week": 39,
 		"portion": {
-			"hebrew": "Chukat-Balak",
-			"english": "Ordinances/Balak"
+			"hebrew": "Chukat",
+			"english": "Ordinances"
 		},
 		"book": "Numbers",
-		"verses": "19:1-25:9",
+		"verses": "19:1-22:1",
 		"haftorah": [
 			{
 				"book": "Judges",
 				"verses": "11:1-33"
-			},
-			{
-				"book": "Micah",
-				"verses": "5:6-6:8"
 			}
 		],
 		"apostolic": [
 			{
 				"book": "John",
 				"verses": "3:1-21, 19:38-42"
-			},
+			}
+		]
+	},
+	{
+		"week": 40,
+		"portion": {
+			"hebrew": "Balak",
+            "english": "Balak"
+		},
+		"book": "Numbers",
+		"verses": "22:2-25:9",
+		"haftorah": [
+			{
+				"book": "Micah",
+				"verses": "5:6-6:8"
+			}
+		],
+		"apostolic": [
 			{
 				"book": "Matthew",
 				"verses": "21:1-11"
@@ -967,10 +1056,10 @@
 		]
 	},
 	{
-		"week": 36,
+		"week": 41,
 		"portion": {
 			"hebrew": "Pinchas",
-			"english": "Pinchas"
+            "english": "Pinchas"
 		},
 		"book": "Numbers",
 		"verses": "25:10-30:1",
@@ -996,17 +1085,17 @@
 		]
 	},
 	{
-		"week": 37,
+		"week": 42,
 		"portion": {
-			"hebrew": "Matot-Masei",
-			"english": "Tribes/Journey"
+			"hebrew": "Matot",
+			"english": "Tribes"
 		},
 		"book": "Numbers",
-		"verses": "30:2-36:13",
+		"verses": "30:2-32:42",
 		"haftorah": [
 			{
 				"book": "Jeremiah",
-				"verses": "1:1-2:3, 2:4-28, 3:4, 4:1-2"
+				"verses": "1:1-2:3"
 			}
 		],
 		"apostolic": [
@@ -1017,7 +1106,24 @@
 			{
 				"book": "Luke",
 				"verses": "13:1-9"
-			},
+			}
+		]
+	},
+	{
+		"week": 43,
+		"portion": {
+			"hebrew": "Masei",
+			"english": "Journey"
+		},
+		"book": "Numbers",
+		"verses": "33:1-36:13",
+		"haftorah": [
+			{
+				"book": "Jeremiah",
+				"verses": "2:4-28, 3:4, 4:1-2"
+			}
+		],
+		"apostolic": [
 			{
 				"book": "Jacob (James)",
 				"verses": "4:1-12"
@@ -1029,7 +1135,7 @@
 		]
 	},
 	{
-		"week": 38,
+		"week": 44,
 		"portion": {
 			"hebrew": "D’varim",
 			"english": "Words"
@@ -1054,7 +1160,7 @@
 		]
 	},
 	{
-		"week": 39,
+		"week": 45,
 		"portion": {
 			"hebrew": "Va’etchanan",
 			"english": "And I besought..."
@@ -1079,7 +1185,7 @@
 		]
 	},
 	{
-		"week": 40,
+		"week": 46,
 		"portion": {
 			"hebrew": "Ekev",
 			"english": "Because"
@@ -1104,7 +1210,7 @@
 		]
 	},
 	{
-		"week": 41,
+		"week": 47,
 		"portion": {
 			"hebrew": "Re’eh",
 			"english": "Behold"
@@ -1125,7 +1231,7 @@
 		]
 	},
 	{
-		"week": 42,
+		"week": 48,
 		"portion": {
 			"hebrew": "Shoftim",
 			"english": "Judges"
@@ -1150,7 +1256,7 @@
 		]
 	},
 	{
-		"week": 43,
+		"week": 49,
 		"portion": {
 			"hebrew": "Ki Tetzei",
 			"english": "When you go..."
@@ -1175,7 +1281,7 @@
 		]
 	},
 	{
-		"week": 44,
+		"week": 50,
 		"portion": {
 			"hebrew": "Ki Tavo",
 			"english": "When you come..."
@@ -1200,17 +1306,38 @@
 		]
 	},
 	{
-		"week": 45,
+		"week": 51,
 		"portion": {
-			"hebrew": "Nitzavim-Vayelech",
-			"english": "You are standing.../And he went"
+			"hebrew": "Nitzavim",
+			"english": "You are standing..."
 		},
 		"book": "Deuteronomy",
-		"verses": "29:9-31:30",
+		"verses": "29:9-30:20",
 		"haftorah": [
 			{
 				"book": "Isaiah",
-				"verses": "55:6-56:8, 61:10-63:9"
+				"verses": "61:10-63:9"
+			}
+		],
+		"apostolic": [
+			{
+				"book": "John",
+				"verses": "12:41-50, 15:1-11"
+			}
+		]
+	},
+	{
+		"week": 52,
+		"portion": {
+			"hebrew": "Vayelech",
+			"english": "And he went"
+		},
+		"book": "Deuteronomy",
+		"verses": "31:1-30",
+		"haftorah": [
+			{
+				"book": "Isaiah",
+				"verses": "55:6-56:8"
 			},
 			{
 				"book": "Hosea",
@@ -1223,10 +1350,6 @@
 		],
 		"apostolic": [
 			{
-				"book": "John",
-				"verses": "12:41-50, 15:1-11"
-			},
-			{
 				"book": "Romans",
 				"verses": "10:1-17"
 			},
@@ -1237,7 +1360,7 @@
 		]
 	},
 	{
-		"week": 46,
+		"week": 53,
 		"portion": {
 			"hebrew": "Haaazinu",
 			"english": "Give ear..."
@@ -1274,7 +1397,7 @@
 		]
 	},
 	{
-		"week": 47,
+		"week": 54,
 		"portion": {
 			"hebrew": "V’Zot HaBrachah",
 			"english": "And this is the blessing..."
