@@ -9,9 +9,6 @@ const props = {
 
 import hebrewDate from "hebrew-date";
 
-import torahReadingsJson from "../../public/torah_readings.json";
-import torahLeapReadingsJson from "../../public/torah_readings_leap.json";
-import festivalReadingsJson from "../../public/festival_readings.json";
 import {
     TorahReadings,
     TorahReadingType,
@@ -20,18 +17,48 @@ import {
 } from "./data";
 
 let parsedTorahReadings: TorahReadingType[] = [];
-let parsedLeapTorahReadings: TorahReadingType[] = [];
 let parsedFestivalReadings: FestivalReadingType[] = [];
 let error;
 
-try {
-    parsedTorahReadings = TorahReadings.parse(torahReadingsJson);
-    parsedLeapTorahReadings = TorahReadings.parse(torahLeapReadingsJson);
-    parsedFestivalReadings = FestivalReadings.parse(festivalReadingsJson);
-} catch (err) {
-    error = err;
-    console.error("Error validating Torah readings data:", err);
+function isHebrewLeapYear(year: number): boolean {
+    const yearInCycle = year % 19;
+    return [0, 3, 6, 8, 11, 14, 17].includes(yearInCycle);
 }
+
+async function loadData() {
+    try {
+        const festivalReadingsJson = await import(
+            "../../public/festival_readings.json"
+        );
+        parsedFestivalReadings = FestivalReadings.parse(
+            festivalReadingsJson.default
+        );
+
+        const hebrewDateToday = hebrewDate(new Date());
+        const hebrewYear = hebrewDateToday.year;
+
+        if (isHebrewLeapYear(hebrewYear)) {
+            const torahLeapReadingsJson = await import(
+                "../../public/torah_readings_leap.json"
+            );
+            parsedTorahReadings = TorahReadings.parse(
+                torahLeapReadingsJson.default
+            );
+        } else {
+            const torahReadingsJson = await import(
+                "../../public/torah_readings.json"
+            );
+            parsedTorahReadings = TorahReadings.parse(
+                torahReadingsJson.default
+            );
+        }
+    } catch (err) {
+        error = err;
+        console.error("Error validating Torah readings data:", err);
+    }
+}
+
+loadData();
 
 let holidayReading;
 
@@ -47,22 +74,6 @@ parsedFestivalReadings.forEach((reading) => {
         }
     }
 });
-
-function isHebrewLeapYear(year: number): boolean {
-    const yearInCycle = year % 19;
-    return [0, 3, 6, 8, 11, 14, 17].includes(yearInCycle);
-}
-
-const hebrewDateToday = hebrewDate(new Date());
-const hebrewYear = hebrewDateToday.year;
-
-let displayTorahReading;
-
-if (isHebrewLeapYear(hebrewYear)) {
-    displayTorahReading = parsedLeapTorahReadings;
-} else {
-    displayTorahReading = parsedTorahReadings;
-}
 ---
 
 <Layout {...props}>
@@ -92,7 +103,7 @@ if (isHebrewLeapYear(hebrewYear)) {
                 ) : (
                     <>
                         <ul role="list">
-                            {displayTorahReading.map((reading) => (
+                            {parsedTorahReadings.map((reading) => (
                                 <li>
                                     <span id={`week-${reading.week}`}>
                                         Week {reading.week}
