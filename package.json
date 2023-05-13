@@ -14,12 +14,15 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/svelte": "^2.1.1",
 		"@astrojs/vercel": "^3.3.0",
 		"@fontsource/comfortaa": "^4.5.11",
 		"@fontsource/rubik": "^4.5.14",
 		"astro": "^2.4.1",
 		"hebrew-date": "^1.0.6",
+		"nanostores": "^0.8.1",
 		"open-props": "^1.5.8",
+		"svelte": "^3.54.0",
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {

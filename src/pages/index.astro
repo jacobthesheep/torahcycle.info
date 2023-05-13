@@ -12,12 +12,9 @@ import hebrewDate from "hebrew-date";
 import {
     TorahReadings,
     TorahReadingType,
-    FestivalReadings,
-    FestivalReadingType,
 } from "./data";
 
 let parsedTorahReadings: TorahReadingType[] = [];
-let parsedFestivalReadings: FestivalReadingType[] = [];
 let error;
 
 function isHebrewLeapYear(year: number): boolean {
@@ -25,15 +22,9 @@ function isHebrewLeapYear(year: number): boolean {
     return [0, 3, 6, 8, 11, 14, 17].includes(yearInCycle);
 }
 
+
 async function loadData() {
     try {
-        const festivalReadingsJson = await import(
-            "../../public/festival_readings.json"
-        );
-        parsedFestivalReadings = FestivalReadings.parse(
-            festivalReadingsJson.default
-        );
-
         const hebrewDateToday = hebrewDate(new Date());
         const hebrewYear = hebrewDateToday.year;
 
@@ -60,20 +51,7 @@ async function loadData() {
 
 loadData();
 
-let holidayReading;
 
-parsedFestivalReadings.forEach((reading) => {
-    if (reading.date && reading.month) {
-        if (
-            hebrewDate(new Date()).month === reading.month &&
-            hebrewDate(new Date()).date === reading.date
-        ) {
-            holidayReading = `Day of ${reading.holiday} is the ${
-                reading.date
-            }th of ${hebrewDate(new Date()).month_name}`;
-        }
-    }
-});
 ---
 
 <Layout {...props}>
