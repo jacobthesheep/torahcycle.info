@@ -13,12 +13,15 @@ dependencies:
   '@fontsource/rubik':
     specifier: ^4.5.14
     version: 4.5.14
+  '@hebcal/core':
+    specifier: ^4.0.3
+    version: 4.0.3
+  '@hebcal/leyning':
+    specifier: ^7.3.2
+    version: 7.3.2
   astro:
     specifier: ^2.4.1
     version: 2.4.1
-  hebrew-date:
-    specifier: ^1.0.6
-    version: 1.0.6
   nanostores:
     specifier: ^0.8.1
     version: 0.8.1
@@ -608,6 +611,18 @@ packages:
 
   /@fontsource/rubik@4.5.14:
     resolution: {integrity: sha512-EvMK3kkeAgKkk8qAeT4PjpyAYyu72pIlJm+SXJ5vR/xhCX2yj2xoq3+YS38rPmPcCAnrAVONoQ3ezLxVm6jhBA==}
+    dev: false
+
+  /@hebcal/core@4.0.3:
+    resolution: {integrity: sha512-4sb9xN/O35BUjcWhxwA3shLmY43j2WVQo4KBgYGbd4XDWyYgFksD1C50W0gigZKECg9F3j/jFdpT1vWFz2CiZQ==}
+    engines: {node: '>= 12.17.0'}
+    dev: false
+
+  /@hebcal/leyning@7.3.2:
+    resolution: {integrity: sha512-nfdJblFKGPZakQOxYkTXHJMZWtWKerzLT55odIObv62BzIiXbe1+xPDvGmmCvm5P1lBdUeMlahfa7eNroW3UEg==}
+    hasBin: true
+    dependencies:
+      '@hebcal/core': 4.0.3
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -1800,10 +1815,6 @@ packages:
       hast-util-parse-selector: 3.1.1
       property-information: 6.2.0
       space-separated-tokens: 2.0.2
-    dev: false
-
-  /hebrew-date@1.0.6:
-    resolution: {integrity: sha512-rC+RTJ9l/sGkaykdkAfuHj+pogzb7JhKhFE6kuttVyEUseHAYbgSwLQvqWtfvINKrP/FIz/DbZrpFZM35L0bdQ==}
     dev: false
 
   /html-escaper@3.0.3:

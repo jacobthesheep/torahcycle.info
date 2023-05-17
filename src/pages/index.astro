@@ -1,46 +1,78 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
-import ParsedTorahReadings from "../components/TorahReading.svelte";
+import { HebrewCalendar, HDate, Event } from "@hebcal/core";
+import { getLeyningForParshaHaShavua } from "@hebcal/leyning";
 const props = {
     title: "",
     description: "",
     image: "home",
 };
+
+const currentHebrewYear = new HDate().getFullYear();
+
+function getSheminiAtzeretDate(year: number) {
+    const holidays = HebrewCalendar.getHolidaysForYear(year);
+    let sheminiAtzeretDate;
+
+    for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
+        for (let holidayEvent of holidayEvents) {
+            if (holidayEvent.getDesc() === "Shmini Atzeret") {
+                sheminiAtzeretDate = holidayEvent.getDate().greg();
+                break;
+            }
+        }
+        if (sheminiAtzeretDate) break;
+    }
+    return sheminiAtzeretDate;
+}
+
+const readingsData = [];
+let startDate = getSheminiAtzeretDate(currentHebrewYear);
+let endDate = getSheminiAtzeretDate(currentHebrewYear + 1);
+
+const options = {
+    start: new HDate(startDate),
+    end: new HDate(endDate),
+    sedrot: true,
+    noHolidays: true,
+};
+
+const events = HebrewCalendar.calendar(options);
+
+for (const ev of events) {
+    const hd = ev.getDate();
+    const date = hd.greg();
+    const reading = getLeyningForParshaHaShavua(ev, false);
+    const readingData = {
+        date: date.toLocaleDateString(),
+        hebrewDate: hd.toString(),
+        portion: ev.getDesc(),
+        readingSummary: reading.summary,
+        haftara: reading.haftara,
+    };
+    readingsData.push(readingData);
+}
 ---
 
 <Layout {...props}>
-    <!-- <nav>
-        <ul>
-            {
-                displayTorahReadings.map((reading) => (
-                    <li>
-                        <Link href={`#week-${reading.week}`}>
-                            Week {reading.week}
-                        </Link>
-                    </li>
-                ))
-            }
-        </ul>
-    </nav> -->
     <main>
         <h1>Weekly Scripture Reading</h1>
-        <!-- {holidayReading ? <p>{holidayReading}</p> : <p>No holiday reading</p>} -->
         <article>
-            <ParsedTorahReadings/>
+            <ul role="list">
+                {
+                    readingsData.map((reading) => (
+                        <li>
+                            <p>
+                                {reading.date} - {reading.hebrewDate}
+                            </p>
+                            <p>{reading.portion}</p>
+                            <p>Torah: {reading.readingSummary}</p>
+                            <p>Haftara: {reading.haftara}</p>
+                        </li>
+                    ))
+                }
+            </ul>
         </article>
-        <section>
-            <p>
-                Collected from <Link href="https://torahportions.ffoz.org/">
-                    FFOZ
-                </Link>, <Link
-                    href="https://torahresource.com/resources/weekly-parashah/"
-                >
-                    Torah Resource
-                </Link>, and the <Link href="https://tlvbiblesociety.org/">
-                    Tree of Life Bible
-                </Link>.
-            </p>
-        </section>
     </main>
 </Layout>
