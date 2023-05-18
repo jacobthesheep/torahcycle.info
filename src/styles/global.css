@@ -4,48 +4,21 @@
 
 /* some CSS styling straight from https://github.com/hexagoncircle/ryan-mulligan-dev */
 
-
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 html {
-    block-size: 100%;
     font-family: "RubikVariable", system-ui, sans-serif;
     font-feature-settings: "tnum";
     font-optical-sizing: auto;
 }
 
 body {
-    margin: 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--size-fluid-5);
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-    display: block;
-    max-width: 100%;
-}
-
-p,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
-    margin-block: 0;
+:is(input, button, a, select) {
+    border-radius: var(--radius-2);
+    width: fit-content;
 }
 
 h1,
@@ -58,53 +31,6 @@ blockquote {
     font-family: "ComfortaaVariable", ui-rounded, sans-serif;
     white-space: unset;
     text-wrap: balance;
-}
-
-input,
-button,
-select {
-    font: inherit;
-}
-
-:is(input, button, a, select) {
-    border-radius: var(--radius-2);
-    width: fit-content;
-}
-
-:is(input, button, a[data-button], select) {
-    padding: var(--size-2) var(--size-3);
-}
-
-:is(input, button, a, select):is(:focus-visible) {
-    outline: 2px solid red;
-    outline-offset: 2px;
-}
-
-
-@layer customComponents {
-    a[data-button] {
-        --button-shadow-color: black;
-        font-weight: bold;
-        font-size: var(--font-size-2);
-        padding: var(--size-2) var(--size-3);
-        text-align: center;
-        width: fit-content;
-        transform: rotateX(0) rotateY(0) rotateZ(0);
-        display: inline-block;
-        position: relative;
-        top: 0;
-        left: 0;
-        transition: .3s;
-        border: var(--border-size-2) solid var(--button-shadow-color);
-        box-shadow: 0.5px 1px 0 0 var(--button-shadow-color), 1.5px 2px 0 0 var(--button-shadow-color), 2.5px 3px 0 0 var(--button-shadow-color), 3.5px 4px 0 0 var(--button-shadow-color), 4.5px 5px 0 0 var(--button-shadow-color), 5.5px 6px 0 0 var(--button-shadow-color);
-    }
-
-    a[data-button]:hover {
-        box-shadow: 0 0 0 0 var(--button-shadow-color), 0 0 0 0 var(--button-shadow-color), 0 0 0 0 var(--button-shadow-color), 0 0 0 0 var(--button-shadow-color), 0 0 0 0 var(--button-shadow-color), 0 0 0 0 var(--button-shadow-color);
-        top: 6px;
-        left: 5.5px;
-        transform: rotateX(5deg) rotateY(3deg) rotateZ(.25deg);
-    }
 }
 
 header {
