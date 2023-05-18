@@ -63,12 +63,25 @@ for (const ev of events) {
                 {
                     readingsData.map((reading) => (
                         <li>
-                            <p>
-                                {reading.date} - {reading.hebrewDate}
-                            </p>
-                            <p>{reading.portion}</p>
-                            <p>Torah: {reading.readingSummary}</p>
-                            <p>Haftara: {reading.haftara}</p>
+                            <span>
+                                <time>{reading.date}</time> -
+                                <time>{reading.hebrewDate}</time>
+                            </span>
+                            <h3>{reading.portion}</h3>
+                            <ul class="fa-ul">
+                                <li>
+                                    <span class="fa-li">
+                                        <i class="fa-solid fa-scroll-torah" />
+                                    </span>
+                                    Torah: {reading.readingSummary}
+                                </li>
+                                <li>
+                                    <span class="fa-li">
+                                        <i class="fa-solid fa-book-tanakh" />
+                                    </span>
+                                    Haftara: {reading.haftara}
+                                </li>
+                            </ul>
                         </li>
                     ))
                 }
