@@ -9,8 +9,6 @@ const props = {
     image: "home",
 };
 
-const currentHebrewYear = new HDate().getFullYear();
-const currentYear = new Date().getFullYear();
 
 function getSheminiAtzeretDate(year: number) {
     const holidays = HebrewCalendar.getHolidaysForYear(year);
@@ -28,8 +26,12 @@ function getSheminiAtzeretDate(year: number) {
     return sheminiAtzeretDate;
 }
 
-let startDate = getSheminiAtzeretDate(currentHebrewYear);
-let endDate = getSheminiAtzeretDate(currentHebrewYear + 1);
+
+const currentYear = new Date().getFullYear();
+const currentHebrewYear = new HDate().getFullYear();
+
+let startDate = new HDate(getSheminiAtzeretDate(currentHebrewYear));
+let endDate = new HDate(getSheminiAtzeretDate(currentHebrewYear + 1));
 
 interface ReadingData {
     date: string;
@@ -42,9 +44,6 @@ interface ReadingData {
 }
 
 const readingsData: ReadingData[] = [];
-
-startDate = new HDate(startDate);
-endDate = new HDate(endDate);
 
 function handleReading(reading: any, date: HDate) {
     const dateObj = date.greg();
