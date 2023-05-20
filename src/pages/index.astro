@@ -2,7 +2,7 @@
 import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
 import { HebrewCalendar, HDate, Event } from "@hebcal/core";
-import { getLeyningForParshaHaShavua } from "@hebcal/leyning";
+import { getLeyningOnDate } from "@hebcal/leyning";
 const props = {
     title: "",
     description: "",
@@ -10,6 +10,7 @@ const props = {
 };
 
 const currentHebrewYear = new HDate().getFullYear();
+const currentYear = new Date().getFullYear();
 
 function getSheminiAtzeretDate(year: number) {
     const holidays = HebrewCalendar.getHolidaysForYear(year);
@@ -27,47 +28,101 @@ function getSheminiAtzeretDate(year: number) {
     return sheminiAtzeretDate;
 }
 
-const readingsData = [];
 let startDate = getSheminiAtzeretDate(currentHebrewYear);
 let endDate = getSheminiAtzeretDate(currentHebrewYear + 1);
 
-const options = {
-    start: new HDate(startDate),
-    end: new HDate(endDate),
-    sedrot: true,
-    noHolidays: true,
-};
+interface ReadingData {
+    date: string;
+    dateTime: string;
+    hebrewDate: string;
+    portion: string | undefined;
+    holiday: string | undefined;
+    readingSummary: string;
+    haftara: string;
+}
 
-const events = HebrewCalendar.calendar(options);
+const readingsData: ReadingData[] = [];
 
-for (const ev of events) {
-    const hd = ev.getDate();
-    const date = hd.greg();
-    const reading = getLeyningForParshaHaShavua(ev, false);
-    const readingData = {
-        date: date.toLocaleDateString(),
-        hebrewDate: hd.toString(),
-        portion: ev.getDesc(),
+startDate = new HDate(startDate);
+endDate = new HDate(endDate);
+
+function handleReading(reading: any, date: HDate) {
+    const dateObj = date.greg();
+    const formattedDate = dateObj.toISOString().split("T")[0];
+
+    const monthDayOptions: Intl.DateTimeFormatOptions = {
+        month: "long",
+        day: "numeric",
+    };
+
+    const otherDateFormatted = dateObj.toLocaleDateString(
+        undefined,
+        monthDayOptions
+    );
+
+    const portion =
+        reading.parsha && reading.parsha.length > 1
+            ? reading.parsha.join("-")
+            : reading.parsha
+            ? reading.parsha[0]
+            : undefined;
+
+    let holiday = reading.name.en;
+    holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
+
+    readingsData.push({
+        date: otherDateFormatted,
+        dateTime: formattedDate,
+        hebrewDate: date.toString(),
+        portion: portion,
+        holiday: holiday,
         readingSummary: reading.summary,
         haftara: reading.haftara,
-    };
-    readingsData.push(readingData);
+    });
+}
+
+for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
+    if (date.getDay() === 6) {
+        const readings = getLeyningOnDate(date, false);
+
+        if (Array.isArray(readings)) {
+            // Loop through each Leyning object and handle it
+            for (const reading of readings) {
+                handleReading(reading, date);
+            }
+        } else {
+            // We have a single Leyning object, so handle it
+            handleReading(readings, date);
+        }
+    }
 }
 ---
 
 <Layout {...props}>
     <main>
-        <h1>Weekly Scripture Reading</h1>
+        <h1>
+            <time datetime={`${currentYear}`}>{currentYear}</time> Weekly Scripture
+            Reading
+        </h1>
         <article>
             <ul role="list">
                 {
                     readingsData.map((reading) => (
                         <li>
                             <span>
-                                <time>{reading.date}</time> -
-                                <time>{reading.hebrewDate}</time>
+                                <time datetime={`${reading.dateTime}`}>
+                                    {reading.date}
+                                </time>
                             </span>
-                            <h3>{reading.portion}</h3>
+
+                            <div>
+                                {reading.portion ? (
+                                    <h3>Parashat {reading.portion}</h3>
+                                ) : (
+                                    <h3>{reading.holiday}</h3>
+                                )}
+                            </div>
+
                             <ul class="fa-ul">
                                 <li>
                                     <span class="fa-li">
