@@ -7,12 +7,12 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.4.0
     version: 3.4.0(astro@2.5.0)(react@18.2.0)
-  '@fontsource/comfortaa':
-    specifier: ^4.5.11
-    version: 4.5.11
-  '@fontsource/rubik':
-    specifier: ^4.5.14
-    version: 4.5.14
+  '@fontsource-variable/comfortaa':
+    specifier: ^5.0.0
+    version: 5.0.0
+  '@fontsource-variable/rubik':
+    specifier: ^5.0.1
+    version: 5.0.1
   '@hebcal/core':
     specifier: ^4.0.3
     version: 4.0.3
@@ -947,12 +947,12 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/comfortaa@4.5.11:
-    resolution: {integrity: sha512-KKC2C6KbF9BD6m9+wMf5hK0wFjIi3p3J/6C4JZW6OF9G6K4qZJFp2dBZzsEBepKh4s9/Q5G1SWsUUZY3ZeZNDA==}
+  /@fontsource-variable/comfortaa@5.0.0:
+    resolution: {integrity: sha512-dP5gUVldvxfCA4Im9q4H/l9Eusxaesb9LVJzqggTFEcxDNwWuhpsUjSAec8ITFAJd7n+2H6Wupj6z2MQ3C8HSQ==}
     dev: false
 
-  /@fontsource/rubik@4.5.14:
-    resolution: {integrity: sha512-EvMK3kkeAgKkk8qAeT4PjpyAYyu72pIlJm+SXJ5vR/xhCX2yj2xoq3+YS38rPmPcCAnrAVONoQ3ezLxVm6jhBA==}
+  /@fontsource-variable/rubik@5.0.1:
+    resolution: {integrity: sha512-xXHoTwwEeXqMdpAwbxtWXtWFUjvP8lg7Td1V3jcni7ZdVYhLdvmYZc5rX7QhqcN8nsuYoCyImWXyqR1YtZ5e1g==}
     dev: false
 
   /@hebcal/core@4.0.3:
@@ -3794,8 +3794,8 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /rollup@3.22.0:
-    resolution: {integrity: sha512-imsigcWor5Y/dC0rz2q0bBt9PabcL3TORry2hAa6O6BuMvY71bqHyfReAz5qyAqiQATD1m70qdntqBfBQjVWpQ==}
+  /rollup@3.23.0:
+    resolution: {integrity: sha512-h31UlwEi7FHihLe1zbk+3Q7z1k/84rb9BSwmBSr/XjOCEaBJ2YyedQDuM0t/kfOS0IxM+vk1/zI9XxYj9V+NJQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -4345,7 +4345,7 @@ packages:
     dependencies:
       esbuild: 0.17.19
       postcss: 8.4.23
-      rollup: 3.22.0
+      rollup: 3.23.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: false

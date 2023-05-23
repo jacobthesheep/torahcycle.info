@@ -5,7 +5,7 @@
 /* some CSS styling straight from https://github.com/hexagoncircle/ryan-mulligan-dev */
 
 html {
-    font-family: "RubikVariable", system-ui, sans-serif;
+    font-family: "Rubik Variable", system-ui, sans-serif;
     font-feature-settings: "tnum";
     font-optical-sizing: auto;
 }
@@ -28,7 +28,7 @@ h4,
 h5,
 h6,
 blockquote {
-    font-family: "ComfortaaVariable", ui-rounded, sans-serif;
+    font-family: "Comfortaa Variable", ui-rounded, sans-serif;
     white-space: unset;
     text-wrap: balance;
 }

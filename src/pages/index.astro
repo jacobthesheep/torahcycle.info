@@ -2,13 +2,16 @@
 import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
 import { HebrewCalendar, HDate, Event } from "@hebcal/core";
-import { getLeyningOnDate } from "@hebcal/leyning";
+import {
+    getLeyningOnDate,
+    getLeyningForParshaHaShavua,
+    getLeyningForParsha,
+} from "@hebcal/leyning";
 const props = {
     title: "",
     description: "",
     image: "home",
 };
-
 
 function getSheminiAtzeretDate(year: number) {
     const holidays = HebrewCalendar.getHolidaysForYear(year);
@@ -26,7 +29,6 @@ function getSheminiAtzeretDate(year: number) {
     return sheminiAtzeretDate;
 }
 
-
 const currentYear = new Date().getFullYear();
 const currentHebrewYear = new HDate().getFullYear();
 
@@ -36,7 +38,6 @@ let endDate = new HDate(getSheminiAtzeretDate(currentHebrewYear + 1));
 interface ReadingData {
     date: string;
     dateTime: string;
-    hebrewDate: string;
     portion: string | undefined;
     holiday: string | undefined;
     readingSummary: string;
@@ -72,7 +73,6 @@ function handleReading(reading: any, date: HDate) {
     readingsData.push({
         date: otherDateFormatted,
         dateTime: formattedDate,
-        hebrewDate: date.toString(),
         portion: portion,
         holiday: holiday,
         readingSummary: reading.summary,
@@ -95,6 +95,26 @@ for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
         }
     }
 }
+
+let currentWeekIndex: number;
+const today = new Date();
+
+for (let i = 0; i < readingsData.length; i++) {
+    if (new Date(readingsData[i].dateTime) > today) {
+        currentWeekIndex = i; // Get the previous week's reading if the current date has passed
+        break;
+    }
+}
+
+// console.log(readingsData);
+
+// const parashat = 'Mishpatim';
+// const events = HebrewCalendar.calendar({sedrot: true, noHolidays: true});
+// const ev = events.find((ev) => ev.getDesc() == `Parashat ${parashat}`);
+// const specialReading = getLeyningForParshaHaShavua(ev, false);
+// const reading = getLeyningForParsha(parashat);
+// console.log(`${ev.getDesc()}: ${specialReading.summary}`);
+// console.log(reading.summary);
 ---
 
 <Layout {...props}>
@@ -106,12 +126,22 @@ for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
         <article>
             <ul role="list">
                 {
-                    readingsData.map((reading) => (
-                        <li>
+                    readingsData.map((reading, index) => (
+                        <li
+                            id={
+                                index == currentWeekIndex
+                                    ? `currentWeek`
+                                    : `week${index}`
+                            }
+                        >
                             <span>
-                                <time datetime={`${reading.dateTime}`}>
-                                    {reading.date}
-                                </time>
+                                {index == currentWeekIndex ? (
+                                    <span>This week's portion</span>
+                                ) : (
+                                    <time datetime={`${reading.dateTime}`}>
+                                        {reading.date}
+                                    </time>
+                                )}
                             </span>
 
                             <div>
@@ -143,3 +173,13 @@ for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
         </article>
     </main>
 </Layout>
+
+<script>
+    window.onload = function () {
+        const elem = document.getElementById("currentWeek");
+        if (elem) {
+            // Check if the element exists before calling scrollIntoView
+            elem.scrollIntoView();
+        }
+    };
+</script>

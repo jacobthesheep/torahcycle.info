@@ -16,8 +16,8 @@
 	"dependencies": {
 		"@astrojs/svelte": "^2.2.0",
 		"@astrojs/vercel": "^3.4.0",
-		"@fontsource/comfortaa": "^4.5.11",
-		"@fontsource/rubik": "^4.5.14",
+		"@fontsource-variable/comfortaa": "^5.0.0",
+		"@fontsource-variable/rubik": "^5.0.1",
 		"@hebcal/core": "^4.0.3",
 		"@hebcal/leyning": "^7.4.1",
 		"astro": "^2.5.0",
