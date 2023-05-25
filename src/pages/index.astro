@@ -16,6 +16,30 @@ const props = {
     image: "home",
 };
 
+function getSheminiAtzeretDate(year: number) {
+    const holidays = HebrewCalendar.getHolidaysForYear(year);
+    let sheminiAtzeretDate;
+
+    for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
+        for (let holidayEvent of holidayEvents) {
+            if (holidayEvent.getDesc() === "Shmini Atzeret") {
+                sheminiAtzeretDate = holidayEvent.getDate().greg();
+                break;
+            }
+        }
+        if (sheminiAtzeretDate) break;
+    }
+    return sheminiAtzeretDate;
+}
+
+const currentYear = new Date().getFullYear();
+const currentHebrewYear = new HDate().getFullYear();
+
+let startDate = new HDate(getSheminiAtzeretDate(currentHebrewYear));
+let endDate = new HDate(getSheminiAtzeretDate(currentHebrewYear + 1));
+
+
+
 function getStartAndEndOfWeek() {
     const now = new Date();
     const dayOfWeek = now.getDay();
@@ -35,21 +59,6 @@ function getStartAndEndOfWeek() {
 const startOfWeek = new HDate(getStartAndEndOfWeek().startOfWeek);
 const endOfWeek = new HDate(getStartAndEndOfWeek().endOfWeek);
 
-// function getSheminiAtzeretDate(year: number) {
-//     const holidays = HebrewCalendar.getHolidaysForYear(year);
-//     let sheminiAtzeretDate;
-
-//     for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
-//         for (let holidayEvent of holidayEvents) {
-//             if (holidayEvent.getDesc() === "Shmini Atzeret") {
-//                 sheminiAtzeretDate = holidayEvent.getDate().greg();
-//                 break;
-//             }
-//         }
-//         if (sheminiAtzeretDate) break;
-//     }
-//     return sheminiAtzeretDate;
-// }
 
 interface ReadingData {
     date: string;
@@ -60,7 +69,65 @@ interface ReadingData {
     haftara?: string;
 }
 
-const readingsData: ReadingData[] = [];
+const currentReadingsData: ReadingData[] = [];
+const yearlyReadingsData: ReadingData[] = [];
+
+for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
+    if (date.getDay() === 6) {
+        const yearlyReadings = getLeyningOnDate(date, false);
+
+        if (Array.isArray(yearlyReadings)) {
+            // Loop through each Leyning object and handle it
+            for (const reading of yearlyReadings) {
+                handleYearlyReading(reading, date);
+            }
+        } else {
+            // We have a single Leyning object, so handle it
+            handleYearlyReading(yearlyReadings, date);
+        }
+    }
+}
+
+function handleYearlyReading(reading: any, date: HDate) {
+     if (reading.hasOwnProperty('weekday')) {
+        return;
+    }
+    const dateObj = date.greg();
+    const formattedDate = dateObj.toISOString().split("T")[0];
+
+    const monthDayOptions: Intl.DateTimeFormatOptions = {
+        month: "long",
+        day: "numeric",
+    };
+
+    const otherDateFormatted = dateObj.toLocaleDateString(
+        undefined,
+        monthDayOptions
+    );
+
+    const localDate = dateObj.toLocaleDateString();
+    const dayOfWeek = dateObj.toLocaleString("en-US", { weekday: "short" });
+
+    const portion =
+        reading.parsha && reading.parsha.length > 1
+            ? reading.parsha.join("-")
+            : reading.parsha
+            ? reading.parsha[0]
+            : undefined;
+
+    let holiday = reading.name.en;
+    holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
+
+    yearlyReadingsData.push({
+        date: localDate,
+        dayOfWeek: dayOfWeek,
+        dateTime: formattedDate,
+        name: reading.parsha || reading.name.en,
+        readingSummary: reading.summary,
+        haftara: reading.haftara,
+    });
+}
+
 
 function handleReading(reading: any, date: HDate) {
      if (reading.hasOwnProperty('weekday')) {
@@ -92,7 +159,7 @@ function handleReading(reading: any, date: HDate) {
     let holiday = reading.name.en;
     holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
 
-    readingsData.push({
+    currentReadingsData.push({
         date: localDate,
         dayOfWeek: dayOfWeek,
         dateTime: formattedDate,
@@ -183,7 +250,7 @@ for (const ev of events) {
 }
 
 let combinedData = eventArray.map(eventObj => {
-    const readingObj = readingsData.find(readingObj => readingObj.date === eventObj.Date);
+    const readingObj = currentReadingsData.find(readingObj => readingObj.date === eventObj.Date);
     return {
         ...eventObj,
         readingData: readingObj
