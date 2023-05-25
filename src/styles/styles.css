@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--size-fluid-5);
+    height: 100%;
 }
 
 :is(input, button, a, select) {
@@ -61,8 +62,6 @@ svg g {
 
 main,
 footer {
-    /* --size-fluid-2: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
-    --size-fluid-3: clamp(1.5rem, calc(1.43rem + 0.37vw), 1.69rem); */
     --page-max-width: 55ch;
     --page-padding: clamp(var(--size-fluid-2), 6vw, var(--size-fluid-3));
     --full: minmax(var(--page-padding), 1fr);
@@ -83,9 +82,6 @@ main>*+* {
     margin-block-start: var(--size-fluid-5);
 }
 
-article span {
-    scroll-margin: var(--size-5);
-}
 
 nav {
     position: fixed;
@@ -106,43 +102,26 @@ nav ul {
     white-space: nowrap;
 }
 
-article {
-    --outline-offset: 2px;
-    --scrollbar-offset: 4px;
-    display: grid;
-    grid-column: full;
-    grid-template-columns: inherit;
-    margin-block-end: calc(var(--size-fluid-1)*-1 - 1ex);
-    overflow-y: hidden;
-    max-width: 100%;
-    overflow-x: scroll;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
+span {
+    scroll-margin: var(--size-5);
 }
 
-article ul[role="list"] {
-    display: flex;
-    gap: clamp(var(--page-padding)/2, 4vw, var(--page-padding));
-    padding-block: var(--size-fluid-4) calc(var(--size-fluid-4) + 1ex);
-    position: relative;
-    width: 100%;
-}
-
-article ul[role="list"]>li {
-    --duration: 250ms;
-    flex: 1 0 auto;
-    position: relative;
-    scroll-snap-align: center;
-    inline-size: min(300px + 5vw, 100%);
-    border: 2px solid var(--surface-3);
-    border-radius: var(--radius-3);
+main>ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    scroll-margin-top: var(--size-fluid-6);
-    transition: transform var(--duration);
-    padding: var(--size-5);
+    padding-block: var(--size-fluid-4) calc(var(--size-fluid-4) + 1ex);
+    gap: var(--size-5);
+}
+
+main>ul>li:not(:last-of-type) {
+    padding-bottom: var(--size-5);
+    border-bottom: 1px solid var(--surface-4);
+}
+
+main>ul>li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-5);
 }
 
 ul {
@@ -155,26 +134,4 @@ footer {
     justify-items: center;
     margin-top: auto;
     padding-block: var(--size-5) calc(var(--size-5) + env(safe-area-inset-bottom));
-}
-
-article::-webkit-scrollbar {
-    background-color: transparent;
-    height: 12px;
-}
-
-article::-webkit-scrollbar-thumb {
-    background-color: transparent
-}
-
-article::-webkit-scrollbar:active,
-article:hover::-webkit-scrollbar {
-    background-color: var(--blue-5);
-    box-shadow: inset var(--surface-1) 0 0 0 4px
-}
-
-article::-webkit-scrollbar-thumb:active,
-article:hover::-webkit-scrollbar-thumb {
-    background-color: var(--blue-5);
-    border-left: 4px solid var(--surface-1);
-    border-right: 4px solid var(--surface-1);
 }

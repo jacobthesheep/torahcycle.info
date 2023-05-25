@@ -14,16 +14,13 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/svelte": "^2.2.0",
 		"@astrojs/vercel": "^3.4.0",
 		"@fontsource-variable/comfortaa": "^5.0.0",
 		"@fontsource-variable/rubik": "^5.0.1",
 		"@hebcal/core": "^4.0.3",
 		"@hebcal/leyning": "^7.4.1",
 		"astro": "^2.5.0",
-		"nanostores": "^0.8.1",
 		"open-props": "^1.5.8",
-		"svelte": "^3.54.0",
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {

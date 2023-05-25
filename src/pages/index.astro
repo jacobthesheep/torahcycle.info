@@ -1,52 +1,71 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
-import { HebrewCalendar, HDate, Event } from "@hebcal/core";
+import { HebrewCalendar, HDate, Location, Event, parshiot } from "@hebcal/core";
 import {
     getLeyningOnDate,
     getLeyningForParshaHaShavua,
     getLeyningForParsha,
+    formatAliyahShort,
+    getLeyningForHoliday,
 } from "@hebcal/leyning";
+
 const props = {
     title: "",
     description: "",
     image: "home",
 };
 
-function getSheminiAtzeretDate(year: number) {
-    const holidays = HebrewCalendar.getHolidaysForYear(year);
-    let sheminiAtzeretDate;
+function getStartAndEndOfWeek() {
+    const now = new Date();
+    const dayOfWeek = now.getDay();
 
-    for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
-        for (let holidayEvent of holidayEvents) {
-            if (holidayEvent.getDesc() === "Shmini Atzeret") {
-                sheminiAtzeretDate = holidayEvent.getDate().greg();
-                break;
-            }
-        }
-        if (sheminiAtzeretDate) break;
-    }
-    return sheminiAtzeretDate;
+    const startOfWeek = new Date(now);
+    startOfWeek.setDate(now.getDate() - dayOfWeek);
+
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+
+    return {
+        startOfWeek,
+        endOfWeek,
+    };
 }
 
-const currentYear = new Date().getFullYear();
-const currentHebrewYear = new HDate().getFullYear();
+const startOfWeek = new HDate(getStartAndEndOfWeek().startOfWeek);
+const endOfWeek = new HDate(getStartAndEndOfWeek().endOfWeek);
 
-let startDate = new HDate(getSheminiAtzeretDate(currentHebrewYear));
-let endDate = new HDate(getSheminiAtzeretDate(currentHebrewYear + 1));
+// function getSheminiAtzeretDate(year: number) {
+//     const holidays = HebrewCalendar.getHolidaysForYear(year);
+//     let sheminiAtzeretDate;
+
+//     for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
+//         for (let holidayEvent of holidayEvents) {
+//             if (holidayEvent.getDesc() === "Shmini Atzeret") {
+//                 sheminiAtzeretDate = holidayEvent.getDate().greg();
+//                 break;
+//             }
+//         }
+//         if (sheminiAtzeretDate) break;
+//     }
+//     return sheminiAtzeretDate;
+// }
 
 interface ReadingData {
     date: string;
+    dayOfWeek: string;
     dateTime: string;
-    portion: string | undefined;
-    holiday: string | undefined;
+    name: string;
     readingSummary: string;
-    haftara: string;
+    haftara?: string;
 }
 
 const readingsData: ReadingData[] = [];
 
 function handleReading(reading: any, date: HDate) {
+     if (reading.hasOwnProperty('weekday')) {
+        return;
+    }
     const dateObj = date.greg();
     const formattedDate = dateObj.toISOString().split("T")[0];
 
@@ -60,6 +79,9 @@ function handleReading(reading: any, date: HDate) {
         monthDayOptions
     );
 
+    const localDate = dateObj.toLocaleDateString();
+    const dayOfWeek = dateObj.toLocaleString("en-US", { weekday: "short" });
+
     const portion =
         reading.parsha && reading.parsha.length > 1
             ? reading.parsha.join("-")
@@ -71,19 +93,24 @@ function handleReading(reading: any, date: HDate) {
     holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
 
     readingsData.push({
-        date: otherDateFormatted,
+        date: localDate,
+        dayOfWeek: dayOfWeek,
         dateTime: formattedDate,
-        portion: portion,
-        holiday: holiday,
+        name: reading.parsha || reading.name.en,
         readingSummary: reading.summary,
         haftara: reading.haftara,
     });
 }
 
-for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
-    if (date.getDay() === 6) {
+for (
+    let date = startOfWeek;
+    date.deltaDays(endOfWeek) <= 0;
+    date = date.next()
+) {
+    let holidays = HebrewCalendar.getHolidaysOnDate(date);
+    const isHoliday = holidays && holidays.length > 0;
+    if (date.getDay() === 6 || isHoliday) {
         const readings = getLeyningOnDate(date, false);
-
         if (Array.isArray(readings)) {
             // Loop through each Leyning object and handle it
             for (const reading of readings) {
@@ -96,90 +123,108 @@ for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
     }
 }
 
-let currentWeekIndex: number;
-const today = new Date();
+const options = {
+    start: startOfWeek,
+    end: endOfWeek,
+    candlelighting: true,
+    location: Location.lookup("San Diego"),
+    omer: true,
+    sedrot: true,
+};
 
-for (let i = 0; i < readingsData.length; i++) {
-    if (new Date(readingsData[i].dateTime) > today) {
-        currentWeekIndex = i; // Get the previous week's reading if the current date has passed
-        break;
-    }
+const events = HebrewCalendar.calendar(options);
+
+let eventNames: string[] = [];
+
+for (let event of events) {
+    // Get the name of the constructor function (which should match the class name)
+    let eventType = event.constructor.name;
+
+    // Add the event name to the array.
+    eventNames.push(eventType);
 }
 
-// console.log(readingsData);
+// Convert the array to a Set and back to an array to remove duplicates
+eventNames = [...new Set(eventNames)];
 
-// const parashat = 'Mishpatim';
-// const events = HebrewCalendar.calendar({sedrot: true, noHolidays: true});
-// const ev = events.find((ev) => ev.getDesc() == `Parashat ${parashat}`);
-// const specialReading = getLeyningForParshaHaShavua(ev, false);
-// const reading = getLeyningForParsha(parashat);
-// console.log(`${ev.getDesc()}: ${specialReading.summary}`);
-// console.log(reading.summary);
+let eventArray = [];
+
+for (const ev of events) {
+    const hd = ev.getDate();
+    const date = hd.greg();
+    const dateString = date.toLocaleDateString();
+    const dayOfWeek = date.toLocaleString("en-US", { weekday: "short" });
+
+    // Check if there's already an object for this date
+    let dateObj = eventArray.find(
+        (
+            obj
+        ): obj is {
+            Date: string;
+            DayOfWeek: string;
+            Events: Array<{ Event: string }>;
+        } => obj.Date === dateString
+    );
+
+    if (!dateObj) {
+        // If there's no object for this date, create one
+        dateObj = {
+            Date: dateString,
+            DayOfWeek: dayOfWeek,
+            Events: [],
+        };
+        eventArray.push(dateObj);
+    }
+
+    // Add the current event to the date object
+    dateObj.Events.push({
+        Event: ev.render("en"),
+    });
+}
+
+let combinedData = eventArray.map(eventObj => {
+    const readingObj = readingsData.find(readingObj => readingObj.date === eventObj.Date);
+    return {
+        ...eventObj,
+        readingData: readingObj
+    }
+});
 ---
 
 <Layout {...props}>
     <main>
-        <h1>
-            <time datetime={`${currentYear}`}>{currentYear}</time> Weekly Scripture
-            Reading
-        </h1>
-        <article>
-            <ul role="list">
-                {
-                    readingsData.map((reading, index) => (
-                        <li
-                            id={
-                                index == currentWeekIndex
-                                    ? `currentWeek`
-                                    : `week${index}`
-                            }
-                        >
-                            <span>
-                                {index == currentWeekIndex ? (
-                                    <span>This week's portion</span>
-                                ) : (
-                                    <time datetime={`${reading.dateTime}`}>
-                                        {reading.date}
-                                    </time>
-                                )}
-                            </span>
+        <ul>
+  {combinedData.map(({ DayOfWeek, Events, readingData }) => (
+    <li>
+      <span>{DayOfWeek}</span>
+      <ul>
+        {Events.map(({ Event }) => (
+          <li>{Event}</li>
+        ))}
+      </ul>
+      {readingData && (
+        <ul class="fa-ul">
 
-                            <div>
-                                {reading.portion ? (
-                                    <h3>Parashat {reading.portion}</h3>
-                                ) : (
-                                    <h3>{reading.holiday}</h3>
-                                )}
-                            </div>
+          <li>
+            <span class="fa-li">
+              <i class="fa-solid fa-scroll-torah" />
+            </span>
+            Torah: {readingData.readingSummary}
+          </li>
 
-                            <ul class="fa-ul">
-                                <li>
-                                    <span class="fa-li">
-                                        <i class="fa-solid fa-scroll-torah" />
-                                    </span>
-                                    Torah: {reading.readingSummary}
-                                </li>
-                                <li>
-                                    <span class="fa-li">
-                                        <i class="fa-solid fa-book-tanakh" />
-                                    </span>
-                                    Haftara: {reading.haftara}
-                                </li>
-                            </ul>
-                        </li>
-                    ))
-                }
-            </ul>
-        </article>
+          {readingData.haftara && (
+            <li>
+              <span class="fa-li">
+                <i class="fa-solid fa-book-tanakh" />
+              </span>
+              <p>Haftara: {readingData.haftara}</p>
+            </li>
+          )}
+        </ul>
+      )}
+    </li>
+  ))}
+</ul>
+
     </main>
 </Layout>
-
-<script>
-    window.onload = function () {
-        const elem = document.getElementById("currentWeek");
-        if (elem) {
-            // Check if the element exists before calling scrollIntoView
-            elem.scrollIntoView();
-        }
-    };
-</script>
