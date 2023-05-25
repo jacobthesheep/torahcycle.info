@@ -4,7 +4,7 @@ View the torah reading cycle in a simple yet elegant way.
 
 ## Tech Stack
 
-- **Meta Framework**: [Astro](https://astro.build/) and [Svelte](https://svelte.dev/) 
+- **Meta Framework**: [Astro](https://astro.build/)
 - **Javascript Flavor**: [Typescript](https://typescriptlang.org/)
 - **Formatter / Linter**: [Rome](https://rome.tools/)
 - **Styling**: [Open Props](https://open-props.style/)
