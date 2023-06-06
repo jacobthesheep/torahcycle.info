@@ -1,14 +1,9 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
-import Link from "../components/Link.astro";
-import { HebrewCalendar, HDate, Location, Event, parshiot } from "@hebcal/core";
-import {
-    getLeyningOnDate,
-    getLeyningForParshaHaShavua,
-    getLeyningForParsha,
-    formatAliyahShort,
-    getLeyningForHoliday,
-} from "@hebcal/leyning";
+import { HebrewCalendar, HDate, Location, Event } from "@hebcal/core";
+import { getLeyningOnDate } from "@hebcal/leyning";
+import {getTriennialForParshaHaShavua} from '@hebcal/triennial';
+import AstroGreet from '../components/AstroGreet.astro';
 
 const props = {
     title: "",
@@ -32,13 +27,10 @@ function getSheminiAtzeretDate(year: number) {
     return sheminiAtzeretDate;
 }
 
-const currentYear = new Date().getFullYear();
 const currentHebrewYear = new HDate().getFullYear();
 
 let startDate = new HDate(getSheminiAtzeretDate(currentHebrewYear));
 let endDate = new HDate(getSheminiAtzeretDate(currentHebrewYear + 1));
-
-
 
 function getStartAndEndOfWeek() {
     const now = new Date();
@@ -59,110 +51,28 @@ function getStartAndEndOfWeek() {
 const startOfWeek = new HDate(getStartAndEndOfWeek().startOfWeek);
 const endOfWeek = new HDate(getStartAndEndOfWeek().endOfWeek);
 
-
 interface ReadingData {
     date: string;
-    dayOfWeek: string;
-    dateTime: string;
     name: string;
     readingSummary: string;
     haftara?: string;
 }
 
 const currentReadingsData: ReadingData[] = [];
-const yearlyReadingsData: ReadingData[] = [];
-
-for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
-    if (date.getDay() === 6) {
-        const yearlyReadings = getLeyningOnDate(date, false);
-
-        if (Array.isArray(yearlyReadings)) {
-            // Loop through each Leyning object and handle it
-            for (const reading of yearlyReadings) {
-                handleYearlyReading(reading, date);
-            }
-        } else {
-            // We have a single Leyning object, so handle it
-            handleYearlyReading(yearlyReadings, date);
-        }
-    }
-}
-
-function handleYearlyReading(reading: any, date: HDate) {
-     if (reading.hasOwnProperty('weekday')) {
-        return;
-    }
-    const dateObj = date.greg();
-    const formattedDate = dateObj.toISOString().split("T")[0];
-
-    const monthDayOptions: Intl.DateTimeFormatOptions = {
-        month: "long",
-        day: "numeric",
-    };
-
-    const otherDateFormatted = dateObj.toLocaleDateString(
-        undefined,
-        monthDayOptions
-    );
-
-    const localDate = dateObj.toLocaleDateString();
-    const dayOfWeek = dateObj.toLocaleString("en-US", { weekday: "short" });
-
-    const portion =
-        reading.parsha && reading.parsha.length > 1
-            ? reading.parsha.join("-")
-            : reading.parsha
-            ? reading.parsha[0]
-            : undefined;
-
-    let holiday = reading.name.en;
-    holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
-
-    yearlyReadingsData.push({
-        date: localDate,
-        dayOfWeek: dayOfWeek,
-        dateTime: formattedDate,
-        name: reading.parsha || reading.name.en,
-        readingSummary: reading.summary,
-        haftara: reading.haftara,
-    });
-}
-
 
 function handleReading(reading: any, date: HDate) {
      if (reading.hasOwnProperty('weekday')) {
         return;
     }
     const dateObj = date.greg();
-    const formattedDate = dateObj.toISOString().split("T")[0];
-
-    const monthDayOptions: Intl.DateTimeFormatOptions = {
-        month: "long",
-        day: "numeric",
-    };
-
-    const otherDateFormatted = dateObj.toLocaleDateString(
-        undefined,
-        monthDayOptions
-    );
 
     const localDate = dateObj.toLocaleDateString();
-    const dayOfWeek = dateObj.toLocaleString("en-US", { weekday: "short" });
-
-    const portion =
-        reading.parsha && reading.parsha.length > 1
-            ? reading.parsha.join("-")
-            : reading.parsha
-            ? reading.parsha[0]
-            : undefined;
 
     let holiday = reading.name.en;
     holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
 
     currentReadingsData.push({
         date: localDate,
-        dayOfWeek: dayOfWeek,
-        dateTime: formattedDate,
         name: reading.parsha || reading.name.en,
         readingSummary: reading.summary,
         haftara: reading.haftara,
@@ -190,11 +100,85 @@ for (
     }
 }
 
+    const citiesByCountry = {
+        USA: [
+            "Atlanta",
+            "Austin",
+            "Baltimore",
+            "Boston",
+            "Buffalo",
+            "Chicago",
+            "Cincinnati",
+            "Cleveland",
+            "Dallas",
+            "Denver",
+            "Detroit",
+            "Houston",
+            "Las Vegas",
+            "Los Angeles",
+            "Miami",
+            "Minneapolis",
+            "New York",
+            "Omaha",
+            "Pawtucket",
+            "Philadelphia",
+            "Phoenix",
+            "Pittsburgh",
+            "Providence",
+            "Portland",
+            "Saint Louis",
+            "San Diego",
+            "San Francisco",
+            "Seattle",
+            "Washington DC",
+            "Worcester",
+        ],
+        Israel: [
+            "Ashdod",
+            "Beer Sheva",
+            "Eilat",
+            "Haifa",
+            "Jerusalem",
+            "Tel Aviv",
+            "Tiberias",
+            "Petach Tikvah",
+        ],
+        Iraq: ["Baghdad"],
+        Germany: ["Berlin"],
+        Colombia: ["Bogota"],
+        Hungary: ["Budapest"],
+        Argentina: ["Buenos Aires"],
+        Gibraltar: ["Gibraltar"],
+        Hawaii: ["Hawaii"],
+        Finland: ["Helsinki"],
+        "South Africa": ["Johannesburg"],
+        Ukraine: ["Kiev"],
+        Bolivia: ["La Paz"],
+        Zambia: ["Livingston"],
+        UK: ["London"],
+        France: ["Marseilles", "Paris"],
+        Australia: ["Melbourne", "Sydney"],
+        Mexico: ["Mexico City"],
+        Canada: ["Montreal", "Ottawa", "Toronto", "Vancouver"],
+        Russia: ["Moscow", "Saint Petersburg"],
+        Panama: ["Panama City"],
+        Brazil: ["Sao Paulo"],
+    };
+
+        const countries = Object.keys(citiesByCountry);
+        const cities = Object.values(citiesByCountry);
+        // create a variable array that contains all the cities in a string
+        const citiesString = cities.flat();
+        // console.log(citiesString);
+        let selectedCountry = countries[0];
+        const selectedCities = (citiesByCountry as {[key: string]: string[]})[selectedCountry] || [];
+        let selectedCity = selectedCities[0];
+
 const options = {
     start: startOfWeek,
     end: endOfWeek,
-    candlelighting: true,
-    location: Location.lookup("San Diego"),
+      candlelighting: true,
+    location: Location.lookup(selectedCity),
     omer: true,
     sedrot: true,
 };
@@ -203,35 +187,39 @@ const events = HebrewCalendar.calendar(options);
 
 let eventNames: string[] = [];
 
-for (let event of events) {
-    // Get the name of the constructor function (which should match the class name)
-    let eventType = event.constructor.name;
-
-    // Add the event name to the array.
+for (const ev of events) {
+    let eventType = ev.constructor.name;
     eventNames.push(eventType);
 }
 
-// Convert the array to a Set and back to an array to remove duplicates
 eventNames = [...new Set(eventNames)];
 
-let eventArray = [];
+interface EventDetails {
+    Event: string;
+    EventType: string;
+}
+
+interface EventType {
+    Date: string;
+    DayOfWeek: string;
+    Events: EventDetails[];
+}
+
+let eventArray: EventType[] = [];
 
 for (const ev of events) {
+      let eventType = ev.constructor.name;
     const hd = ev.getDate();
     const date = hd.greg();
     const dateString = date.toLocaleDateString();
     const dayOfWeek = date.toLocaleString("en-US", { weekday: "short" });
+// const triReading = getTriennialForParshaHaShavua(ev);
+
 
     // Check if there's already an object for this date
-    let dateObj = eventArray.find(
-        (
-            obj
-        ): obj is {
-            Date: string;
-            DayOfWeek: string;
-            Events: Array<{ Event: string }>;
-        } => obj.Date === dateString
-    );
+   let dateObj = eventArray.find(
+    (obj: any): obj is EventType => obj.Date === dateString
+);
 
     if (!dateObj) {
         // If there's no object for this date, create one
@@ -246,6 +234,7 @@ for (const ev of events) {
     // Add the current event to the date object
     dateObj.Events.push({
         Event: ev.render("en"),
+        EventType: eventType,
     });
 }
 
@@ -256,22 +245,77 @@ let combinedData = eventArray.map(eventObj => {
         readingData: readingObj
     }
 });
+
+let cityTimes: Array<{ city: string, candlelighting?: string, havdalah?: string }> = [];
+
+for (let city of citiesString) {
+  let options = {
+    start: startOfWeek,
+    end: endOfWeek,
+    candlelighting: true,
+    location: Location.lookup(city),
+  };
+
+  let candleLightingEvents = HebrewCalendar.calendar(options);
+
+ let cityEventTimes: { city: string, candlelighting?: string, havdalah?: string } = { city };
+  for (let event of candleLightingEvents) {
+    if (event.constructor.name === 'CandleLightingEvent') {
+      cityEventTimes.candlelighting = event.render('en');
+    } else if (event.constructor.name === 'HavdalahEvent') {
+      cityEventTimes.havdalah = event.render('en');
+    }
+  }
+  cityTimes.push(cityEventTimes);
+}
+
 ---
 
 <Layout {...props}>
     <main>
+
+        <!-- <AstroGreet />
+
+
+<AstroGreet message="Lovely day to build components!" />
+<AstroGreet message="Glad you made it! 👋" /> -->
+
+
+<div>
+    <label for="country-select">Choose a country:</label>
+    <select name="country" id="country-select" data-selected-country={selectedCountry}>
+        {countries.map((country) => (
+            <option value={country}>{country}</option>
+        ))}
+    </select>
+
+    <label for="city-select">Choose a city:</label>
+    <select name="city" id="city-select" data-cities={JSON.stringify(citiesByCountry)}>
+       {selectedCities.map((city) => (
+            <option value={city}>{city}</option>
+        ))}
+    </select>
+</div>
+
+
+
         <ul>
   {combinedData.map(({ DayOfWeek, Events, readingData }) => (
     <li>
       <span>{DayOfWeek}</span>
-      <ul>
-        {Events.map(({ Event }) => (
-          <li>{Event}</li>
-        ))}
-      </ul>
+
+      <ul data-citytimes={JSON.stringify(cityTimes)}>
+  {Events.map(({ Event, EventType }) => (
+    // Find corresponding city event times
+
+       <li data-lighting={EventType === 'CandleLightingEvent' || EventType === 'HavdalahEvent'}>
+      {Event}
+    </li>
+  ))}
+</ul>
+
       {readingData && (
         <ul class="fa-ul">
-
           <li>
             <span class="fa-li">
               <i class="fa-solid fa-scroll-torah" />
@@ -295,3 +339,88 @@ let combinedData = eventArray.map(eventObj => {
 
     </main>
 </Layout>
+
+<script>
+let countrySelect = document.getElementById('country-select') as HTMLInputElement;
+let citySelect = document.getElementById('city-select') as HTMLInputElement;
+
+
+
+let cityTimesElements = document.querySelectorAll('[data-citytimes]');
+let cityTimesElement = document.querySelector('[data-citytimes]');
+let lightingElements = document.querySelectorAll('[data-lighting]');
+
+
+
+if (countrySelect && citySelect) {
+    countrySelect.addEventListener('change', function() {
+
+
+    const selectedCountry = countrySelect.value;
+    let cities;
+if (citySelect.dataset.cities !== undefined) {
+    cities = JSON.parse(citySelect.dataset.cities);
+}
+
+    const citiesInSelectedCountry = cities[selectedCountry] || [];
+
+
+    // Clear the city select
+        while (citySelect.firstChild) {
+            citySelect.removeChild(citySelect.firstChild);
+        }
+
+        // Populate the city select with the cities in the selected country
+        for (let city of citiesInSelectedCountry) {
+            let option = document.createElement('option');
+            option.text = city;
+            option.value = city;
+            citySelect.appendChild(option);
+        }
+
+         let selectedCity = citySelect.value;
+let selectedCityTimes;
+
+// Parse cityTimes from the data attribute
+const parsedCityTimes = JSON.parse(cityTimesElement.dataset.citytimes);
+
+for (let cityTime of parsedCityTimes) {
+  // Check if the cityTime is for the selected city
+  if (cityTime.city === selectedCity) {
+    selectedCityTimes = cityTime;
+    break;
+  }
+}
+lightingElements[0].innerHTML = selectedCityTimes.candlelighting;
+lightingElements[1].innerHTML = selectedCityTimes.havdalah;
+
+    });
+} else {
+    console.error('Elements not found');
+}
+
+
+
+if (citySelect) {
+    citySelect.addEventListener('change', function() {
+        let selectedCity = citySelect.value;
+        let selectedCityTimes;
+
+// Parse cityTimes from the data attribute
+const parsedCityTimes = JSON.parse(cityTimesElement.dataset.citytimes);
+
+for (let cityTime of parsedCityTimes) {
+  // Check if the cityTime is for the selected city
+  if (cityTime.city === selectedCity) {
+    selectedCityTimes = cityTime;
+    break;
+  }
+}
+
+lightingElements[0].innerHTML = selectedCityTimes.candlelighting;
+lightingElements[1].innerHTML = selectedCityTimes.havdalah;
+
+    });
+}
+
+</script>
