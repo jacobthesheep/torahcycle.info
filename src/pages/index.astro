@@ -3,33 +3,13 @@ import Layout from "../layouts/BaseLayout.astro";
 import { HebrewCalendar, HDate, Location, Event } from "@hebcal/core";
 import { getLeyningOnDate } from "@hebcal/leyning";
 import {getTriennialForParshaHaShavua} from '@hebcal/triennial';
+import Link from "../components/Link.astro";
 
 const props = {
     title: "",
     description: "",
     image: "home",
 };
-
-function getSheminiAtzeretDate(year: number) {
-    const holidays = HebrewCalendar.getHolidaysForYear(year);
-    let sheminiAtzeretDate;
-
-    for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
-        for (let holidayEvent of holidayEvents) {
-            if (holidayEvent.getDesc() === "Shmini Atzeret") {
-                sheminiAtzeretDate = holidayEvent.getDate().greg();
-                break;
-            }
-        }
-        if (sheminiAtzeretDate) break;
-    }
-    return sheminiAtzeretDate;
-}
-
-const currentHebrewYear = new HDate().getFullYear();
-
-let startDate = new HDate(getSheminiAtzeretDate(currentHebrewYear));
-let endDate = new HDate(getSheminiAtzeretDate(currentHebrewYear + 1));
 
 function getStartAndEndOfWeek() {
     const now = new Date();
@@ -322,6 +302,9 @@ for (let city of citiesString) {
             </li>
           )}
         </ul>
+        <span> view this year's
+            <Link href="/torah-readings">torah readings</Link>
+        </span>
       )}
     </li>
   ))}

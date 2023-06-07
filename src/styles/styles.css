@@ -48,7 +48,6 @@ header span a {
 header div {
     display: flex;
     align-items: center;
-    width: 100%;
 }
 
 svg {
@@ -112,6 +111,14 @@ main>ul>li {
     display: flex;
     flex-direction: column;
     gap: var(--size-5);
+}
+
+main div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: var(--size-5);
 }
 
 ul {
