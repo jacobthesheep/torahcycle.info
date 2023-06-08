@@ -4,4 +4,11 @@ interface PageMeta {
 	image?: string;
 }
 
-declare module "hebrew-date";
+interface ReadingData {
+    date: string;
+    dateTime: string;
+    DayOfWeek?: string;
+    name: string;
+    readingSummary: string;
+    haftara?: string;
+}

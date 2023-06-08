@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
+import { readingsData, processTorahReadings, resetReadingsData } from "./data";
 import { HebrewCalendar, HDate, Event } from "@hebcal/core";
-import { getLeyningOnDate } from "@hebcal/leyning";
 
 const props = {
     title: "",
@@ -32,51 +32,8 @@ const currentHebrewYear = new HDate().getFullYear();
 let startDate = new HDate(getSheminiAtzeretDate(currentHebrewYear));
 let endDate = new HDate(getSheminiAtzeretDate(currentHebrewYear + 1));
 
-interface ReadingData {
-    date: string;
-     dateTime: string;
-      DayOfWeek: string;
-    name: string;
-    readingSummary: string;
-    haftara?: string;
-}
-
-const readingsData: ReadingData[] = [];
-
-function handleReading(reading: any, date: HDate) {
-  const dateObj = date.greg();
-    const formattedDate = dateObj.toISOString().split("T")[0];
-
-    const localDate = dateObj.toLocaleDateString();
-       const dayOfWeek = dateObj.toLocaleString("en-US", { weekday: "short" });
-
-    let holiday = reading.name.en;
-    holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
-    readingsData.push({
-        date: localDate,
-           dateTime: formattedDate,
-            DayOfWeek: dayOfWeek,
-        name: reading.parsha || reading.name.en,
-        readingSummary: reading.summary,
-        haftara: reading.haftara,
-    });
-}
-
-for (let date = startDate; date.deltaDays(endDate) <= 0; date = date.next()) {
-    if (date.getDay() === 6) {
-        const readings = getLeyningOnDate(date, false);
-
-        if (Array.isArray(readings)) {
-            // Loop through each Leyning object and handle it
-            for (const reading of readings) {
-                handleReading(reading, date);
-            }
-        } else {
-            // We have a single Leyning object, so handle it
-            handleReading(readings, date);
-        }
-    }
-}
+resetReadingsData();
+processTorahReadings(startDate, endDate);
 
 let currentWeekIndex: number;
 const today = new Date();
@@ -92,63 +49,25 @@ for (let i = 0; i < readingsData.length; i++) {
 <Layout {...props}>
     <style>
         article {
-            --outline-offset: 2px;
-            --scrollbar-offset: 4px;
-            display: grid;
-            grid-column: full;
-            grid-template-columns: inherit;
-            margin-block-end: calc(var(--size-fluid-1) * -1 - 1ex);
-            overflow-y: hidden;
-            max-width: 100%;
-            overflow-x: scroll;
-            overscroll-behavior-x: contain;
-            scroll-snap-type: x mandatory;
-        }
-
-        article ul[role="list"] {
-            display: flex;
-            gap: clamp(var(--page-padding) / 2, 4vw, var(--page-padding));
-            padding-block: var(--size-fluid-4) calc(var(--size-fluid-4) + 1ex);
-            position: relative;
-            width: 100%;
-        }
-
-        article ul[role="list"] > li {
-            --duration: 250ms;
-            flex: 1 0 auto;
-            position: relative;
-            scroll-snap-align: center;
-            inline-size: min(300px + 5vw, 100%);
-            border: 2px solid var(--surface-3);
+            overflow-y: scroll;
+            overscroll-behavior-y: contain;
+            scroll-snap-type: y mandatory;
+            border: 2px solid var(--surface-4);
             border-radius: var(--radius-3);
+        }
+
+        ul[role="list"] {
+            width: 100%;
+            height: 15em;
+        }
+
+        .slide {
+            scroll-snap-align: start;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
-            scroll-margin-top: var(--size-fluid-6);
-            transition: transform var(--duration);
-            padding: var(--size-5);
-        }
-        article::-webkit-scrollbar {
-            background-color: transparent;
-            height: 12px;
-        }
-
-        article::-webkit-scrollbar-thumb {
-            background-color: transparent;
-        }
-
-        article::-webkit-scrollbar:active,
-        article:hover::-webkit-scrollbar {
-            background-color: var(--blue-5);
-            box-shadow: inset var(--surface-1) 0 0 0 4px;
-        }
-
-        article::-webkit-scrollbar-thumb:active,
-        article:hover::-webkit-scrollbar-thumb {
-            background-color: var(--blue-5);
-            border-left: 4px solid var(--surface-1);
-            border-right: 4px solid var(--surface-1);
+            justify-content: center;
         }
     </style>
     <main>
@@ -161,21 +80,24 @@ for (let i = 0; i < readingsData.length; i++) {
                 {
                     readingsData.map((reading, index) => (
                         <li
+                            class="slide"
                             id={
                                 index == currentWeekIndex
                                     ? `currentWeek`
                                     : `week${index}`
                             }
                         >
-                            <span>
-                                {index == currentWeekIndex ? (
-                                    <span>This week's portion</span>
-                                ) : (
-                                    <time datetime={`${reading.dateTime}`}>
-                                        {reading.date}
-                                    </time>
-                                )}
-                            </span>
+                            {index == currentWeekIndex - 1 ? (
+                                <span>Last week's portion</span>
+                            ) : index == currentWeekIndex ? (
+                                <span>This week's portion</span>
+                            ) : index == currentWeekIndex + 1 ? (
+                                <span>Next week's portion</span>
+                            ) : (
+                                <time datetime={`${reading.dateTime}`}>
+                                    {reading.date}
+                                </time>
+                            )}
 
                             <div>
                                 <h2>{reading.name}</h2>

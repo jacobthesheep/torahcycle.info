@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
-import { HebrewCalendar, HDate, Location, Event } from "@hebcal/core";
-import { getLeyningOnDate } from "@hebcal/leyning";
-import {getTriennialForParshaHaShavua} from '@hebcal/triennial';
 import Link from "../components/Link.astro";
+import { readingsData, processAllReadings, resetReadingsData } from './data';
+import { HebrewCalendar, HDate, Location, Event } from "@hebcal/core";
+import {getTriennialForParshaHaShavua} from '@hebcal/triennial';
 
 const props = {
     title: "",
@@ -30,54 +30,8 @@ function getStartAndEndOfWeek() {
 const startOfWeek = new HDate(getStartAndEndOfWeek().startOfWeek);
 const endOfWeek = new HDate(getStartAndEndOfWeek().endOfWeek);
 
-interface ReadingData {
-    date: string;
-    name: string;
-    readingSummary: string;
-    haftara?: string;
-}
-
-const currentReadingsData: ReadingData[] = [];
-
-function handleReading(reading: any, date: HDate) {
-     if (reading.hasOwnProperty('weekday')) {
-        return;
-    }
-    const dateObj = date.greg();
-
-    const localDate = dateObj.toLocaleDateString();
-
-    let holiday = reading.name.en;
-    holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
-
-    currentReadingsData.push({
-        date: localDate,
-        name: reading.parsha || reading.name.en,
-        readingSummary: reading.summary,
-        haftara: reading.haftara,
-    });
-}
-
-for (
-    let date = startOfWeek;
-    date.deltaDays(endOfWeek) <= 0;
-    date = date.next()
-) {
-    let holidays = HebrewCalendar.getHolidaysOnDate(date);
-    const isHoliday = holidays && holidays.length > 0;
-    if (date.getDay() === 6 || isHoliday) {
-        const readings = getLeyningOnDate(date, false);
-        if (Array.isArray(readings)) {
-            // Loop through each Leyning object and handle it
-            for (const reading of readings) {
-                handleReading(reading, date);
-            }
-        } else {
-            // We have a single Leyning object, so handle it
-            handleReading(readings, date);
-        }
-    }
-}
+resetReadingsData();
+processAllReadings(startOfWeek, endOfWeek);
 
     const citiesByCountry = {
         USA: [
@@ -218,7 +172,7 @@ for (const ev of events) {
 }
 
 let combinedData = eventArray.map(eventObj => {
-    const readingObj = currentReadingsData.find(readingObj => readingObj.date === eventObj.Date);
+    const readingObj = readingsData.find(readingObj => readingObj.date === eventObj.Date);
     return {
         ...eventObj,
         readingData: readingObj
@@ -247,7 +201,6 @@ for (let city of citiesString) {
   }
   cityTimes.push(cityEventTimes);
 }
-
 ---
 
 <Layout {...props}>
