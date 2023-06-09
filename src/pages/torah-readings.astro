@@ -41,6 +41,7 @@ const today = new Date();
 for (let i = 0; i < readingsData.length; i++) {
   if (new Date(readingsData[i].dateTime) > today) {
     currentWeekIndex = i;
+    break;
   }
 }
 ---
