@@ -5,25 +5,25 @@ import { readingsData, processTorahReadings, resetReadingsData } from "./data";
 import { HebrewCalendar, HDate, Event } from "@hebcal/core";
 
 const props = {
-    title: "",
-    description: "",
-    image: "home",
+  title: "",
+  description: "",
+  image: "home",
 };
 
 function getSheminiAtzeretDate(year: number) {
-    const holidays = HebrewCalendar.getHolidaysForYear(year);
-    let sheminiAtzeretDate;
+  const holidays = HebrewCalendar.getHolidaysForYear(year);
+  let sheminiAtzeretDate;
 
-    for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
-        for (let holidayEvent of holidayEvents) {
-            if (holidayEvent.getDesc() === "Shmini Atzeret") {
-                sheminiAtzeretDate = holidayEvent.getDate().greg();
-                break;
-            }
-        }
-        if (sheminiAtzeretDate) break;
+  for (let [hebrewDate, holidayEvents] of Object.entries(holidays)) {
+    for (let holidayEvent of holidayEvents) {
+      if (holidayEvent.getDesc() === "Shmini Atzeret") {
+        sheminiAtzeretDate = holidayEvent.getDate().greg();
+        break;
+      }
     }
-    return sheminiAtzeretDate;
+    if (sheminiAtzeretDate) break;
+  }
+  return sheminiAtzeretDate;
 }
 
 const currentYear = new Date().getFullYear();
@@ -39,96 +39,86 @@ let currentWeekIndex: number;
 const today = new Date();
 
 for (let i = 0; i < readingsData.length; i++) {
-    if (new Date(readingsData[i].dateTime) > today) {
-        currentWeekIndex = i; // Get the previous week's reading if the current date has passed
-        break;
-    }
+  if (new Date(readingsData[i].dateTime) > today) {
+    currentWeekIndex = i;
+  }
 }
 ---
 
 <Layout {...props}>
-    <style>
-        article {
-            overflow-y: scroll;
-            overscroll-behavior-y: contain;
-            scroll-snap-type: y mandatory;
-            border: 2px solid var(--surface-4);
-            border-radius: var(--radius-3);
-            width: var(--size-fluid-10);
+  <style>
+    article {
+      overflow-y: scroll;
+      overscroll-behavior-y: contain;
+      scroll-snap-type: y mandatory;
+      border: 2px solid var(--surface-4);
+      border-radius: var(--radius-3);
+      width: var(--size-fluid-10);
+    }
+
+    ul[role="list"] {
+      height: 15em;
+    }
+
+    ul[role="list"] > li {
+      scroll-snap-align: start;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+  <main>
+    <h1>
+      <time datetime={`${currentYear}`}>{currentYear}</time> Weekly Scripture Reading
+    </h1>
+    <article>
+      <ul role="list">
+        {
+          readingsData.map((reading, index) => (
+            <li id={index == currentWeekIndex ? `currentWeek` : `week${index}`}>
+              {index == currentWeekIndex - 1 ? (
+                <span>Last week's portion</span>
+              ) : index == currentWeekIndex ? (
+                <span>This week's portion</span>
+              ) : index == currentWeekIndex + 1 ? (
+                <span>Next week's portion</span>
+              ) : (
+                <time datetime={`${reading.dateTime}`}>{reading.date}</time>
+              )}
+
+              <div>
+                <h2>{reading.name}</h2>
+              </div>
+
+              <ul class="fa-ul">
+                <li>
+                  <span class="fa-li">
+                    <i class="fa-solid fa-scroll-torah" />
+                  </span>
+                  Torah: {reading.readingSummary}
+                </li>
+                <li>
+                  <span class="fa-li">
+                    <i class="fa-solid fa-book-tanakh" />
+                  </span>
+                  Haftara: {reading.haftara}
+                </li>
+              </ul>
+            </li>
+          ))
         }
-
-        ul[role="list"] {
-            height: 15em;
-        }
-
-        ul[role="list"] > li {
-            scroll-snap-align: start;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    </style>
-    <main>
-        <h1>
-            <time datetime={`${currentYear}`}>{currentYear}</time> Weekly Scripture
-            Reading
-        </h1>
-        <article>
-            <ul role="list">
-                {
-                    readingsData.map((reading, index) => (
-                        <li
-                            id={
-                                index == currentWeekIndex
-                                    ? `currentWeek`
-                                    : `week${index}`
-                            }
-                        >
-                            {index == currentWeekIndex - 1 ? (
-                                <span>Last week's portion</span>
-                            ) : index == currentWeekIndex ? (
-                                <span>This week's portion</span>
-                            ) : index == currentWeekIndex + 1 ? (
-                                <span>Next week's portion</span>
-                            ) : (
-                                <time datetime={`${reading.dateTime}`}>
-                                    {reading.date}
-                                </time>
-                            )}
-
-                            <div>
-                                <h2>{reading.name}</h2>
-                            </div>
-
-                            <ul class="fa-ul">
-                                <li>
-                                    <span class="fa-li">
-                                        <i class="fa-solid fa-scroll-torah" />
-                                    </span>
-                                    Torah: {reading.readingSummary}
-                                </li>
-                                <li>
-                                    <span class="fa-li">
-                                        <i class="fa-solid fa-book-tanakh" />
-                                    </span>
-                                    Haftara: {reading.haftara}
-                                </li>
-                            </ul>
-                        </li>
-                    ))
-                }
-            </ul>
-        </article>
-    </main>
+      </ul>
+    </article>
+  </main>
 </Layout>
 
 <script>
-    window.onload = function () {
-        const elem = document.getElementById("currentWeek");
-        if (elem) {
-            // Check if the element exists before calling scrollIntoView
-            elem.scrollIntoView();
-        }
-    };
+  window.onload = function () {
+    const elem = document.getElementById("currentWeek");
+    if (elem) {
+      // Check if the element exists before calling scrollIntoView
+      elem.scrollIntoView();
+    }
+  };
 </script>

@@ -28,6 +28,8 @@
 		"autoprefixer": "^10.4.14",
 		"postcss-jit-props": "^1.0.13",
 		"postcss-preset-env": "^8.4.2",
-		"rome": "12.0.0"
+		"prettier": "^2.8.8",
+		"prettier-plugin-astro": "^0.10.0",
+		"rome": "^12.1.3"
 	}
 }

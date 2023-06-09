@@ -14,56 +14,54 @@ let thisYear = `${new Date().getFullYear()}`;
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1,viewport-fit=cover"
-        />
-        <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml" /> -->
-        <!-- <link rel="icon" href="/favicon.ico" sizes="any" /> -->
-        <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.webp" /> -->
-        <link rel="icon" href="https://fav.farm/📖" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{completeTitle}</title>
-        <meta name="author" content={author} />
-        <link rel="author" href={authorURL} />
-        <meta name="description" content={description} />
-        <meta name="color-scheme" content="dark light" />
-        <meta property="og:title" content={completeTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={Astro.url} />
-        <meta property="og:image" content={socialImageURL} />
-        <meta name="twitter:title" content={completeTitle} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={socialImageURL} />
-        <link href="https://github.com/jacobthesheep" rel="me" />
-        <link href="https://twitter.com/jacob_thesheep" rel="me" />
-        <link href="https://codepen.io/jacobthesheep" rel="me" />
-        <script
-            src="https://kit.fontawesome.com/3c45d20e42.js"
-            crossorigin="anonymous"
-        ></script>
-    </head>
-    <body>
-        <header>
-            <div>
-                <!--?xml version="1.0" standalone="no"?-->
-                <span><Link href="/">Torah Reading Cycle</Link> - site wip</span
-                >
-            </div>
-        </header>
-        <slot />
-        <footer>
-            <p>
-                <small>
-                    &copy;
-                    <time datetime={thisYear}>{thisYear}</time>
-                    built by <Link href={authorURL}>{author}</Link>
-                </small>
-            </p>
-        </footer>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml" /> -->
+    <!-- <link rel="icon" href="/favicon.ico" sizes="any" /> -->
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.webp" /> -->
+    <link rel="icon" href="https://fav.farm/📖" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{completeTitle}</title>
+    <meta name="author" content={author} />
+    <link rel="author" href={authorURL} />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="dark light" />
+    <meta property="og:title" content={completeTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta name="twitter:title" content={completeTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialImageURL} />
+    <link href="https://github.com/jacobthesheep" rel="me" />
+    <link href="https://twitter.com/jacob_thesheep" rel="me" />
+    <link href="https://codepen.io/jacobthesheep" rel="me" />
+    <script
+      src="https://kit.fontawesome.com/3c45d20e42.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <!--?xml version="1.0" standalone="no"?-->
+        <span><Link href="/">Torah Reading Cycle</Link> - site wip</span>
+      </div>
+    </header>
+    <slot />
+    <footer>
+      <p>
+        <small>
+          &copy;
+          <time datetime={thisYear}>{thisYear}</time>
+          built by <Link href={authorURL}>{author}</Link>
+        </small>
+      </p>
+    </footer>
+  </body>
 </html>
