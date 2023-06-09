@@ -78,20 +78,6 @@ main>*+* {
     margin-block-start: var(--size-fluid-5);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: var(--size-7);
-    padding: var(--size-3);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    white-space: nowrap;
-}
-
-span {
-    scroll-margin: var(--size-5);
-}
-
 main>ul {
     display: flex;
     flex-direction: column;
@@ -120,7 +106,7 @@ main div {
 
 ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0 var(--size-3);
 }
 
 footer {

@@ -54,16 +54,15 @@ for (let i = 0; i < readingsData.length; i++) {
             scroll-snap-type: y mandatory;
             border: 2px solid var(--surface-4);
             border-radius: var(--radius-3);
+            width: var(--size-fluid-10);
         }
 
         ul[role="list"] {
-            width: 100%;
             height: 15em;
         }
 
-        .slide {
+        ul[role="list"] > li {
             scroll-snap-align: start;
-            width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -80,7 +79,6 @@ for (let i = 0; i < readingsData.length; i++) {
                 {
                     readingsData.map((reading, index) => (
                         <li
-                            class="slide"
                             id={
                                 index == currentWeekIndex
                                     ? `currentWeek`
