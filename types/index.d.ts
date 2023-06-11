@@ -4,6 +4,13 @@ interface PageMeta {
 	image?: string;
 }
 
+interface AliyahData {
+    number: string;
+    description: string;
+    verseCount?: number;
+    reason?: string;
+}
+
 interface ReadingData {
     date: string;
     dateTime: string;
@@ -11,4 +18,5 @@ interface ReadingData {
     name: string;
     readingSummary: string;
     haftara?: string;
+    aliyot: AliyahData[];
 }

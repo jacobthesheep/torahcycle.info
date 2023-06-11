@@ -261,6 +261,18 @@ const cityTimes = generateCityTimes(
                     </span>
                     Torah: {readingData.readingSummary}
                   </li>
+                  <details>
+                    <summary>Aliyot Details</summary>
+                    <ul>
+                      {readingData.aliyot.map((aliyah) => (
+                        <li>
+                          {aliyah.number}: {aliyah.description} (
+                          {aliyah.verseCount ?? "N/A"} verses)
+                          {aliyah.reason && <div>Reason: {aliyah.reason}</div>}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
 
                   {readingData.haftara && (
                     <li>

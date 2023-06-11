@@ -122,4 +122,19 @@ for (let i = 0; i < readingsData.length; i++) {
       elem.scrollIntoView();
     }
   };
+  // Select all details elements
+const detailsElements = document.querySelectorAll('details');
+
+// Add event listener to each details element
+detailsElements.forEach((detailsElement) => {
+  detailsElement.addEventListener('click', () => {
+    // Close all other details elements
+    detailsElements.forEach((otherDetailsElement) => {
+      if (otherDetailsElement !== detailsElement) {
+        otherDetailsElement.removeAttribute('open');
+      }
+    });
+  });
+});
+
 </script>

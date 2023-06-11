@@ -1,5 +1,5 @@
 import { HebrewCalendar, HDate } from "@hebcal/core";
-import { getLeyningOnDate } from "@hebcal/leyning";
+import { getLeyningOnDate, formatAliyahWithBook, Aliyah } from "@hebcal/leyning";
 
 export const readingsData: ReadingData[] = [];
 
@@ -25,6 +25,29 @@ function handleReading(reading: any, date: HDate) {
     let holiday = reading.name.en;
     holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
 
+    const aliyot: AliyahData[] = [];
+
+  for (const [num, aliyah] of Object.entries(reading.fullkriyah)) {
+
+
+                    const number = num === 'M' ? 'maftir' : `aliyah ${num}`;
+                    let description = formatAliyahWithBook(aliyah as Aliyah);
+                    const verseCount = (aliyah as Aliyah).v;
+
+                    const aliyahData: AliyahData = {
+                        number,
+                        description,
+                        verseCount,
+                    };
+
+                    if (reading.reason && reading.reason[num]) {
+                        aliyahData.reason = reading.reason[num];
+                        description += ' | ' + reading.reason[num];
+                    }
+                    aliyot.push(aliyahData);
+                }
+
+
     readingsData.push({
         date: localDate,
         dateTime: formattedDate,
@@ -32,6 +55,7 @@ function handleReading(reading: any, date: HDate) {
         name: reading.portion || holiday,
         readingSummary: reading.summary,
         haftara: reading.haftara,
+        aliyot: aliyot
     });
 }
 
@@ -44,7 +68,9 @@ export function processAllReadings(start: HDate, end: HDate) {
         let holidays = HebrewCalendar.getHolidaysOnDate(date);
         const isHoliday = holidays && holidays.length > 0;
         if (date.getDay() === 6 || isHoliday) {
+
             const readings = getLeyningOnDate(date, false);
+
             if (Array.isArray(readings)) {
                 // Loop through each Leyning object and handle it
                 for (const reading of readings) {
@@ -60,8 +86,9 @@ export function processAllReadings(start: HDate, end: HDate) {
 
 export function processTorahReadings(start: HDate, end: HDate) {
    for (let date = start; date.deltaDays(end) <= 0; date = date.next()) {
-    if (date.getDay() === 6) {
-        const readings = getLeyningOnDate(date, false);
+       if (date.getDay() === 6) {
+
+           const readings = getLeyningOnDate(date, false);
 
         if (Array.isArray(readings)) {
             // Loop through each Leyning object and handle it
