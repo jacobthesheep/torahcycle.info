@@ -1,5 +1,4 @@
-import type { HDate } from "@hebcal/core";
-import { HebrewCalendar } from "@hebcal/core";
+import { HebrewCalendar, HDate } from "@hebcal/core";
 import { getLeyningOnDate } from "@hebcal/leyning";
 
 export const readingsData: ReadingData[] = [];
@@ -25,6 +24,7 @@ function handleReading(reading: any, date: HDate) {
 
     let holiday = reading.name.en;
     holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
+
     readingsData.push({
         date: localDate,
         dateTime: formattedDate,
