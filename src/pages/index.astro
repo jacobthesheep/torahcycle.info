@@ -106,26 +106,6 @@ const endOfWeek = new HDate(getStartAndEndOfWeek().endOfWeek);
 resetReadingsData();
 processAllReadings(startOfWeek, endOfWeek);
 
-const options = {
-  start: startOfWeek,
-  end: endOfWeek,
-  candlelighting: true,
-  location: Location.lookup(selectedCity),
-  omer: true,
-  sedrot: true,
-};
-
-const events = HebrewCalendar.calendar(options);
-
-let eventNames: string[] = [];
-
-for (const ev of events) {
-  let eventType = ev.constructor.name;
-  eventNames.push(eventType);
-}
-
-eventNames = [...new Set(eventNames)];
-
 interface EventDetails {
   Event: string;
   EventType: string;
@@ -137,39 +117,82 @@ interface EventType {
   Events: EventDetails[];
 }
 
-let eventArray: EventType[] = [];
-
-for (const ev of events) {
-  let eventType = ev.constructor.name;
+function generateEventObject(ev: Event, eventArray: Map<string, EventType>) {
+  const eventType = ev.constructor.name;
   const hd = ev.getDate();
   const date = hd.greg();
   const dateString = date.toLocaleDateString();
   const dayOfWeek = date.toLocaleString("en-US", { weekday: "short" });
-  // const triReading = getTriennialForParshaHaShavua(ev);
 
-  // Check if there's already an object for this date
-  let dateObj = eventArray.find(
-    (obj: any): obj is EventType => obj.Date === dateString
-  );
+  let dateObj = eventArray.get(dateString) || {
+    Date: dateString,
+    DayOfWeek: dayOfWeek,
+    Events: [],
+  };
 
-  if (!dateObj) {
-    // If there's no object for this date, create one
-    dateObj = {
-      Date: dateString,
-      DayOfWeek: dayOfWeek,
-      Events: [],
-    };
-    eventArray.push(dateObj);
-  }
-
-  // Add the current event to the date object
   dateObj.Events.push({
     Event: ev.render("en"),
     EventType: eventType,
   });
+
+  eventArray.set(dateString, dateObj);
 }
 
-let combinedData = eventArray.map((eventObj) => {
+interface CityTimes {
+  city: string;
+  candlelighting?: string;
+  havdalah?: string;
+}
+
+function generateCityTimes(
+  citiesString: string[],
+  startOfWeek: Date,
+  endOfWeek: Date
+): CityTimes[] {
+  const cityTimes: CityTimes[] = [];
+
+  for (let city of citiesString) {
+    const options = {
+      start: startOfWeek,
+      end: endOfWeek,
+      candlelighting: true,
+      location: Location.lookup(city),
+    };
+
+    const candleLightingEvents = HebrewCalendar.calendar(options);
+
+    const cityEventTimes: CityTimes = { city };
+
+    for (let event of candleLightingEvents) {
+      if (event.constructor.name === "CandleLightingEvent") {
+        cityEventTimes.candlelighting = event.render("en");
+      } else if (event.constructor.name === "HavdalahEvent") {
+        cityEventTimes.havdalah = event.render("en");
+      }
+    }
+    cityTimes.push(cityEventTimes);
+  }
+
+  return cityTimes;
+}
+
+const options = {
+  start: startOfWeek,
+  end: endOfWeek,
+  candlelighting: true,
+  location: Location.lookup(selectedCity),
+  omer: true,
+  sedrot: true,
+};
+
+const events = HebrewCalendar.calendar(options);
+const eventArray = new Map();
+
+for (const ev of events) {
+  generateEventObject(ev, eventArray);
+}
+
+const combinedData = Array.from(eventArray.values()).map((eventObj) => {
   const readingObj = readingsData.find(
     (readingObj) => readingObj.date === eventObj.Date
   );
@@ -179,36 +202,13 @@ let combinedData = eventArray.map((eventObj) => {
   };
 });
 
-let cityTimes: Array<{
-  city: string;
-  candlelighting?: string;
-  havdalah?: string;
-}> = [];
-
-for (let city of citiesString) {
-  let options = {
-    start: startOfWeek,
-    end: endOfWeek,
-    candlelighting: true,
-    location: Location.lookup(city),
-  };
-
-  let candleLightingEvents = HebrewCalendar.calendar(options);
-
-  let cityEventTimes: {
-    city: string;
-    candlelighting?: string;
-    havdalah?: string;
-  } = { city };
-  for (let event of candleLightingEvents) {
-    if (event.constructor.name === "CandleLightingEvent") {
-      cityEventTimes.candlelighting = event.render("en");
-    } else if (event.constructor.name === "HavdalahEvent") {
-      cityEventTimes.havdalah = event.render("en");
-    }
-  }
-  cityTimes.push(cityEventTimes);
-}
+const startOfWeekDate: Date = startOfWeek.greg();
+const endOfWeekDate: Date = endOfWeek.greg();
+const cityTimes = generateCityTimes(
+  citiesString,
+  startOfWeekDate,
+  endOfWeekDate
+);
 ---
 
 <Layout {...props}>
@@ -240,7 +240,7 @@ for (let city of citiesString) {
             <span>{DayOfWeek}</span>
 
             <ul data-citytimes={JSON.stringify(cityTimes)}>
-              {Events.map(({ Event, EventType }) => (
+              {Events.map(({ Event, EventType }: EventDetails) => (
                 <li
                   data-lighting={
                     EventType === "CandleLightingEvent" ||
