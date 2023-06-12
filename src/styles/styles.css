@@ -115,24 +115,3 @@ footer {
     margin-top: auto;
     padding-block: var(--size-5) calc(var(--size-5) + env(safe-area-inset-bottom));
 }
-
-details {
-    position: relative;
-}
-
-details>summary::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Adjust the opacity as needed */
-    pointer-events: none;
-    z-index: 1;
-}
-
-details>summary {
-    position: relative;
-    z-index: 2;
-}
