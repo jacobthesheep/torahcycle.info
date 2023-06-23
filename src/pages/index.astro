@@ -3,7 +3,7 @@ import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
 import { readingsData, processAllReadings, resetReadingsData } from "./data";
 import { HebrewCalendar, HDate, Location, Event } from "@hebcal/core";
-import { getTriennial } from "@hebcal/triennial";
+// import { getTriennial } from "@hebcal/triennial";
 
 const props = {
   title: "",
@@ -11,10 +11,10 @@ const props = {
   image: "home",
 };
 
-let currentHebrewYear = new HDate().getFullYear();
+// let currentHebrewYear = new HDate().getFullYear();
 
-const currentTriAll = getTriennial(currentHebrewYear, false);
-const currentTriReadings = [currentTriAll.readings];
+// const currentTriAll = getTriennial(currentHebrewYear, false);
+// const currentTriReadings = [currentTriAll.readings];
 
 const citiesByCountry = {
   USA: [
@@ -291,16 +291,18 @@ const cityTimes = generateCityTimes(
                     </li>
                   )}
                 </ul>
-                <span>
-                  {" "}
-                  view this year's
-                  <Link href="/torah-readings">torah readings</Link>
-                </span>
               </>
             )}
           </li>
         ))
       }
+      <li>
+        <span>
+          {" "}
+          view this year's
+          <Link href="/torah-readings">torah readings</Link>
+        </span>
+      </li>
     </ul>
   </main>
 </Layout>
