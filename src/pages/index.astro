@@ -109,7 +109,7 @@ const startOfWeek = new HDate(getStartAndEndOfWeek().startOfWeek);
 const endOfWeek = new HDate(getStartAndEndOfWeek().endOfWeek);
 
 resetReadingsData();
-processAllReadings(startOfWeek, endOfWeek);
+const weeksPsalmsData = processAllReadings(startOfWeek, endOfWeek);
 
 interface EventDetails {
   Event: string;
@@ -197,12 +197,36 @@ for (const ev of events) {
   generateEventObject(ev, eventArray);
 }
 
-const combinedData = Array.from(eventArray.values()).map((eventObj) => {
-  const readingObj = readingsData.find(
-    (readingObj) => readingObj.date === eventObj.Date
+let date = startOfWeek;
+const daysArray = [];
+
+while (date.deltaDays(endOfWeek) <= 0) {
+  daysArray.push(date);
+  date = date.next();
+}
+
+const combinedData = Array.from(daysArray).map((date) => {
+  const formattedDate = date.greg().toLocaleDateString("en-US", {
+    month: "numeric",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  const dayOfWeek = date.greg().toLocaleString("en-US", { weekday: "short" });
+
+  const psalmsObj = weeksPsalmsData.find(
+    (psalmsObj) => psalmsObj.date === formattedDate
   );
+  const readingObj = readingsData.find(
+    (readingObj) => readingObj.date === formattedDate
+  );
+
+  const eventObj = eventArray.get(formattedDate) || {};
+
   return {
+    dayOfWeek,
     ...eventObj,
+    psalmsData: psalmsObj,
     readingData: readingObj,
   };
 });
@@ -214,6 +238,10 @@ const cityTimes = generateCityTimes(
   startOfWeekDate,
   endOfWeekDate
 );
+
+eventArray.forEach((element) => {
+  console.log(element);
+});
 ---
 
 <Layout {...props}>
@@ -240,21 +268,28 @@ const cityTimes = generateCityTimes(
 
     <ul>
       {
-        combinedData.map(({ DayOfWeek, Events, readingData }) => (
+        combinedData.map(({ dayOfWeek, Events, readingData, psalmsData }) => (
           <li>
-            <span>{DayOfWeek}</span>
+            <span>{dayOfWeek}</span>
+
+            {psalmsData && (
+              <ul>
+                <li>{psalmsData.render}</li>
+              </ul>
+            )}
 
             <ul data-citytimes={JSON.stringify(cityTimes)}>
-              {Events.map(({ Event, EventType }: EventDetails) => (
-                <li
-                  data-lighting={
-                    EventType === "CandleLightingEvent" ||
-                    EventType === "HavdalahEvent"
-                  }
-                >
-                  {Event}
-                </li>
-              ))}
+              {Events &&
+                Events.map(({ Event, EventType }: EventDetails) => (
+                  <li
+                    data-lighting={
+                      EventType === "CandleLightingEvent" ||
+                      EventType === "HavdalahEvent"
+                    }
+                  >
+                    {Event}
+                  </li>
+                ))}
             </ul>
 
             {readingData && (

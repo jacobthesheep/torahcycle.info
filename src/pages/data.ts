@@ -1,5 +1,6 @@
 import { HebrewCalendar, HDate } from "@hebcal/core";
 import { getLeyningOnDate, formatAliyahWithBook, Aliyah } from "@hebcal/leyning";
+import { dailyPsalms, PsalmsEvent } from "@hebcal/learning";
 
 export const readingsData: ReadingData[] = [];
 
@@ -10,9 +11,8 @@ export function resetReadingsData() {
 function handleReading(reading: any, date: HDate) {
 
     const dateObj = date.greg();
-    const formattedDate = dateObj.toISOString().split("T")[0];
-
     const localDate = dateObj.toLocaleDateString();
+    const formattedDate = dateObj.toISOString().split("T")[0];
     const dayOfWeek = dateObj.toLocaleString("en-US", { weekday: "short" });
 
     const portion =
@@ -28,7 +28,6 @@ function handleReading(reading: any, date: HDate) {
     const aliyot: AliyahData[] = [];
 
     for (const [num, aliyah] of Object.entries(reading.fullkriyah)) {
-
 
         const number = num === 'M' ? 'maftir' : `aliyah ${num}`;
         let description = formatAliyahWithBook(aliyah as Aliyah);
@@ -47,7 +46,6 @@ function handleReading(reading: any, date: HDate) {
         aliyot.push(aliyahData);
     }
 
-
     readingsData.push({
         date: localDate,
         dateTime: formattedDate,
@@ -59,14 +57,36 @@ function handleReading(reading: any, date: HDate) {
     });
 }
 
+function getPsalmsEventData(localDate: string, psalmsEvent: PsalmsEvent): PsalmsEventData {
+    return {
+        date: localDate,
+        render: psalmsEvent.render('en'),
+        url: psalmsEvent.url(),
+        categories: psalmsEvent.getCategories()
+    };
+}
+
 export function processAllReadings(start: HDate, end: HDate) {
+    let weeksPsalmsData: PsalmsEventData[] = [];
+
     for (
         let date = start;
         date.deltaDays(end) <= 0;
         date = date.next()
     ) {
+
+        const dateObj = date.greg();
+        const localDate = dateObj.toLocaleDateString();
+
+        const todaysPsalms = dailyPsalms(date);
+        const psalmsEvent = new PsalmsEvent(date, todaysPsalms);
+        const psalmsData = getPsalmsEventData(localDate, psalmsEvent);
+
+        weeksPsalmsData.push(psalmsData);
+
         let holidays = HebrewCalendar.getHolidaysOnDate(date);
         const isHoliday = holidays && holidays.length > 0;
+
         if (date.getDay() === 6 || isHoliday) {
 
             const readings = getLeyningOnDate(date, false);
@@ -88,7 +108,9 @@ export function processAllReadings(start: HDate, end: HDate) {
             }
         }
     }
+    return weeksPsalmsData;
 }
+
 
 export function processTorahReadings(start: HDate, end: HDate) {
     for (let date = start; date.deltaDays(end) <= 0; date = date.next()) {

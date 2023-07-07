@@ -20,3 +20,17 @@ interface ReadingData {
     haftara?: string;
     aliyot: AliyahData[];
 }
+
+interface DafYomiEventData {
+    date: string;
+    render: string;
+    url: string;
+    categories: string[];
+}
+
+interface PsalmsEventData {
+    date: string;
+    render: string;
+    url: string;
+    categories: string[];
+}
