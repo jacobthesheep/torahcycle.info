@@ -1,4 +1,4 @@
-import type { HebrewCalendar, HDate } from "@hebcal/core";
+import { HebrewCalendar, HDate } from "@hebcal/core";
 import { getLeyningOnDate, formatAliyahWithBook, Aliyah } from "@hebcal/leyning";
 import { dailyPsalms, PsalmsEvent } from "@hebcal/learning";
 
@@ -20,7 +20,10 @@ function handleReading(reading: any, date: HDate) {
 
     const aliyot: AliyahData[] = [];
 
-    const relevantReading = date.getDay() === 6 ? reading.fullkriyah : reading.weekday;
+    let holidays = HebrewCalendar.getHolidaysOnDate(date);
+    const isHoliday = holidays && holidays.length > 0;
+
+    const relevantReading = (date.getDay() === 6 || isHoliday) ? reading.fullkriyah : reading.weekday;
 
     if (relevantReading) {
         for (const [num, aliyah] of Object.entries(relevantReading)) {

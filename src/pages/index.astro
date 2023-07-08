@@ -291,26 +291,21 @@ const cityTimes = generateCityTimes(
                     </span>
                     Torah: {readingData.readingSummary}
                   </li>
-                  {!(
-                    Events?.length > 0 &&
-                    (dayOfWeek === "Mon" || dayOfWeek === "Thu")
-                  ) && (
-                    <li>
-                      <details>
-                        <summary>Aliyot Details</summary>
-                        <ul>
-                          {readingData.aliyot.map((aliyah: AliyahData) => (
-                            <li>
-                              {aliyah.number}: {aliyah.description}
-                              {aliyah.reason && (
-                                <div>Reason: {aliyah.reason}</div>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      </details>
-                    </li>
-                  )}
+                  <li>
+                    <details>
+                      <summary>Aliyot Details</summary>
+                      <ul>
+                        {readingData.aliyot.map((aliyah: AliyahData) => (
+                          <li>
+                            {aliyah.number}: {aliyah.description}
+                            {aliyah.reason && (
+                              <div>Reason: {aliyah.reason}</div>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  </li>
 
                   {readingData.haftara && (
                     <li>
