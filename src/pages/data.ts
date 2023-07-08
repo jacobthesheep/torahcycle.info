@@ -1,4 +1,4 @@
-import { HebrewCalendar, HDate } from "@hebcal/core";
+import type { HebrewCalendar, HDate } from "@hebcal/core";
 import { getLeyningOnDate, formatAliyahWithBook, Aliyah } from "@hebcal/leyning";
 import { dailyPsalms, PsalmsEvent } from "@hebcal/learning";
 
@@ -15,35 +15,43 @@ function handleReading(reading: any, date: HDate) {
     const formattedDate = dateObj.toISOString().split("T")[0];
     const dayOfWeek = dateObj.toLocaleString("en-US", { weekday: "short" });
 
-    const portion =
-        reading.parsha && reading.parsha.length > 1
-            ? reading.parsha.join("-")
-            : reading.parsha
-                ? reading.parsha[0]
-                : undefined;
-
     let holiday = reading.name.en;
     holiday = holiday.replace(/(\(on Shabbat\)|I|II)/g, "").trim();
 
     const aliyot: AliyahData[] = [];
 
-    for (const [num, aliyah] of Object.entries(reading.fullkriyah)) {
+    const relevantReading = date.getDay() === 6 ? reading.fullkriyah : reading.weekday;
 
-        const number = num === 'M' ? 'maftir' : `aliyah ${num}`;
-        let description = formatAliyahWithBook(aliyah as Aliyah);
-        const verseCount = (aliyah as Aliyah).v;
+    if (relevantReading) {
+        for (const [num, aliyah] of Object.entries(relevantReading)) {
+            const number = num === 'M' ? 'maftir' : `aliyah ${num}`;
+            let description = formatAliyahWithBook(aliyah as Aliyah);
+            const verseCount = (aliyah as Aliyah).v;
 
-        const aliyahData: AliyahData = {
-            number,
-            description,
-            verseCount,
-        };
+            const aliyahData: AliyahData = {
+                number,
+                description,
+                verseCount,
+            };
 
-        if (reading.reason && reading.reason[num]) {
-            aliyahData.reason = reading.reason[num];
-            description += ' | ' + reading.reason[num];
+            if (reading.reason && reading.reason[num]) {
+                aliyahData.reason = reading.reason[num];
+                description += ' | ' + reading.reason[num];
+            }
+            aliyot.push(aliyahData);
         }
-        aliyot.push(aliyahData);
+    }
+
+    let portion;
+
+    if (aliyot.length > 0) {
+        const firstAliyah = aliyot[0];
+        const lastAliyah = aliyot[aliyot.length - 1];
+
+        const firstVerse = firstAliyah.description.split(':')[1].split('-')[0].trim();
+        const lastVerse = lastAliyah.description.split('-')[1].trim();
+
+        portion = `${firstAliyah.description.split(':')[0]}:${firstVerse}-${lastVerse}`;
     }
 
     readingsData.push({
@@ -51,7 +59,7 @@ function handleReading(reading: any, date: HDate) {
         dateTime: formattedDate,
         DayOfWeek: dayOfWeek,
         name: reading.portion || holiday,
-        readingSummary: reading.summary,
+        readingSummary: reading.summary || portion,
         haftara: reading.haftara,
         aliyot: aliyot
     });
@@ -84,30 +92,25 @@ export function processAllReadings(start: HDate, end: HDate) {
 
         weeksPsalmsData.push(psalmsData);
 
-        let holidays = HebrewCalendar.getHolidaysOnDate(date);
-        const isHoliday = holidays && holidays.length > 0;
+        const readings = getLeyningOnDate(date, false);
 
-        if (date.getDay() === 6 || isHoliday) {
-
-            const readings = getLeyningOnDate(date, false);
-
-            if (readings) {
-                if (Array.isArray(readings)) {
-                    // Loop through each Leyning object and handle it
-                    for (const reading of readings) {
-                        if (reading) {
-                            handleReading(reading, date);
-                        }
+        if (readings) {
+            if (Array.isArray(readings)) {
+                // Loop through each Leyning object and handle it
+                for (const reading of readings) {
+                    if (reading) {
+                        handleReading(reading, date);
                     }
-                } else {
-                    // We have a single Leyning object, so handle it
-                    if (readings) {
-                        handleReading(readings, date);
-                    }
+                }
+            } else {
+                // We have a single Leyning object, so handle it
+                if (readings) {
+                    handleReading(readings, date);
                 }
             }
         }
     }
+
     return weeksPsalmsData;
 }
 

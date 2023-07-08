@@ -3,18 +3,12 @@ import Layout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
 import { readingsData, processAllReadings, resetReadingsData } from "./data";
 import { HebrewCalendar, HDate, Location, Event } from "@hebcal/core";
-// import { getTriennial } from "@hebcal/triennial";
 
 const props = {
   title: "",
   description: "",
   image: "home",
 };
-
-// let currentHebrewYear = new HDate().getFullYear();
-
-// const currentTriAll = getTriennial(currentHebrewYear, false);
-// const currentTriReadings = [currentTriAll.readings];
 
 const citiesByCountry = {
   USA: [
@@ -238,10 +232,6 @@ const cityTimes = generateCityTimes(
   startOfWeekDate,
   endOfWeekDate
 );
-
-eventArray.forEach((element) => {
-  console.log(element);
-});
 ---
 
 <Layout {...props}>
@@ -301,21 +291,26 @@ eventArray.forEach((element) => {
                     </span>
                     Torah: {readingData.readingSummary}
                   </li>
-                  <li>
-                    <details>
-                      <summary>Aliyot Details</summary>
-                      <ul>
-                        {readingData.aliyot.map((aliyah: AliyahData) => (
-                          <li>
-                            {aliyah.number}: {aliyah.description}
-                            {aliyah.reason && (
-                              <div>Reason: {aliyah.reason}</div>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  </li>
+                  {!(
+                    Events?.length > 0 &&
+                    (dayOfWeek === "Mon" || dayOfWeek === "Thu")
+                  ) && (
+                    <li>
+                      <details>
+                        <summary>Aliyot Details</summary>
+                        <ul>
+                          {readingData.aliyot.map((aliyah: AliyahData) => (
+                            <li>
+                              {aliyah.number}: {aliyah.description}
+                              {aliyah.reason && (
+                                <div>Reason: {aliyah.reason}</div>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    </li>
+                  )}
 
                   {readingData.haftara && (
                     <li>

@@ -23,9 +23,6 @@ dependencies:
   '@hebcal/leyning':
     specifier: ^7.4.1
     version: 7.4.1
-  '@hebcal/triennial':
-    specifier: ^1.3.2
-    version: 1.3.2
   astro:
     specifier: ^2.8.0
     version: 2.8.0
@@ -981,14 +978,6 @@ packages:
     hasBin: true
     dependencies:
       '@hebcal/core': 4.1.1
-    dev: false
-
-  /@hebcal/triennial@1.3.2:
-    resolution: {integrity: sha512-+36y0iNUOIh2ERIyHnV4Zqv3nG5FXcnO68wfHc35i7Tt9B28zzVWy0afJQrznBQKQoYY9tX/rGUkbfY6SQv9sA==}
-    hasBin: true
-    dependencies:
-      '@hebcal/core': 4.1.1
-      '@hebcal/leyning': 7.4.1
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
