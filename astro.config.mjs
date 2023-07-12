@@ -4,5 +4,5 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: "https://torahcycle-info.vercel.app/",
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({ analytics: true }),
 });
